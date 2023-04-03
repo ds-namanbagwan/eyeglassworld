@@ -6,7 +6,7 @@ export default function NewFooter(props: any) {
 
     return (
         <>
-            <div className="bg-green text-white">
+            <div className="bg-green text-white inline-block w-full">
 
                 <div className="absolute text-4xl ml-6 mt-14">
                     {props?.prop?.c_text5}
