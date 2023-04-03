@@ -279,10 +279,10 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                   entityType: "location",
                   fieldApiName: "address.postalCode",
 
-                  },
-                  {
-                    entityType: "location",
-                    fieldApiName: "name",
+                },
+                {
+                  entityType: "location",
+                  fieldApiName: "name",
 
                 },
                 {
@@ -294,13 +294,17 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                   entityType: "location",
                   fieldApiName: "address.region",
 
-                  },
-                  // {
-                  //   entityType: "location",
-                  //   fieldApiName: "address.countryCode",
+                },
+                {
+                  entityType: "location",
+                  fieldApiName: "address.line2",
+                },
+                {
+                  entityType: "location",
+                  fieldApiName: "address.countryCode",
+                }
 
-                  // },
-                ]}
+              ]}
                 
                 handleInputValue={handleInputValue}  
                 handleSetUserShareLocation={handleSetUserShareLocation}

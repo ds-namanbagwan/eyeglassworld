@@ -195,7 +195,7 @@ const Locator: Template<TemplateRenderProps>= ({
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
-      <PageLayout global={_site}>
+      {/* <PageLayout global={_site}> */}
       <NewHeader prop={_site} />
         <SearchHeadlessProvider
           experienceKey={AnswerExperienceConfig.experienceKey}
@@ -212,7 +212,7 @@ const Locator: Template<TemplateRenderProps>= ({
         </SearchHeadlessProvider>
       
         <NewFooter prop={_site} />
-      </PageLayout>
+      {/* </PageLayout> */}
       </AnalyticsScopeProvider>
       </AnalyticsProvider>
     </>
