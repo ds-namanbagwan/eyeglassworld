@@ -8,7 +8,7 @@ export default function NewHeader(props: any) {
 
     return (
         <>
-            <div className=" flex w-80 ml-4"><img src={props?.prop?.c_photo?.url} />
+            <div className=" flex w-80 ml-4"><img src={props?.prop?.c_photo?.url} alt="" />
                  
                 <div className="mt-12 ml-[150%]"><SearchBar/></div>
             

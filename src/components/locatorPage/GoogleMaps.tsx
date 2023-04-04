@@ -228,10 +228,10 @@ function UnwrappedGoogleMaps({
       position,
       map,
       icon: Mapicon2,
-      // label: {
-      //   text: String(i),
-      //   color: "white",
-      // },
+      label: {
+        text: String(i),
+        color: "white",
+      },
       // animation: google.maps.Animation.DROP
     });
 
@@ -258,7 +258,7 @@ function UnwrappedGoogleMaps({
               text: String(markers?.length),
               color: "white",
             },
-            //  animation: google.maps.Animation.DROP,
+             animation: google.maps.Animation.DROP,
           });
         },
       },

@@ -9,7 +9,7 @@ const SearchBar = () => (
       
       <div className="td" id="s-cover">
         <button  type="submit" className="buttonsearch">
-          <div className="s-circle"></div>
+          {/* <div className="s-circle"></div> */}
           <span></span>
         </button>
       </div>

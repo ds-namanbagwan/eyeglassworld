@@ -142,7 +142,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
    
 .location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7}
 .result-list .location{ @apply first:mt-0}
-.location .button-bx .btn{@apply w-[9.75rem] bg-Dark-red font-second-main-font text-lg  border-none text-white    }
+.location .button-bx .btn{@apply w-[9.75rem] bg-green font-second-main-font text-lg  border-none text-white    }
 .location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-black underline  }
 .location .button-bx .btn + .btn{  @apply mt-2 ml-2 md:mt-0 hover:no-underline   w-auto }
 .location .button-bx .btn:hover svg{@apply !fill-red }
@@ -291,11 +291,11 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .pagination-conatiner{ @apply mt-4}
 .nearby-btn .btn{ @apply !w-full}
 .nearby-card .button-bx{@apply ml-0 lg:ml-0 flex-row justify-start }
-.nearby-card .button-bx .btn{@apply w-[9.75rem] bg-Dark-red hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
+.nearby-card .button-bx .btn{@apply w-[9.75rem] bg-green hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
 .nearby-card .button-bx .btn.notHighligh{@apply w-full md:w-[48%] ml-2 bg-white justify-start  border-none text-black underline  }
 .nearby-card .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto hover:no-underline}
 .nearby-card .button-bx .btn:hover svg{@apply !fill-red }
-.map-section .button-bx .btn{@apply w-[11.25rem] md:w-[9.25rem] lg:w-[11.25rem]  bg-Dark-red hover:bg-hover-btn font-second-main-font  border-none text-white  }
+.map-section .button-bx .btn{@apply w-[11.25rem] md:w-[9.25rem] lg:w-[11.25rem]  bg-green hover:bg-hover-btn font-second-main-font  border-none text-white  }
 .map-section .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-white justify-start  border-none text-black underline  }
 .map-section .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto ml-2 hover:no-underline}
 .map-section .button-bx .btn:hover svg{@apply !fill-red }
@@ -493,8 +493,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .locator-main .result{ @apply border-l-4 border-l-white}
 
 .locator-main .result.active{@apply border-l-4 border-l-hover-border}
-.locator-main .result.fixed-hover.active{@apply border-l-4 border-l-red}
-.locator-main .result.fixed-hover{@apply border-l-4 border-l-red}
+.locator-main .result.fixed-hover.active{@apply border-l-4 border-l-green}
+.locator-main .result.fixed-hover{@apply border-l-4 border-l-green}
 .footer-block{  @apply border-b border-border-light py-3 lg:py-0 lg:border-none px-5}
 .footer-block-title{  @apply text-lg lg:text-[1.28571rem] font-semibold leading-6 pb-1 lg:pb-2}
 .footer-block ul li a{  @apply text-base leading-6 py-1 inline-block align-top hover:underline}
