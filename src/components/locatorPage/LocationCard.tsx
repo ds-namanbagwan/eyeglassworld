@@ -81,9 +81,8 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 : ''}
             </div>
 
-
             <div className="icon-row content-col address-with-availablity notHighlight">
-            {/* <div className="icon">
+              {/* <div className="icon">
             {" "}
             <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
           </div> */}
@@ -102,13 +101,12 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                         <OpenClose timezone={result.rawData.timezone} hours={result.rawData.hours} deliveryHours={result.rawData.hours}></OpenClose>
                       </div></>}
 
-
                   <div className={`storelocation-openCloseTime  capitalize hidden`}>
                     {/* {hoursopen?
                    typeof result.rawData.hours === "undefined" ? ("") :
                      <Hours key={result.rawData.name} additionalHoursText={result.rawData.additionalHoursText} hours={result.rawData.hours} c_specific_day={result.rawData.c_specific_day} />
                    :''} */}
-                </div>
+                  </div>
                 </div></> : <div className="closeddot notHighlight red-dot">
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
                   <circle id="Ellipse_5" data-name="Ellipse 5" cx="4" cy="4" r="4" fill="#ad1e1f" />
@@ -120,24 +118,23 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
             </div>
             <div className="mt-2">
-            {result.rawData.mainPhone?
-        <div className="icon-row">
-           {/* <div className="icon">
+              {result.rawData.mainPhone ?
+                <div className="icon-row">
+                  {/* <div className="icon">
            <img className=" " src={Phonesvg} width="20" height="20"
                         alt="" />
                         </div> */}
-          <div className="content-col">
-            <a className="underline" href={`tel:${result.rawData.mainPhone}`}>{result.rawData.mainPhone}</a>
-          </div>
-        </div>:''}
-        </div>
+                  <div className="content-col">
+                    <a className="underline" href={`tel:${result.rawData.mainPhone}`}>{result.rawData.mainPhone}</a>
+                  </div>
+                </div> : ''}
+            </div>
 
             <div className="button-bx">
               <Link type="button" href={url} className=" btn notHighlight "
                 data-ya-track={`viewStore -${result.rawData.name}`}
                 eventName={`viewStore -${result.rawData.name}`}
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
                 {StaticData.StoreDetailbtn}
               </Link>
@@ -145,9 +142,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
                 : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
             </div>
-
-
-
           </div>
 
         </div>

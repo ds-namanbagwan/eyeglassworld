@@ -334,7 +334,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .hero-section .hero-content .banner-text{  @apply border-l-2 border-dashed border-white px-7}
 .hero-section .hero-content h1{  @apply text-3xl md:text-5xl font-normal mb-3}
 .hero-section .hero-content p{@apply max-w-2xl}
-.banner-text h1{ @apply text-red text-[2.4375rem] mb-3  mt-8 font-second-main-font}
+.banner-text h1{ @apply text-green text-[3rem] mb-3  mt-8 font-second-main-font}
 
 /* address sec */
 .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
@@ -360,7 +360,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .opennow-sec .icons{@apply min-w-[0.75rem] sm:min-w-[1.25rem] mr-1 sm:mr-1}
 .opennow-sec .icons img{@apply w-5 sm:w-5}
 .direction-button{@apply mt-6 }
-.direction-button a{@apply  !bg-Dark-red !text-white  !border-button-light hover:!border-transparent !border-2 }
+.direction-button a{@apply  !bg-green !text-white  !border-button-light hover:!border-transparent !border-2 }
 .direction-button .btn:hover svg{@apply !fill-red }
 .opennow-sec.deactive-feci{@apply opacity-70 text-red }
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
