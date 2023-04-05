@@ -27,9 +27,9 @@ export default function offer(props: any) {
                     })}
                 </div>
                 <div className="button-bx3">
-                    <Link type="button" href={props?.c_aboutCTA?.link} className="btn notHighlight1">
+                    <a type="button" href={props?.c_aboutCTA?.link} className="btn notHighlight1">
                         {props?.c_aboutCTA?.label}
-                    </Link>
+                    </a>
                 </div>
             </div>
 
