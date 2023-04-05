@@ -360,7 +360,6 @@ const Location: Template<ExternalApiRenderData> = ({
           item: {
             "@id":
               stagingBaseurl +
-
               document.dm_directoryParents[index].slug +
               ".html",
             name: i.name,
@@ -564,7 +563,9 @@ const Location: Template<ExternalApiRenderData> = ({
           </div>
 
           <div className="container">
-            <div className="sec-title"><h2 className="mt-10">{StaticData.about}</h2></div>
+            <div className="sec-title">
+              <h2 className="mt-10">{StaticData.about}</h2>
+            </div>
             <div className="flex w-full gap-12">
               <div className="map-sec1">
                 <CustomMap prop={yextDisplayCoordinate} />
@@ -577,11 +578,10 @@ const Location: Template<ExternalApiRenderData> = ({
                 <p>{c_aboutdata2.data}</p><br />
                 <p className="text-xl font-semibold">{c_aboutdata3.aboutsubhead}</p>
                 <p>{c_aboutdata3.data}</p>
-              </div>
 
+              </div>
             </div>
           </div>
-
 
           <div className="container mt-10">
             <div className="sec-title"><h2 className="">{StaticData.photoGallary}</h2></div>
@@ -599,9 +599,7 @@ const Location: Template<ExternalApiRenderData> = ({
             </div>
           </div>
 
-          {/* <Faq faqs={c_faqs}/> */}
           <NewFooter prop={_site} />
-
 
         </AnalyticsScopeProvider>
       </AnalyticsProvider>

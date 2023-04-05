@@ -641,7 +641,7 @@ function UnwrappedGoogleMaps({
           e.target.dataset.longitude +
           "&origin=" +
           origin +
-          ",UK";
+          ",Us";
         window.open(getDirectionUrl, "_blank");
       };
       navigator.geolocation.getCurrentPosition(

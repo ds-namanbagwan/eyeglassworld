@@ -11,26 +11,29 @@ import * as React from "react";
 import { favicon } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
 import PageLayout from "../components/layouts/PageLayout";
-export const config: TemplateConfig = {
-  stream: {
-    $id: "404",
-    // Specifies the exact data that each generated document will contain. This data is passed in
-    // directly as props to the default exported function.
-    fields: [
-      "name",
+import NewHeader from "../components/layouts/NewHeader";
+import "../index.css";
+import NewFooter from "../components/layouts/NewFooter";
+// export const config: TemplateConfig = {
+//   stream: {
+//     $id: "404",
+//     // Specifies the exact data that each generated document will contain. This data is passed in
+//     // directly as props to the default exported function.
+//     fields: [
+//       "name",
       
-    ],
-    // Defines the scope of entities that qualify for this stream.
-    filter: {
-      entityIds: ["global-data"]
-    },
-    // The entity language profiles that documents will be generated for.
-    localization: {
-      locales: ["en_GB"],
-      primary: false,
-    },
-  },
-};
+//     ],
+//     // Defines the scope of entities that qualify for this stream.
+//     filter: {
+//       entityIds: ["h&f"]
+//     },
+//     // The entity language profiles that documents will be generated for.
+//     localization: {
+//       locales: ["en"],
+//       primary: false,
+//     },
+//   },
+// };
 
 // The path must be exactly 404.html
 export const getPath: GetPath<TemplateProps> = () => {
@@ -62,7 +65,8 @@ const FourOhFour: Template<TemplateRenderProps> = ({
   } = document;
   return (
     <>
-      <PageLayout global={_site}>
+      
+      <NewHeader prop={_site} />
         <div className="content-list">
           <div className="container">
             <div className="sec-title text-center">
@@ -80,7 +84,8 @@ const FourOhFour: Template<TemplateRenderProps> = ({
 
           </div>
         </div>
-      </PageLayout>
+        <NewFooter prop={_site} />
+      
     </>
   );
 };

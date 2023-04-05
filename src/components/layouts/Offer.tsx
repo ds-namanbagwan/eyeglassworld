@@ -4,7 +4,7 @@ import { Link } from "@yext/pages/components"
 
 
 export default function offer(props: any) {
-    console.log(props.c_aboutCTA.label, "naman12")
+    // console.log(props.c_aboutCTA.label, "naman12")
 
     return (
         <>

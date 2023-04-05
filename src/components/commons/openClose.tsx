@@ -363,7 +363,7 @@ export const OpenStausFunctions = {
   },
   getUtcOffsetFromTimeZone: (timeZone, date = new Date()) => {
     const tz = date
-      .toLocaleString("en-gb", { timeZone, timeStyle: "long" })
+      .toLocaleString("en", { timeZone, timeStyle: "long" })
       .split(" ")
       .slice(-1)[0];
     const dateString = date.toString();

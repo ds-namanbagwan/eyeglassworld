@@ -82,7 +82,8 @@ export default function Nearby(props: any) {
                     </div>
                     <div className="distance mt-5 mr-5">{metersToMiles(location.distance)}
                     <span>{StaticData.miles}</span>
-                    {console.log(location.distance,"location.distance")}</div>
+                    {/* {console.log(location.distance,"location.distance")} */}
+                    </div>
                     <div className="icon-row content-col">
                       <Address address={location.data.address} />
                     </div>

@@ -232,13 +232,7 @@ const country: Template<TemplateRenderProps> = ({
           } else {
             detlslug1 = `${res.slug.toString()}.html`;
           }
-          // if (res.meta.entityType.id == 'ce_city') {
-          //   detlslug1 = "gb/" + detlslug1;
-          // } else {
-          //   detlslug1 = detlslug1;
-          // }
-
-          // console.log(entity.name, res);
+        
 
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
             // console.log(detl,"123456")

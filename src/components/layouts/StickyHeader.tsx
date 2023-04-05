@@ -2,7 +2,7 @@ import * as React from "react"
 
 
 export default function StickyHeader(props: any) {
-    console.log(props.props.c_head2.header2subpart, "name")
+    // console.log(props.props.c_head2.header2subpart, "name")
 
     return (
         <>
