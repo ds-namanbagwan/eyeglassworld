@@ -38,7 +38,8 @@ module.exports = {
       'box-border': '#cccccc',
       'dark-gray': '#333333',
       'hover-border': '#d8d8d8',
-      'green':'#0078b4'
+      'green':'#0078b4',
+      'dark-pink':'#e2231a'
     },
 
     fontFamily: {

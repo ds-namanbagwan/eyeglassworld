@@ -158,6 +158,33 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
 .result-inner{@apply p-4 }
 .button-bx{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
+
+
+
+
+/* button-bx1 */
+.button-bx1{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
+
+.button-bx1 .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[250px] sm:h-[50px] sm:mt-[33px]
+  px-2 transition-all duration-300 text-white
+   hover:text-green   border-dark-pink border hover:border-green  bg-dark-pink hover:bg-white text-sm md:text-base font-semibold flex items-center justify-center  }
+
+
+
+/*button-bx2 */
+   .button-bx2{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
+
+.button-bx2 .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[250px] sm:h-[50px] sm:mt-[33px]
+  px-2 transition-all duration-300 text-white
+   hover:text-dark-pink   border-dark-pink border hover:border-dark-pink  bg-dark-pink hover:bg-white text-sm md:text-base font-semibold flex items-center justify-center  }
+
+/*button-bx3 */
+.button-bx3{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
+
+.button-bx3 .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[250px] sm:h-[50px] sm:mt-[33px]
+  px-2 transition-all duration-300 text-white
+   hover:text-green   border-green border hover:border-green  bg-green hover:bg-white text-sm md:text-base font-semibold flex items-center justify-center  }
+
 .button-bx .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[48%]  
    px-2 transition-all duration-300 hover:bg-hover-btn text-gray-dark
     hover:text-white   border-black border hover:border-transparent  bg-white text-sm md:text-base font-medium flex items-center justify-center  }

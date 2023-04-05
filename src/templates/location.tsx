@@ -83,12 +83,14 @@ export const config: TemplateConfig = {
       "c_aboutdata1",
       "c_aboutdata2",
       "c_aboutdata3",
-      "c_bannerimage",
+      // "c_bannerimage",
       "c_faqs.name",
       "c_faqs.answer",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
-      "dm_directoryParents.meta.entityType"
+      "dm_directoryParents.meta.entityType",
+      "c_photogallary1CTA",
+      "c_aboutCTA"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -287,7 +289,7 @@ const Location: Template<ExternalApiRenderData> = ({
     mainPhone,
     c_photogallary1,
     photoGallery,
-    c_bannerimage,
+    // c_bannerimage,
     c_canonical,
     description,
     additionalHoursText,
@@ -303,7 +305,8 @@ const Location: Template<ExternalApiRenderData> = ({
     c_aboutdata3,
     dm_directoryParents,
     c_faqs,
-    
+    c_photogallary1CTA,
+    c_aboutCTA
   } = document;
 
   let templateData = { document: document, __meta: __meta };
@@ -474,12 +477,12 @@ const Location: Template<ExternalApiRenderData> = ({
           <NewHeader prop={_site} />
 
           <BreadCrumbs
-              name={name}
-              parents={dm_directoryParents}
-              baseUrl={relativePrefixToRoot}
-              address={address}
-            ></BreadCrumbs>
-          
+            name={name}
+            parents={dm_directoryParents}
+            baseUrl={relativePrefixToRoot}
+            address={address}
+          ></BreadCrumbs>
+
 
           <div className="container">
             <div className='banner-text banner-dark-bg justify-center text-center'>
@@ -517,7 +520,7 @@ const Location: Template<ExternalApiRenderData> = ({
               baseUrl={relativePrefixToRoot}
               address={address}
             ></BreadCrumbs> */}
-            {/* <div className="location-information">
+          {/* <div className="location-information">
               <div className="container">
                 <div className="banner-text banner-dark-bg justify-center text-left">
                   <h1 className="entity-name">{name}</h1>
@@ -546,13 +549,18 @@ const Location: Template<ExternalApiRenderData> = ({
                 ></Contact>
               </div>
             </div>
-          </div> */} 
+          </div> */}
 
           <StickyHeader props={_site} />
 
+          <div className="text mt-14">
+            <div className="sec-title"><h2 className="">{StaticData.photoGallary1}</h2></div>
+            <PhotoGallery1 c_photogallary1={c_photogallary1} c_photogallary1CTA={c_photogallary1CTA} />
+          </div>
+
           <div className="text mt-10">
             <div className="sec-title"><h2 className="">{StaticData.offer}</h2></div>
-            <Offer props={c_offerstype} />
+            <Offer props={c_offerstype} c_aboutCTA={c_aboutCTA}/>
           </div>
 
           <div className="container">
@@ -573,16 +581,6 @@ const Location: Template<ExternalApiRenderData> = ({
 
             </div>
           </div>
-
-
-
-
-
-          {/* <div className="text mt-14">
-            <div className="sec-title"><h2 className="">{StaticData.photoGallary1}</h2></div>
-            <PhotoGallery1 c_photogallary1={c_photogallary1} />
-           
-          </div> */}
 
 
           <div className="container mt-10">

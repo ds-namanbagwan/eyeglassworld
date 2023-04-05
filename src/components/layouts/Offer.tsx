@@ -1,9 +1,10 @@
 import * as React from "react"
 import { StaticData } from "../../../sites-global/staticData"
+import { Link } from "@yext/pages/components"
 
 
 export default function offer(props: any) {
-    // console.log(props, "naman12")
+    console.log(props.c_aboutCTA.label, "naman12")
 
     return (
         <>
@@ -24,6 +25,11 @@ export default function offer(props: any) {
                             </>
                         )
                     })}
+                </div>
+                <div className="button-bx3">
+                    <Link type="button" href={props?.c_aboutCTA?.link} className="btn notHighlight1">
+                        {props?.c_aboutCTA?.label}
+                    </Link>
                 </div>
             </div>
 
