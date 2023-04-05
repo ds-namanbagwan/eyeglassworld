@@ -560,7 +560,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
           <div className="text mt-10">
             <div className="sec-title"><h2 className="">{StaticData.offer}</h2></div>
-            <Offer props={c_offerstype} c_aboutCTA={c_aboutCTA}/>
+            <Offer props={c_offerstype} c_aboutCTA={c_aboutCTA} />
           </div>
 
           <div className="container">
