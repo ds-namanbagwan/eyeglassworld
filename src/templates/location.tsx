@@ -84,7 +84,7 @@ export const config: TemplateConfig = {
       "c_aboutdata2",
       "c_aboutdata3",
       // "c_bannerimage",
-      "c_faqs.name",
+      "c_faqs.question",
       "c_faqs.answer",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
@@ -140,7 +140,6 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
   return [`index-old/${document.id}`];
 };
-
 /**
  * This allows the user to define a function which will take in their template
  * data and procude a HeadConfig object. When the site is generated, the HeadConfig
@@ -231,23 +230,17 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:title",
-          content: document.c_meta_title ? document.c_meta_title : `${document.name} Store of MGM Timber`,
+          content: document.c_meta_title ? document.c_meta_title : `${document.name} Store`,
         },
       },
       {
         type: "meta",
         attributes: {
           name: "twitter:description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
+          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} Store in ${document.address.city}.`}`,
         },
       },
       /// twitter tag
-
-
-
-
-
-
     ],
 
   };
@@ -587,6 +580,8 @@ const Location: Template<ExternalApiRenderData> = ({
             <div className="sec-title"><h2 className="">{StaticData.photoGallary}</h2></div>
             <PhotoGallery props={photoGallery} />
           </div>
+
+          <Faq c_faqs={c_faqs}/>
 
           <div className="nearby-sec">
             <div className="container">

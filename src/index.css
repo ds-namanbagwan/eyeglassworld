@@ -461,9 +461,11 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .faq-main-sec{@apply m-0 relative pb-7 pt-0 md:pb-12 }
 .faq-sec{@apply m-0 }
 .faq-card { @apply backdrop-blur-sm w-11/12 max-w-[43.25rem] p-4 md:p-5 pb-10 bg-white/90 mx-auto }
-.faq-card h2{@apply  py-2 md:py-4 font-second-main-font  text-center relative text-[1.75rem] md:text-[1.75rem] uppercase text-red  before:bg-dots before:absolute before:left-0 before:top-0  }
-.faq-tab{@apply w-full text-left mt-0 border-b border-b-box-border }
-.faq-tab .faq-tab-label{ @apply w-full font-second-main-font text-xl border-none  text-black pl-4 pr-12 py-2.5 hover:text-red}
+.faq-card h2{@apply  py-2 md:py-4 font-second-main-font  text-center relative text-[1.75rem] md:text-[1.75rem] uppercase text-green  before:bg-dots before:absolute before:left-0 before:top-0  }
+.faq-tab{@apply w-full text-left mt-0 border-b-[1px]}
+.faq-head{@apply w-full text-center text-3xl text-green font-bold mt-32 }
+.faq-head2{@apply w-full text-center text-xl text-black font-bold mt-8 }
+.faq-tab .faq-tab-label{ @apply w-full font-second-main-font text-xl border-none  text-black pl-4 pr-12 py-2.5 hover:text-green}
 .faq-tab .faq__question-button{@apply leading-7 relative w-full text-left after:absolute after:top-3 after:right-4 after:w-5 after:h-5 md:after:w-7 md:after:h-7 after:rounded-full   after:bg-plus_icon after:bg-center after:bg-no-repeat after:bg-[length:.625rem_.625rem] md:after:bg-[length:1rem_1rem] }
 .faq-tab .faq__question-button[aria-expanded="true"]{ @apply after:bg-minus_icon}
 .faq-tab  .faq-tab-label.active{  @apply border-b-transparent before:opacity-0 }
