@@ -64,7 +64,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
        type: "meta",
        attributes: {
          name: "description",
-         content: `${document.c_meta_description?document.c_meta_description:`View Timber Merchants near you today at MGM Timber. We stock high-quality, robust products at competitive rates.`}`,
+         content: `${document.c_meta_description?document.c_meta_description:`View Eye Glass Stores near you today. We supply high-quality,of glass.`}`,
        },
      },
 
@@ -134,14 +134,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       type: "meta",
       attributes: {
         name: "twitter:description",
-        content:`${document.c_meta_description?document.c_meta_description:`View Timber Merchants near you today at MGM Timber. We stock high-quality, robust products at competitive rates.`}`,
+        content: `${document.c_meta_description?document.c_meta_description:`View Eye Glass Stores near you today. We supply high-quality,of glass.`}`,
       },
     },
     {
       type: "meta",
       attributes: {
         name: "twitter:title",
-        content: `${document.c_meta_title?document.c_meta_title:`Timber Merchants Near Me - Find MGM Timber Branch Locator Here.`}`,
+        content: `${document.c_meta_title?document.c_meta_title:`Near Me - Find Branch Locator Here.`}`,
       },
     },
     {
