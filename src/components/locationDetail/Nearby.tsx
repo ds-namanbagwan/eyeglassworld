@@ -63,7 +63,7 @@ export default function Nearby(props: any) {
           let newurl=finalcountry+"/"+finalregion+"/"+finalcity+"/"+result1+".html";
           if (!location.data.slug) {
             // url = `/${location.data.id}-${result1}.html`;
-            url = newurl;
+            url = `/${newurl}`;
           } else {
             url = `/${location.data.slug.toString()}.html`;
           }

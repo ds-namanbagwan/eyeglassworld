@@ -176,14 +176,14 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 
 .button-bx2 .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[250px] sm:h-[50px] sm:mt-[33px]
   px-2 transition-all duration-300 text-white
-   hover:text-dark-pink   border-dark-pink border hover:border-dark-pink  bg-dark-pink hover:bg-white text-sm md:text-base font-semibold flex items-center justify-center  }
+   hover:text-dark-pink hover:text-xl  border-dark-pink border hover:border-dark-pink  bg-dark-pink hover:bg-white text-sm md:text-base font-semibold flex items-center justify-center  }
 
 /*button-bx3 */
 .button-bx3{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
 
 .button-bx3 .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[250px] sm:h-[50px] sm:mt-[33px]
   px-2 transition-all duration-300 text-white
-   hover:text-green   border-green border hover:border-green  bg-green hover:bg-white text-sm md:text-base font-semibold flex items-center justify-center  }
+   hover:text-green hover:text-xl   border-green border hover:border-green  bg-green hover:bg-white text-sm md:text-base font-semibold flex items-center justify-center  }
 
 .button-bx .btn{@apply py-1.5 md:py-2  text-center cursor-pointer leading-4 sm:leading-[1.375rem] w-full sm:w-[48%]  
    px-2 transition-all duration-300 hover:bg-hover-btn text-gray-dark
@@ -259,7 +259,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
   @apply relative pr-0 md:pr-[6.25rem] leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
 }
 .location-name-miles h2{  @apply text-3xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
-.location-name-miles h2 a{ @apply text-[1.375rem] text-gray font-second-main-font}
+.location-name-miles h2 a{ @apply text-[1.800rem] text-green font-second-main-font}
 
 .location-name-miles .distance{
   @apply sm:absolute sm:-top-0.5 right-0 text-base md:text-lg mt-1 sm:mt-0
@@ -483,7 +483,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .nearby-card .red-dot{ @apply !justify-start}
 .nearby-card .icon-row{ @apply pl-0}
 .nearby-card .OpenDot{ @apply  font-second-main-font  text-lg}
-.nearby-card h2 a{ @apply font-second-main-font  !text-lg text-black }
+.nearby-card h2 a{ @apply font-second-main-font text-xl text-green }
 .nearby-card .distance{ @apply absolute right-0 md:right-2 top-0 md:-top-0.5}
 .near-address{ @apply flex mt-2 items-start min-h-[90px]}
 .nearby-card .address { @apply text-lg }

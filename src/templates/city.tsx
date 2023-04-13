@@ -102,7 +102,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`}`,
+          content: `${document.c_meta_description ? document.c_meta_description : `Use this page to find your nearest store in ${document.name} and discover the location details you need to visit us today.`}`,
         },
       },
 
@@ -198,7 +198,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
+          content: `${document.c_meta_description ? document.c_meta_description : `Find Store in ${document.name}.`}`
         },
       },
     ],
@@ -465,7 +465,7 @@ const City: Template<TemplateRenderProps> = ({
         <div className="container mx-auto">
           <div className="sec-title">
             <h2>
-              MGM stores in {name}
+              Eye Glass World Stores in {name}
             </h2>
           </div>
           <div className="flex flex-wrap justify-center items-start -mx-2.5 lg:-mx-[.9375rem]">

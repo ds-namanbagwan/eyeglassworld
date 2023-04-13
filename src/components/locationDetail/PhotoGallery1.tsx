@@ -19,8 +19,8 @@ export default function PhotoGallery1(props: any) {
                                             </>
                                         )
                                     })}
-                                    <div className="text-center text-green text-2xl mt-3">
-                                        {res.label1.label}
+                                    <div className="text-center text-green text-2xl mt-3 underline">
+                                        <a href={res.label1.link}>{res.label1.label}</a>
                                     </div>
                                 </div>
                             </>

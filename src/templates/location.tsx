@@ -498,50 +498,6 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
             }
           </div>
-          {/* <div className="hero-banner">
-            <div className="hero-image hero-image2">
-              <img
-                className="ObjectFit-image"
-                src={c_bannerimage?.url}
-                alt=""
-              />
-            </div>
-            {/* <BreadCrumbs
-              name={name}
-              parents={dm_directoryParents}
-              baseUrl={relativePrefixToRoot}
-              address={address}
-            ></BreadCrumbs> */}
-          {/* <div className="location-information">
-              <div className="container">
-                <div className="banner-text banner-dark-bg justify-center text-left">
-                  <h1 className="entity-name">{name}</h1>
-                  <div className="openClosestatus detail-page closeing-div">
-                    <OpenClose timezone={timezone} hours={hours} />
-                  </div>
-                </div>
-              </div>
-              <div className="hero-container">
-                <Contact
-                  address={address}
-                  phone={mainPhone}
-                  latitude={
-                    yextDisplayCoordinate
-                      ? yextDisplayCoordinate.latitude
-                      : displayCoordinate?.latitude
-                  }
-                  yextDisplayCoordinate={yextDisplayCoordinate}
-                  longitude={
-                    yextDisplayCoordinate
-                      ? yextDisplayCoordinate.longitude
-                      : displayCoordinate?.longitude
-                  }
-                  hours={hours}
-                  additionalHoursText={additionalHoursText}
-                ></Contact>
-              </div>
-            </div>
-          </div> */}
 
           <StickyHeader props={_site} />
 
@@ -571,7 +527,6 @@ const Location: Template<ExternalApiRenderData> = ({
                 <p>{c_aboutdata2.data}</p><br />
                 <p className="text-xl font-semibold">{c_aboutdata3.aboutsubhead}</p>
                 <p>{c_aboutdata3.data}</p>
-
               </div>
             </div>
           </div>
@@ -581,7 +536,7 @@ const Location: Template<ExternalApiRenderData> = ({
             <PhotoGallery props={photoGallery} />
           </div>
 
-          <Faq c_faqs={c_faqs}/>
+          <Faq c_faqs={c_faqs} />
 
           <div className="nearby-sec">
             <div className="container">
