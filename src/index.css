@@ -462,7 +462,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .faq-sec{@apply m-0 }
 .faq-card { @apply backdrop-blur-sm w-11/12 max-w-[43.25rem] p-4 md:p-5 pb-10 bg-white/90 mx-auto }
 .faq-card h2{@apply  py-2 md:py-4 font-second-main-font  text-center relative text-[1.75rem] md:text-[1.75rem] uppercase text-green  before:bg-dots before:absolute before:left-0 before:top-0  }
-.faq-tab{@apply w-full text-left mt-0 border-b-[1px]}
+.faq-tab{@apply w-full text-left mt-0}
 .faq-head{@apply w-full text-center text-3xl text-green font-bold mt-32 }
 .faq-head2{@apply w-full text-center text-xl text-black font-bold mt-8 }
 .faq-tab .faq-tab-label{ @apply w-full font-second-main-font text-xl border-none  text-black pl-4 pr-12 py-2.5 hover:text-green}

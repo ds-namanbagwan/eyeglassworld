@@ -31,11 +31,12 @@ export default function NewHeader(props: any) {
                         return (
                             <>
                                 <div className="mt-2">
-                                    {res?.label}
+                                    <a href={res?.link}>{res?.label}</a>
                                 </div>
                             </>
                         )
                     })}
+
                 </div>
             </div>
 

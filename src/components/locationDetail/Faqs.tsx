@@ -40,7 +40,7 @@ export default function Faq(props: any) {
     // console.log(renderedQuestionsAnswers,"renderedQuestionsAnswers")
     const showDescription = index === activeIndex ? "current" : "hidden";
     const background = index === activeIndex ? "active" : "";
-    const fontWeightBold = index === activeIndex ? " font-weight-bold  py-0 mt-2" : "";
+    const fontWeightBold = index === activeIndex ? "font-weight-bold  py-0 mt-2" : "";
     const ariaExpanded = index === activeIndex ? "true" : "false";
     return (
       <AccordionItem

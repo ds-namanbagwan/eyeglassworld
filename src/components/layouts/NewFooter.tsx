@@ -10,26 +10,40 @@ export default function NewFooter(props: any) {
 
                 <div className="absolute text-4xl ml-6 mt-14">
                     {props?.prop?.c_text5}
+
+                </div>
+
+                <div className="flex absolute text-xl ml-8 mt-32 gap-5">
+                    {props?.prop?.c_icons1?.map((img: any) => {
+
+                        return (
+                            <>
+                                <div className="flex w-9">
+                                   <img src={img?.url}/>
+                                </div>
+                            </>
+                        )
+                    })}
+
                 </div>
 
                 <div className="flex gap-20 justify-end">
 
                     <div className="mt-14">
-                        <p className="text-xl mb-5">{props.prop.c_footer1.fhead}</p>
+                        <p className="text-xl mb-5">{props?.prop?.c_footer1?.fhead}</p>
                         {props?.prop?.c_footer1?.fsubdata?.map((res1: any) => {
                             return (
                                 <>
                                     <div className="mt-2">
                                         {res1?.label}
                                     </div>
-
                                 </>
                             )
                         })}
                     </div>
 
                     <div className="mt-14">
-                        <p className="text-xl mb-5">{props.prop.c_footer2.fhead}</p>
+                        <p className="text-xl mb-5">{props?.prop?.c_footer2?.fhead}</p>
                         {props?.prop?.c_footer2?.fsubdata?.map((res2: any) => {
                             return (
                                 <>
@@ -43,7 +57,7 @@ export default function NewFooter(props: any) {
                     </div>
 
                     <div className="mt-14">
-                        <p className="text-xl mb-5">{props.prop.c_footert3.fhead}</p>
+                        <p className="text-xl mb-5">{props?.prop?.c_footert3?.fhead}</p>
                         {props?.prop?.c_footert3?.fsubdata?.map((res3: any) => {
                             return (
                                 <>

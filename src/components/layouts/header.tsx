@@ -39,7 +39,7 @@ import Cta from "../commons/cta";
       <div className="centered-container">
         <nav className="py-3 flex items-center justify-between">
           <img
-              src="https://a.mktgcdn.com/p/8esDUBrhKJnkaVztLihLsC3quv_5BjLFG9L6MJ0adcs/150x150.png">
+              src="https://a.mktgcdn.com/p/8esDUBrhKJnkaVztLihLsC3quv_5BjLFG9L6MJ0adcs/150x150.png"/>
             <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
           <div className="hidden space-x-5 sm:block">
             <Cta buttonText="Order Pickup" url="#" style="primary-cta"></Cta>
