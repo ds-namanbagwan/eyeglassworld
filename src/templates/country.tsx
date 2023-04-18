@@ -286,9 +286,7 @@ const country: Template<TemplateRenderProps> = ({
       {/* <div className="location-dtl">
           <Banner name={regionNames.of(name)} c_bannerImage={bannerimage} />
         </div> */}
-
-
-
+        
       <div className="content-list">
         <div className="container">
           <div className="sec-title">

@@ -290,7 +290,6 @@ const region: Template<TemplateRenderProps> = ({
       ></BreadCrumbs>
       {/* <div className="location-dtl">     <Banner name={c_bannerHeading?c_bannerHeading:name} c_bannerImage={bannerimage}  /></div> */}
 
-
       <div className="content-list">
         <div className="container">
           <div className="sec-title">
