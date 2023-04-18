@@ -33,6 +33,7 @@ import $ from "jquery";
 import { Directionsvg, View_Store } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 import useFetchResults from "../../hooks/useFetchResults";
+import { Link } from "@yext/pages/components";
 /**
  * CSS class interface for the {@link GoogleMaps} component
  *
@@ -568,10 +569,10 @@ function UnwrappedGoogleMaps({
           )}
         </div>
         <div className="button-bx !ml-4 !mb-0">
-          <a type="button" href={url} className="btn">
+          <Link type="button" href={url} className="btn">
             {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
             {StaticData.StoreDetailbtn}
-          </a>
+          </Link>
           {result.rawData.displayCoordinate ? (
             <a
               data-listener="false"

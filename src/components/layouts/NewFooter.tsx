@@ -19,7 +19,7 @@ export default function NewFooter(props: any) {
                         return (
                             <>
                                 <div className="flex w-9">
-                                   <img src={img?.url}/>
+                                   <img src={img?.url} alt=""/>
                                 </div>
                             </>
                         )
@@ -35,7 +35,7 @@ export default function NewFooter(props: any) {
                             return (
                                 <>
                                     <div className="mt-2">
-                                        {res1?.label}
+                                       <a href={res1?.link}> {res1?.label}</a>
                                     </div>
                                 </>
                             )
@@ -48,7 +48,7 @@ export default function NewFooter(props: any) {
                             return (
                                 <>
                                     <div className="mt-2">
-                                        {res2?.label}
+                                    <a href={res2?.link}> {res2?.label}</a>
                                     </div>
 
                                 </>
@@ -62,7 +62,7 @@ export default function NewFooter(props: any) {
                             return (
                                 <>
                                     <div className="mt-2">
-                                        {res3?.label}
+                                    <a href={res3?.link}> {res3?.label}</a>
                                     </div>
 
                                 </>

@@ -28,9 +28,9 @@ export default function PhotoGallery1(props: any) {
                     })}
                 </div>
                 <div className="button-bx2">
-                    <a type="button" href={props?.c_photogallary1CTA?.link} className="btn notHighlight1">
+                    <Link type="button" href={props?.c_photogallary1CTA?.link} className="btn notHighlight1">
                         {props?.c_photogallary1CTA?.label}
-                    </a>
+                    </Link>
                 </div>
             </div>
         </>
