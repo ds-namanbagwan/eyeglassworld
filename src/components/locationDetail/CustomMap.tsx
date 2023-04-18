@@ -30,7 +30,7 @@ function CustomMap(coords: props) {
   });
   return (
     <LoadScript googleMapsApiKey="AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18">
-      {coords.prop.latitude && coords.prop.longitude?<> <GoogleMap
+      {coords.prop.latitude && coords.prop.longitude ? <> <GoogleMap
         mapContainerStyle={containerStyle}
         center={{
           lat: coords.prop && coords.prop.latitude,
@@ -38,44 +38,44 @@ function CustomMap(coords: props) {
         }}
         zoom={10}
         options={{
-          styles:[
+          styles: [
             {
-                "featureType": "administrative",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    }
-                ]
+              "featureType": "administrative",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "visibility": "simplified"
+                }
+              ]
             },
             {
-                "featureType": "landscape",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    }
-                ]
+              "featureType": "landscape",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "visibility": "on"
+                }
+              ]
             },
             {
-                "featureType": "poi",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+              "featureType": "poi",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
             },
             {
-                "featureType": "transit",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+              "featureType": "transit",
+              "elementType": "all",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
             }
-        ],
+          ],
         }}
       >
         <Marker
@@ -85,10 +85,10 @@ function CustomMap(coords: props) {
           }}
           icon={marker}
         />
-      </GoogleMap></>:<></>
+      </GoogleMap></> : <></>
 
       }
-     
+
     </LoadScript>
   );
 }
