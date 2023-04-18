@@ -79,14 +79,14 @@ return a.map(format).join(s);
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <Link
+        <a
           onClick={closeModal}
-          type="button"
+          
           id="closeButton"
           className="closeButton bg-closeIcon bg-no-repeat bg-center w-7 h-7 bg-[length:48px]"
         >
           <div dangerouslySetInnerHTML={{ __html: Cross }} />
-        </Link>
+        </a>
 
         {props.holidayHours ? (
           <>

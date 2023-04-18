@@ -131,13 +131,13 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             </div>
 
             <div className="button-bx">
-              <Link type="button" href={url} className=" btn notHighlight "
+              <a href={url} className=" btn notHighlight "
                 data-ya-track={`viewStore -${result.rawData.name}`}
                 eventName={`viewStore -${result.rawData.name}`}
                 rel="noopener noreferrer">
                 {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
                 {StaticData.StoreDetailbtn}
-              </Link>
+              </a>
               {result.rawData.displayCoordinate ?
                 <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
                 : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
