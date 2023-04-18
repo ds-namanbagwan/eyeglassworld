@@ -16,9 +16,9 @@ export default function NewHeader(props: any) {
                 </div>
 
                 <div className="button-bx1">
-                    <Link type="button" href={props?.prop?.c_scheduleTest?.link} className="btn notHighlight1">
+                    <a href={props?.prop?.c_scheduleTest?.link} className="btn notHighlight1">
                         {props?.prop?.c_scheduleTest?.label}
-                    </Link>
+                    </a>
                 </div>
 
             </div>
