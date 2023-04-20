@@ -337,9 +337,7 @@ const SearchLayout = (props: any): JSX.Element => {
 
             <ResultsCount
               customCssClasses={{ container: "mx-2 my-0 text-dark-gray" }} />
-
           </div>
-
 
         </div>
 
