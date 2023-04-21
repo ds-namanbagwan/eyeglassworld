@@ -1,11 +1,11 @@
-import { useSearchActions } from "@yext/search-headless-react";
+import { SelectableFilter, useSearchActions } from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from 'react';
 import * as React from "react";
 import { LocationBias, Pagination, StandardFacets } from "@yext/search-ui-react";
 
 import { Location } from "../../types/search/locations";
 import LocationCard from "./LocationCard";
-import { AnswersHeadlessProvider } from '@yext/answers-headless-react';
+import { AnswersHeadlessProvider, Matcher } from '@yext/answers-headless-react';
 import { GoogleMaps } from "./GoogleMaps";
 import { useSearchState, Result } from "@yext/search-headless-react";
 import Geocode from "react-geocode";
@@ -71,7 +71,21 @@ const SearchLayout = (props: any): JSX.Element => {
           };
           params1 = params;
           SetNewparam(params1);
-          mapzoom = 3;
+          mapzoom = 3;    
+          // const locationFilter: SelectableFilter={
+          //   selected:true,
+          //   fieldId:"builtin.location",
+          //   value:{
+          //     lat:params.latitude,
+          //     lng:params.longitude,
+          //     radius: 100000,
+          //   },
+          //   matcher:Matcher.Near,
+          // };
+          // searchActions.setOffset(0);
+          // searchActions.setStaticFilters([locationFilter]);
+
+         
           searchActions.setUserLocation(params1);
           searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
           searchActions.executeVerticalQuery();
@@ -87,7 +101,19 @@ const SearchLayout = (props: any): JSX.Element => {
       longitude: centerLongitude,
     };
     SetNewparam(params1);
-    // mapzoom=8;
+    mapzoom=8;
+    const locationFilter: SelectableFilter={
+      selected:true,
+      fieldId:"builtin.location",
+      value:{
+        lat:params1.latitude,
+        lng:params1.longitude,
+        radius: 700000,
+      },
+      matcher:Matcher.Near,
+    };
+    // searchActions.setOffset(0);
+    searchActions.setStaticFilters([locationFilter]);
     searchActions.setUserLocation(params1);
     searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
     searchActions.executeVerticalQuery();
