@@ -382,7 +382,7 @@ export default function InputDropdown({
             onInputFocus(inputValue);
             setChildrenKey(childrenKey + 1);
             dispatch({ type: "ShowSections" });
-          }}
+          }}          
           onKeyDown={handleInputElementKeydown}
           onKeyUp={handleDocumentKeyUp}
           value={inputValue}

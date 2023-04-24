@@ -102,18 +102,18 @@ const SearchLayout = (props: any): JSX.Element => {
     };
     SetNewparam(params1);
     mapzoom=8;
-    const locationFilter: SelectableFilter={
-      selected:true,
-      fieldId:"builtin.location",
-      value:{
-        lat:params1.latitude,
-        lng:params1.longitude,
-        radius: 700000,
-      },
-      matcher:Matcher.Near,
-    };
-    // searchActions.setOffset(0);
-    searchActions.setStaticFilters([locationFilter]);
+    // const locationFilter: SelectableFilter={
+    //   selected:true,
+    //   fieldId:"builtin.location",
+    //   value:{
+    //     lat:params1.latitude,
+    //     lng:params1.longitude,
+    //     radius: 700000,
+    //   },
+    //   matcher:Matcher.Near,
+    // };
+    // // searchActions.setOffset(0);
+    // searchActions.setStaticFilters([locationFilter]);
     searchActions.setUserLocation(params1);
     searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
     searchActions.executeVerticalQuery();
