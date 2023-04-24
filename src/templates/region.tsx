@@ -78,12 +78,10 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return url + '.html';
 };
 
-
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
   // return [`index-old/${document.id.toString()}`];
   return [`index-old/${document.locale + "/" + document.name}`];
 };
-
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
@@ -164,8 +162,8 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           property: "og:url",
           content: `${stagingBaseurl
-              ? stagingBaseurl + canonical + "/" + document.slug + ".html"
-              : "/" + document.slug + ".html"
+            ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+            : "/" + document.slug + ".html"
             }`,
         },
       },

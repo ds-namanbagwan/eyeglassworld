@@ -73,7 +73,7 @@ export const config: TemplateConfig = {
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   currentUrl = "/" + document.slug.toString() + ".html";
-  return  "/" + document.slug.toString() + ".html";
+  return "/" + document.slug.toString() + ".html";
 };
 
 // export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
@@ -135,8 +135,8 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           rel: "canonical",
           href: `${stagingBaseurl
-              ? stagingBaseurl + document.slug + ".html"
-              : "/" + document.slug + ".html"
+            ? stagingBaseurl + document.slug + ".html"
+            : "/" + document.slug + ".html"
             }`,
         },
       },
@@ -231,14 +231,14 @@ const country: Template<TemplateRenderProps> = ({
             detlslug1 = `${slug}.html`;
           } else {
             detlslug1 = `${res.slug.toString()}.html`;
-          }    
+          }
 
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
             // console.log(detl,"123456")
             if (!detl.slug) {
               let slugString = detl.name;
               let slug = slugString;
-              detlslug1 = document.slug + "/" + entity.slug + "/" + res.slug + "/" + slug.toLowerCase().replaceAll(" ", "-")+".html";
+              detlslug1 = document.slug + "/" + entity.slug + "/" + res.slug + "/" + slug.toLowerCase().replaceAll(" ", "-") + ".html";
               // console.log(detlslug1,"123456")
             } else {
               detlslug1 = `${detl.slug.toString()}.html`;
@@ -286,7 +286,7 @@ const country: Template<TemplateRenderProps> = ({
       {/* <div className="location-dtl">
           <Banner name={regionNames.of(name)} c_bannerImage={bannerimage} />
         </div> */}
-        
+
       <div className="content-list">
         <div className="container">
           <div className="sec-title">
@@ -304,7 +304,7 @@ const country: Template<TemplateRenderProps> = ({
       </div>
 
       <NewFooter prop={_site} />
-      
+
     </>
   );
 };

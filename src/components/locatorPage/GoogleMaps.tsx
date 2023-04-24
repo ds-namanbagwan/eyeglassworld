@@ -103,7 +103,7 @@ function UnwrappedGoogleMaps({
   const [downinfo, setDownInfo] = useState(true);
   const [hover, setHover] = useState(true);
   const loading = useSearchState((s) => s.searchStatus.isLoading);
- 
+
   let isHover = true;
   const searchZoom: number | number | null | undefined = null;
   let currentMapZoom: number | undefined = 0;
@@ -127,21 +127,21 @@ function UnwrappedGoogleMaps({
 
   locationResults.length > 0
     ? locationResults.map((result: any, i: number) => {
-        if (i == 0 && result) {
-          center = {
-            lat: result.rawData.yextDisplayCoordinate
-              ? result.rawData.yextDisplayCoordinate.latitude
-              : result.rawData.displayCoordinate.latitude,
-            lng: result.rawData.yextDisplayCoordinate
-              ? result.rawData.yextDisplayCoordinate.longitude
-              : result.rawData.displayCoordinate.longitude,
-          };
-        }
-      })
+      if (i == 0 && result) {
+        center = {
+          lat: result.rawData.yextDisplayCoordinate
+            ? result.rawData.yextDisplayCoordinate.latitude
+            : result.rawData.displayCoordinate.latitude,
+          lng: result.rawData.yextDisplayCoordinate
+            ? result.rawData.yextDisplayCoordinate.longitude
+            : result.rawData.displayCoordinate.longitude,
+        };
+      }
+    })
     : (center = {
-        lat: centerLatitude,
-        lng: centerLongitude,
-      });
+      lat: centerLatitude,
+      lng: centerLongitude,
+    });
 
   let info = false;
   const cssClasses = useComposedCssClasses(builtInCssClasses, customCssClasses);
@@ -220,7 +220,7 @@ function UnwrappedGoogleMaps({
     if (mapMarkerClusterer) {
       mapMarkerClusterer.clearMarkers();
     }
-  } catch (e) {}
+  } catch (e) { }
   let i = 0;
   for (const result of locationResults) {
     i++;
@@ -449,7 +449,7 @@ function UnwrappedGoogleMaps({
                 }
                 document
                   .querySelectorAll(".result")
-                  [index].classList.add("fixed-hover");
+                [index].classList.add("fixed-hover");
                 addActiveGrid(index);
                 const position = {
                   lat: result.rawData.yextDisplayCoordinate
@@ -492,7 +492,7 @@ function UnwrappedGoogleMaps({
     const finalcity: any = initialrcity.replaceAll(" ", "-");
     const string1: any = name.toString();
     const result1: any = string1.replaceAll(" ", "-");
-    let newurl=finalcountry+"/"+finalregion+"/"+finalcity+"/"+result1+".html";
+    let newurl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + result1 + ".html";
     if (!result.rawData.slug) {
       // url = `${result.rawData.id}-${result1}.html`;
       url = newurl;

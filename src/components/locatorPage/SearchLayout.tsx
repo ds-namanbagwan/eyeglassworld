@@ -71,7 +71,7 @@ const SearchLayout = (props: any): JSX.Element => {
           };
           params1 = params;
           SetNewparam(params1);
-          mapzoom = 3;    
+          mapzoom = 3;
           // const locationFilter: SelectableFilter={
           //   selected:true,
           //   fieldId:"builtin.location",
@@ -85,7 +85,7 @@ const SearchLayout = (props: any): JSX.Element => {
           // searchActions.setOffset(0);
           // searchActions.setStaticFilters([locationFilter]);
 
-         
+
           searchActions.setUserLocation(params1);
           searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
           searchActions.executeVerticalQuery();
@@ -101,7 +101,7 @@ const SearchLayout = (props: any): JSX.Element => {
       longitude: centerLongitude,
     };
     SetNewparam(params1);
-    mapzoom=8;
+    mapzoom = 8;
     // const locationFilter: SelectableFilter={
     //   selected:true,
     //   fieldId:"builtin.location",

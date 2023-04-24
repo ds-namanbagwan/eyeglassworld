@@ -67,7 +67,7 @@ export default function Faq(props: any) {
           <h2 className="faq-head2">
             {props.c_fAQsHeading ? props.c_fAQsHeading : StaticData.FAQheading2}
           </h2></div>
-        <div className="faq-tabs border-r-4 border-b-4 border-green" style={{textAlign:"right"}}>
+        <div className="faq-tabs border-r-4 border-b-4 border-green" style={{ textAlign: "right" }}>
           {renderedQuestionsAnswers}
         </div>
 
