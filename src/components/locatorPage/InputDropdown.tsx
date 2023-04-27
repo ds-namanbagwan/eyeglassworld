@@ -31,6 +31,7 @@ export interface InputDropdownCssClasses {
   divider?: string;
   logoContainer?: string;
   searchButtonContainer?: string;
+  // filterSearchContainer?:string;
 }
 
 interface Props {

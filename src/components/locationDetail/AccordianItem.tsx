@@ -25,7 +25,7 @@ const AccordionItem = ({
       </button>
       <div
         id={`faq${index + 1}_desc`}
-        data-qa="faq__desc"
+        data-qa="faq__"
         className={`faq-tab-content ${showDescription}`}
       >
        <div dangerouslySetInnerHTML={{__html: RtfConverter.toHTML(item.answer)}}/> 

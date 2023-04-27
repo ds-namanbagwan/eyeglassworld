@@ -129,11 +129,8 @@ const SearchLayout = (props: any): JSX.Element => {
 
         if (error.code == 1) {
           setallowLocation('Please allow your Location')
-
         }
       };
-
-
       navigator.geolocation.getCurrentPosition(function (position) {
         Geocode.setApiKey(googleApikey);
         var inputformat = '';
@@ -262,7 +259,6 @@ const SearchLayout = (props: any): JSX.Element => {
 
   return (
     <>
-
       {/* {loader} */}
       <div className="breadcrumb">
         <div className="container-custom">
@@ -420,8 +416,6 @@ const SearchLayout = (props: any): JSX.Element => {
         </div>
 
       </div>
-
-
     </>
   );
 };

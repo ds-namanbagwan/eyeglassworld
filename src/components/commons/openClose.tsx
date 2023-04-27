@@ -175,7 +175,7 @@ export const OpenStausFunctions = {
     }
 
     const week = [
-      "Sunday",
+      "Sun",
       "Monday",
       "Tuesday",
       "Wednesday",

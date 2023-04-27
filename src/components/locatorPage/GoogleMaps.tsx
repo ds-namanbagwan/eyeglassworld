@@ -378,7 +378,7 @@ function UnwrappedGoogleMaps({
   }
 
   const hours = (result: any) => {
-    return <Hours hours={result} />;
+    return <Hours hours={result} c_specific_day={undefined} />;
   };
   function addActiveGrid(index: any) {
     const elements = document.querySelectorAll(".result");
