@@ -23,7 +23,7 @@ export async function updateLocationIfNeeded(
         longitude: position.coords.longitude,
       });
     } catch(e) {
-      console.error(e);
+      // console.error(e);
     }
   }
 }
@@ -56,7 +56,7 @@ export async function getUserLocation(geolocationOptions?: PositionOptions): Pro
       navigator.geolocation.getCurrentPosition(
         position => resolve(position),
         err => { 
-          console.error('Error occured using geolocation API. Unable to determine user\'s location.');
+          // console.error('Error occured using geolocation API. Unable to determine user\'s location.');
           reject(err); 
         },
         { ...defaultGeolocationOptions, ...geolocationOptions }

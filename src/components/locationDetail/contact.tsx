@@ -10,6 +10,7 @@ import { StaticData } from "../../../sites-global/staticData";
 import Holidayhours from "./Holdayhours";
 import Model from "./Model";
 import CustomMap from "./CustomMap";
+import { formatPhoneNumber } from "react-phone-number-input";
 
 const Contact = (props: any) => {
   const {
@@ -27,7 +28,7 @@ const Contact = (props: any) => {
   return (
     <>
       <div className="address-main-sec">
-        <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4>
+        <h4 className="box-title">{c_storeInfoHeading ? c_storeInfoHeading : "Store Details"}</h4>
 
         <div className="icon-row content-col">
           <div className="icon">
@@ -50,7 +51,7 @@ const Contact = (props: any) => {
             </div>
             <div className="content-col">
               <a id="address" className=" location-phn" href={`tel:${phone}`}>
-                {phone}
+                {formatPhoneNumber(phone)}
               </a>
             </div>
           </div>
@@ -61,7 +62,7 @@ const Contact = (props: any) => {
         <ul className="">
           <li className="button-bx direction-button">
             <GetDirection
-              buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
+              buttonText={c_getDirectionsCTAText ? c_getDirectionsCTAText : StaticData.getDirection}
               address={address}
               latitude={latitude}
               longitude={longitude}

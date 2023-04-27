@@ -22,7 +22,7 @@ export default function UseMyLocation(){
           }
         },
           (error:any) => {
-            console.error(error);
+            // console.error(error);
           }
         );
       })

@@ -25,14 +25,14 @@ let array = [];
 
 const LocationCard: CardComponent<Location> = ({ result }) => {
 
-    const [timeStatus, setTimeStatus] = useState("");
-    const onOpenHide = () => {
-      if (timeStatus == "") {
-        setTimeStatus("active");
-      } else {
-        setTimeStatus("");
-      }
+  const [timeStatus, setTimeStatus] = useState("");
+  const onOpenHide = () => {
+    if (timeStatus == "") {
+      setTimeStatus("active");
+    } else {
+      setTimeStatus("");
     }
+  }
 
   let url = "";
   const [hoursopen, setHoursopen] = React.useState(false);
@@ -50,7 +50,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     }
   }
 
-  const { address, hours, additionalHoursText,timezone } = result.rawData;
+  const { address, hours, additionalHoursText, timezone } = result.rawData;
   var name: any = result.rawData.name?.toLowerCase();
   var country: any = result.rawData.address.countryCode?.toLowerCase();
   var initialcountry: any = country.toString();
@@ -98,29 +98,52 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
           </div> */}
               <Address address={address} />
-              <div className="open-close ">
-          <div className="hours-sec onhighLight">
-            <div className="OpenCloseStatus ">
-              <div className="hours-labels">
-                <span className="icon"></span>
-                 <div className="flex" onClick={onOpenHide}>
-                 <OpenClose
-                    timezone={timezone}
-                    hours={hours}
-                    deliveryHours={hours}
-                  ></OpenClose>
-                 <button><svg className="mt-2" xmlns="http://www.w3.org/2000/svg" width="19.585" height="7.793" viewBox="0 0 9.585 4.793">
-                  <path id="hrd-drop" d="M9,13.5l4.793,4.793L18.585,13.5Z" transform="translate(-9 -13.5)" fill="#00363f"></path>
-                 </svg></button>
-                 </div>
-
+              <div className="pt-2 pb-2">
+                {/* {/ this section is open cloase house in loaction card /} */}
+                <div className="open-close ">
+                  <div className="hours-sec">
+                    <div className="OpenCloseStatus notHighlight">
+                      <div className="hours-labels">
+                        <span className="icon notHighlight">
+                          {/* {/ <img src={timesvg} alt="time"/> /} */}
+                        </span>
+                        <div className="flex notHighlight">
+                          <OpenClose
+                            timezone={timezone}
+                            hours={hours}
+                            deliveryHours={hours}
+                          ></OpenClose>
+                          <button className="ml-2">
+                            {" "}
+                            <svg
+                              onClick={onOpenHide}
+                              className="openclose notHighlight"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="19.585"
+                              height="7.793"
+                              viewBox="0 0 9.585 4.793"
+                            >
+                              <path
+                                id="hrd-drop"
+                                d="M9,13.5l4.793,4.793L18.585,13.5Z"
+                                transform="translate(-9 -13.5)"
+                                fill="#004990"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div className={timeStatus + " daylist notHighlight"}>
+                        <Hours
+                          key={result.rawData.id}
+                          hours={hours}
+                          additionalHoursText={additionalHoursText}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className={timeStatus + " daylist"} >
-                <Hours key={result.rawData.id} hours={hours} additionalHoursText={additionalHoursText} c_specific_day={undefined} /></div>
-            </div>
-
-          </div>
-        </div>
 
             </div>
             <div className="mt-2">

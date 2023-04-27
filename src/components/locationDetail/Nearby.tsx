@@ -14,6 +14,7 @@ import { StaticData } from "../../../sites-global/staticData";
 export default function Nearby(props: any) {
 
   const [neabyData, setnearbyData] = React.useState(props.externalApiData.response.results);
+  console.log(props.externalApiData,"location result-list-inner-355923963200068037 result markerEventBinded")
   const metersToMiles = (meters: number) => {
 
     const miles = meters * 0.000621371;
@@ -45,7 +46,7 @@ export default function Nearby(props: any) {
           },
         }}
       > */}
-      {neabyData.map((location: any, index: Number) => {
+      {neabyData.map((location: any, index: number) => {
 
         let url = "";
         var name: any = location.data.name?.toLowerCase();
@@ -68,8 +69,9 @@ export default function Nearby(props: any) {
         } else {
           url = `/${location.data.slug.toString()}.html`;
         }
-
+         
         if (index > 0) {
+          
           return (
             <>
               {/* <SplideSlide key={index}> */}

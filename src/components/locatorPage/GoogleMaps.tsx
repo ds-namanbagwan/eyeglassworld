@@ -282,11 +282,7 @@ function UnwrappedGoogleMaps({
 
       setTimeout(function () {
         const bounds = new google.maps.LatLngBounds();
-
-        if (markers1.current.length == 1) {
-          map.setCenter(center);
-          map.setZoom(10);
-        } else if (markers1.current.length > 0) {
+        if (markers1.current.length > 0) {
           for (let i = 0; i < locationResults.length; i++) {
             centerlast = {
               lat: locationResults[i].rawData.yextDisplayCoordinate

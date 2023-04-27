@@ -142,7 +142,7 @@ const SearchLayout = (props: any): JSX.Element => {
             }
           },
           (error: any) => {
-            console.error(error);
+            // console.error(error);
             setCheck(false);
           }
         );
@@ -243,7 +243,7 @@ const SearchLayout = (props: any): JSX.Element => {
     if (firstTimeRunners) {
       firstTimeRunners = false;
       // searchActions.resetFacets();
-      FirstLoad();
+      // FirstLoad();
     }
     let params = (new URL(window.location.href)).searchParams;
     let addresssearch = params.get("text");
