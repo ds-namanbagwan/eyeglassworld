@@ -183,6 +183,8 @@ const SearchLayout = (props: any): JSX.Element => {
 
   const handleInputValue = () => {
     setInputValue('');
+    // const lat=centerLatitude;
+    // cosnt long=centerLongitude;
   }
   const handleSetUserShareLocation = (value: any, userShareStatus: boolean) => {
     // console.log(value,center_latitude,center_longitude,"value");
@@ -255,6 +257,8 @@ const SearchLayout = (props: any): JSX.Element => {
       setInputValue("");
     }
 
+
+
   }, [])
 
   return (
@@ -307,7 +311,7 @@ const SearchLayout = (props: any): JSX.Element => {
                 },
                 {
                   entityType: "location",
-                  fieldApiName: "name",
+                  fieldApiName: "builtin.location",
 
                 },
                 {
@@ -414,6 +418,7 @@ const SearchLayout = (props: any): JSX.Element => {
             </div>
           </PerfectScrollbar>
         </div>
+
 
       </div>
     </>

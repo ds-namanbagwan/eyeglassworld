@@ -12,6 +12,7 @@ import Hours from "../commons/hours";
 import Phonesvg from "../../images/phone.svg";
 import mapimage from "../../images/map.svg";
 import { useState } from "react";
+import { formatPhoneNumber } from "react-phone-number-input";
 
 
 const metersToMiles = (meters: number) => {
@@ -50,7 +51,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     }
   }
 
-  const { address, hours, additionalHoursText, timezone } = result.rawData;
+  const { address, hours, additionalHoursText, timezone ,mainPhone} = result.rawData;
   var name: any = result.rawData.name?.toLowerCase();
   var country: any = result.rawData.address.countryCode?.toLowerCase();
   var initialcountry: any = country.toString();
@@ -113,7 +114,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                             hours={hours}
                             deliveryHours={hours}
                           ></OpenClose>
-                          <button className="ml-2">
+                          <div><button className="ml-2">
                             {" "}
                             <svg
                               onClick={onOpenHide}
@@ -131,6 +132,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                               ></path>
                             </svg>
                           </button>
+                          </div>
                         </div>
                       </div>
                       <div className={timeStatus + " daylist notHighlight"}>
@@ -147,14 +149,15 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
             </div>
             <div className="mt-2">
+
               {result.rawData.mainPhone ?
-                <div className="icon-row">
+                <div className="icon-row ">
                   {/* <div className="icon">
            <img className=" " src={Phonesvg} width="20" height="20"
                         alt="" />
                         </div> */}
                   <div className="content-col">
-                    <a className="underline" href={`tel:${result.rawData.mainPhone}`}>{result.rawData.mainPhone}</a>
+                    <a className="underline" href={`tel:${mainPhone}`}>{formatPhoneNumber(mainPhone)}</a>
                   </div>
                 </div> : ''}
             </div>

@@ -213,7 +213,10 @@ export default function InputDropdown({
       )
     ) {
       dispatch({ type: "HideSections" });
+      getCoordinates(inputRef.current?.value);
     }
+
+
   }
 
   function handleDocumentKeydown(evt: globalThis.KeyboardEvent) {
@@ -239,7 +242,7 @@ export default function InputDropdown({
       latestUserInput != "" &&
       locationResults.length == 0
     ) {
-        // alert('1')
+      // alert('1')
       setNorecord(true);
 
       dispatch({ type: "HideSections" });
@@ -252,7 +255,7 @@ export default function InputDropdown({
       latestUserInput != "" &&
       locationResults.length > 0
     ) {
-        // alert('2')
+      // alert('2')
       const locationFilter: SelectableFilter = {
         selected: true,
         fieldId: "builtin.location",
@@ -324,73 +327,72 @@ export default function InputDropdown({
   },);
 
 
-////start///////
-/////bound result at user marker 50 miles//////// 
-function getGoogleLatLng(address:any){
-  let coordinates ={
-    latitude:center_latitude,
-    longitude:center_longitude
-  }
-       
-          // searchActions.setOffset(0);
-          // searchActions.setStaticFilters([locationFilter]);
-  fetch(
-    `https://maps.googleapis.com/maps/api/geocode/json?address=${address},US&key=${googleApikey}`
-  )
-    .then((res) => res.json())
-    .then((json) => {
-      if (json.status === "ZERO_RESULTS") {
-        searchActions.setQuery("gkhvfdjgbdbg");
-        searchActions.setUserLocation(coordinates);
-        searchActions.setOffset(0);
-        searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
-        searchActions.executeVerticalQuery();
-      } else if (json.results) {
-        var status = false;
-        json.results.map((components: any) => {
-          for (let i = 0; i < components.address_components.length; i++) {
-            const type = components.address_components[i].types[0];
-            params = {
-              latitude: components.geometry.location.lat,
-              longitude: components.geometry.location.lng,
-            };
-            if (components.address_components[i].types.includes("country")) {
-              if (components.address_components[i].short_name != "US") {
-                status = true;
-              }
-            }
-          }
-        });
 
-        if (status) {
-          searchActions.setQuery(address);
+
+  ////start///////
+  /////bound result at user marker 50 miles//////// 
+  function getGoogleLatLng(address: any) {
+    let coordinates = {
+      latitude: center_latitude,
+      longitude: center_longitude
+    }
+    fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${address},US&key=${googleApikey}`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.status === "ZERO_RESULTS") {
+          searchActions.setQuery("gkhvfdjgbdbg");
           searchActions.setUserLocation(coordinates);
           searchActions.setOffset(0);
           searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
           searchActions.executeVerticalQuery();
-        } else {
-          const locationFilter: SelectableFilter={
-            selected:true,
-            fieldId:"builtin.location",
-            value:{
-              lat:params.latitude,
-              lng:params.longitude,
-              radius: 241401.6,//radius 100 miles
-            },
-            matcher:Matcher.Near,
-          };
-          searchActions.setUserLocation(params);
-          searchActions.setQuery("");
-          searchActions.setStaticFilters([locationFilter])
-           searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
-          searchActions.executeVerticalQuery();
+        } else if (json.results) {
+          var status = false;
+          json.results.map((components: any) => {
+            for (let i = 0; i < components.address_components.length; i++) {
+              const type = components.address_components[i].types[0];
+              params = {
+                latitude: components.geometry.location.lat,
+                longitude: components.geometry.location.lng,
+              };
+              if (components.address_components[i].types.includes("country")) {
+                if (components.address_components[i].short_name != "US") {
+                  status = true;
+                }
+              }
+            }
+          });
+
+          if (status) {
+            searchActions.setQuery(address);
+            searchActions.setUserLocation(coordinates);
+            searchActions.setOffset(0);
+            searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
+            searchActions.executeVerticalQuery();
+          } else {
+            const locationFilter: SelectableFilter = {
+              selected: true,
+              fieldId: "builtin.location",
+              value: {
+                lat: params.latitude,
+                lng: params.longitude,
+                radius: 402336//radius 400 miles
+              },
+              matcher: Matcher.Near,
+            };
+            searchActions.setUserLocation(params);
+            searchActions.setQuery("");
+            searchActions.setStaticFilters([locationFilter])
+            searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
+            searchActions.executeVerticalQuery();
+          }
         }
-      }
-    })
-    .catch(() => {});
+      })
+      .catch(() => { });
     /////end////////
-}
-  
+  }
+
   function getCoordinates(address: string) {
     getGoogleLatLng(address);
     // searchActions.setQuery(address);
