@@ -335,7 +335,7 @@ const SearchLayout = (props: any): JSX.Element => {
 
               ]}
 
-              // handleInputValue={handleInputValue}
+              handleInputValue={handleInputValue}
               handleSetUserS hareLocation={handleSetUserShareLocation}
             />
 
