@@ -6,7 +6,7 @@ export const AnswerExperienceConfig = {
   verticalKey : "locations",
   experienceKey : "eyeglassworld",
   experienceVersion: "STAGING",
-  locationRadius: 965606.4,
+  locationRadius: 8004672,
   sessionTrackingEnabled: true,
   endpoints: {
     universalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/query",
