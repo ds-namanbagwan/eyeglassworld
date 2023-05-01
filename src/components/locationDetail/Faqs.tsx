@@ -41,6 +41,10 @@ export default function Faq(props: any) {
     const background = index === activeIndex ? "active" : "";
     const fontWeightBold = index === activeIndex ? "font-weight-bold  py-0 mt-2" : "";
     const ariaExpanded = index === activeIndex ? "true" : "false";
+    // console.log(ariaExpanded,"ariaExpanded")
+    // console.log(fontWeightBold,"ariaExpanded")
+    // console.log(background,"ariaExpanded")
+    // console.log(showDescription,"ariaExpanded")
     return (
       <AccordionItem
         showDescription={showDescription}
@@ -78,3 +82,4 @@ export default function Faq(props: any) {
 function setFaqClass(arg0: string) {
   throw new Error("Function not implemented.");
 }
+

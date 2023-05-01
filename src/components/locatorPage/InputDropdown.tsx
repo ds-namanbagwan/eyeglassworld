@@ -377,7 +377,7 @@ export default function InputDropdown({
               value: {
                 lat: params.latitude,
                 lng: params.longitude,
-                radius: 402336//radius 400 miles
+                radius: 321868.8//radius 200 miles
               },
               matcher: Matcher.Near,
             };
@@ -440,7 +440,6 @@ export default function InputDropdown({
       [cssClasses.inputDropdownContainer___active ?? ""]: shouldDisplayDropdown,
     }
   );
-
 
 
   return (

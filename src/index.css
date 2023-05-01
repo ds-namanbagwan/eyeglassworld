@@ -471,6 +471,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .faq-tab  .faq-tab-label.active{  @apply border-b-transparent before:opacity-0 }
 .faq-tab  .faq-tab-label{ @apply flex justify-between items-center relative font-normal cursor-pointer border-b border-faq-border }
 .faq-tab-content{@apply px-4  text-lg text-black py-3 bg-opacity-25 my-3 }
+/* .faq-tab-content1{@apply px-4  text-lg text-black py-3 bg-opacity-25 my-3 hidden} */
 .faq-tab-label.active{ @apply justify-start }
 .view-more{  @apply text-center mt-5}
 

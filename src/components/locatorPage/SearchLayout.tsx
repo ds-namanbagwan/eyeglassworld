@@ -304,11 +304,11 @@ const SearchLayout = (props: any): JSX.Element => {
                   fieldApiName: "name",
 
                 },
-                {
-                  entityType: "location",
-                  fieldApiName: "address.line1",
+s                // {
+                //   entityType: "location",s
+                //   fieldApiName: "address.line1",
 
-                },
+                // },
                 {
                   entityType: "location",
                   fieldApiName: "address.postalCode",
@@ -329,10 +329,10 @@ const SearchLayout = (props: any): JSX.Element => {
                   fieldApiName: "address.region",
 
                 },
-                {
-                  entityType: "location",
-                  fieldApiName: "address.line2",
-                },
+                // {
+                //   entityType: "location",
+                //   fieldApiName: "address.line2",
+                // },
                 {
                   entityType: "location",
                   fieldApiName: "address.countryCode",
