@@ -35,7 +35,7 @@ const GetDirection = (props: GetDirection) => {
         "," +
         longitude +
         "&origin=" +
-        origin +"," +'UK';
+        origin +"," +'US';
 
       window.open(getDirectionUrl, "_blank");
       };
