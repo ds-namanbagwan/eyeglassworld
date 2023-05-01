@@ -326,11 +326,17 @@ export default function InputDropdown({
     }
   },);
 
+  const meterstoMiles = (miles: number) => {
+    const meters = miles * 1609.344;
+    return meters;
+  }
 
-
+  const radius=200;
+  const miles1= meterstoMiles(radius);
+  console.log(miles1,"ashsjfgsdj,fysd");
 
   ////start///////
-  /////bound result at user marker 50 miles//////// 
+  /////bound result at user marker 200 miles//////// 
   function getGoogleLatLng(address: any) {
     let coordinates = {
       latitude: center_latitude,
@@ -377,10 +383,16 @@ export default function InputDropdown({
               value: {
                 lat: params.latitude,
                 lng: params.longitude,
-                radius: 321868.8//radius 200 miles
-              },
-              matcher: Matcher.Near,
-            };
+                radius:miles1//radius 200 miles
+                                   
+                 },
+                 
+                
+              
+              matcher: Matcher.Near,             
+            }; 
+            console.log(locationFilter.value,"73687568557877") 
+                                 
             searchActions.setUserLocation(params);
             searchActions.setQuery("");
             searchActions.setStaticFilters([locationFilter])
@@ -499,3 +511,7 @@ export default function InputDropdown({
     </div>
   );
 }
+function miles(event: MouseEvent<HTMLButtonElement, MouseEvent>): void {
+  throw new Error("Function not implemented.");
+}
+
