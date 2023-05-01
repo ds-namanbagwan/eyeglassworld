@@ -495,7 +495,6 @@ function UnwrappedGoogleMaps({
     } else {
       url = `${result.rawData.slug.toString()}.html`;
     }
-
     const MarkerContent = (
       <>
         {" "}
