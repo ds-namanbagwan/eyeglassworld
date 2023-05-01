@@ -304,7 +304,7 @@ const SearchLayout = (props: any): JSX.Element => {
                   fieldApiName: "name",
 
                 },
-s                // {
+         // {
                 //   entityType: "location",s
                 //   fieldApiName: "address.line1",
 
