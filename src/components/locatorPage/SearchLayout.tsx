@@ -301,6 +301,11 @@ const SearchLayout = (props: any): JSX.Element => {
               searchFields={[
                 {
                   entityType: "location",
+                  fieldApiName: "name",
+
+                },
+                {
+                  entityType: "location",
                   fieldApiName: "address.line1",
 
                 },
@@ -418,8 +423,6 @@ const SearchLayout = (props: any): JSX.Element => {
             </div>
           </PerfectScrollbar>
         </div>
-
-
       </div>
     </>
   );
