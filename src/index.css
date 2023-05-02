@@ -58,6 +58,128 @@ nav .active{ @apply bg-light-red}
 .selectedLabel{@apply block}
 
 /* Header */
+
+
+.Header-container {
+  width: 97%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+    margin-right: auto;
+}
+.Header-wrapper--middle{
+  /* padding-top: 1.25rem; */
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    /* padding-bottom: 1.25rem; */
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.Header-logoWrapper {
+  width: 20rem;
+  margin-right: auto;
+}
+.Header-logoLink,.Header-searchBarWrapper,.Header-searchBar,.Header-links--main,.Footer-row--main,.Footer-links--utility,.Footer-row {
+  
+  /* / display: -webkit-box; / */
+  /* / display: -ms-flexbox; / */
+  display: flex;
+}
+.Header-searchBarAndCtasWrapper{
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.Header-searchBar{
+  height: 50px;
+}
+.sr-only {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+  white-space: nowrap;
+  color: #000;
+  background: #fff;
+}
+.Header-input {
+  font-size: .75rem;
+  line-height: 1.5;
+  padding: 0.9375rem 1.25rem;
+  border-left: 0.0625rem solid #767676;
+  border-top: 0.0625rem solid #767676;
+  border-bottom: 0.0625rem solid #767676;
+  border-radius: 0.1875rem 0 0 0.1875rem;
+  min-width: 14.0625rem;
+}
+.Header-submit{
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    background-color: #024b86;
+    color: #fff;
+    padding: 0.75rem 1.5625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 0.125rem solid;
+    border-color: #024b86;
+    border-radius: 0 0.1875rem 0.1875rem 0;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+}
+.Header-submit:hover, .Header-submit:active, .Header-submit:focus {
+  background-color: #fff;
+  color: #024b86;
+  border-color: #024b86;
+}
+.Header-linkWrapper--ctas {
+  margin-left: 1.25rem;
+}
+.Header-link--ctas{
+  display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    background-color: #a6182e;
+    color: #fff;
+    padding: 0.75rem 1.5625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 0.125rem solid;
+    border-color: #a6182e;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    height: 50px;
+
+}
+.Header-link--ctas:hover, .Header-link--ctas:active, .Header-link--ctas:focus {
+  background-color: #fff;
+  color: #a6182e;
+  border-color: #a6182e;
+}
+a.Header-searchLabelText {
+  height: 41px;
+  width: 50px;
+}
+img.location-logo {
+  height: 25px;
+  width: 27px;
+  margin-top: 10px;
+}
+.headerlogo{@apply w-60 }
+.headerlogo2{@apply w-60 }
 .site-header{   @apply pt-0 lg:pt-6 relative}
 .site-header .header-top{  @apply border-b border-border-light border-opacity-[0.45] text-nav-link}
 .site-header .header-top .logo svg{  @apply w-36 h-auto lg:w-[14.625rem]}
@@ -154,7 +276,9 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .location .result-inner .green-dot, .location .result-inner .red-dot{ @apply  flex justify-center items-center flex-row-reverse  }
 .location .result-inner .green-dot svg, .location .result-inner .red-dot svg{ @apply  ml-1 mt-1 }
 .location-with-filter{ @apply mb-6 flex items-center justify-between text-sm leading-5}
-.location-with-filter h1{@apply text-lg font-normal text-dark-gray my-0 font-second-main-font text-[1.75rem]}
+.location-with-filter h1{@apply text-lg font-normal text-blue my-0 font-second-main-font text-[2.75rem] font-bold}
+.location-with-filter2{ @apply mb-6 flex items-center justify-between text-sm leading-5}
+.location-with-filter2 h2{@apply text-lg font-normal text-black my-0 font-second-main-font text-[1rem] font-light}
 .list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
 .result-inner{@apply p-4 }
 .button-bx{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}

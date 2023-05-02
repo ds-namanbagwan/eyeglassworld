@@ -7,6 +7,7 @@ export const StaticData = {
     Meta_description:"Visit Matalan Demo Store | Matalan is your local great value family retailer shop. Find latest seasonal looks for Women, Men and kids, plus a huge range of homeware.",
     locator_breadcrumb:"Store Locator",
     FindLocationtext:"Find a Location",
+    FindLocationtext2:"Search by city and state or ZIP code",
     Usemylocation:"Use my location",
     Search:"Search",
     Brandname:"Eye Glass World",

@@ -39,7 +39,8 @@ module.exports = {
       'dark-gray': '#333333',
       'hover-border': '#d8d8d8',
       'green':'#0078b4',
-      'dark-pink':'#e2231a'
+      'dark-pink':'#e2231a',
+      'blue':'#024b86'
     },
 
     fontFamily: {

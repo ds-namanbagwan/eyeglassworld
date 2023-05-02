@@ -9,18 +9,36 @@ export default function NewHeader(props: any) {
 
     return (
         <>
-            <div className=" flex w-80 ml-4"><img src={props?.prop?.c_photo?.url} alt="" />
-
-                <div className="mt-12 ml-[150%]">
-                    <SearchBar />
+            <div className="Header-containerWrapper Header-containerWrapper---middle">
+                <div className="Header-container">
+                    <div className="Header-wrapper Header-wrapper--middle">
+                        <div className="Header-logoWrapper">
+                            <a className="Header-logoLink" href="#" data-ya-track="logo" id="brand-logo">
+                                <img className="Header-logo" src={props?.prop?.c_photo?.url} alt="" />
+                            </a>
+                        </div>
+                        <div className="Header-searchBarAndCtasWrapper">
+                            <div className="Header-searchBarWrapper">
+                                {/* <a className="Header-searchLabelText" href="search"><img className="location-logo" src={props?._site?.c_middleHeader.icon.url} alt="" /></a> */}
+                                <form method="get" id="HeaderSearchForm" className="search Header-form" action="">
+                                    <div className="Header-searchBar">
+                                        <input placeholder="Search by City, State, or ZIP code" className="search-input Header-input" type="text" name="inputStoreValue" id="HeaderSearchInput" required />
+                                        <button type="submit" className="search-button Header-submit" data-ya-track="search">
+                                            <span className="Header-submitLabel">GO</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="Header-links Header-links--ctas">
+                                <div className="Header-linkWrapper Header-linkWrapper--ctas">
+                                    <a className="Header-link Header-link--ctas" href="#" data-ya-track="cta1">
+                                        <span className="Header-linktext">SCHEDULE AN EXAM</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div className="button-bx1">
-                    <a href={props?.prop?.c_scheduleTest?.link} className="btn notHighlight1">
-                        {props?.prop?.c_scheduleTest?.label}
-                    </a>
-                </div>
-
             </div>
             <div className="bg-green text-2xl text-white">
 

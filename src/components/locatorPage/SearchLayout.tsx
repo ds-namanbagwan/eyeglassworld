@@ -283,6 +283,9 @@ const SearchLayout = (props: any): JSX.Element => {
           <div className="location-with-filter">
             <h1 className="">{StaticData.FindLocationtext}</h1>
           </div>
+          <div className="location-with-filter2">
+            <h2>{StaticData.FindLocationtext2}</h2>
+          </div>
 
           <div className="search-field">
             <FilterSearch
@@ -304,7 +307,7 @@ const SearchLayout = (props: any): JSX.Element => {
                   fieldApiName: "name",
 
                 },
-         // {
+                // {
                 //   entityType: "location",s
                 //   fieldApiName: "address.line1",
 
@@ -414,8 +417,10 @@ const SearchLayout = (props: any): JSX.Element => {
 
 
               {locationinbuit && locationinbuit.length <= 0 ?
+
                 <div className="browse-dir">
                   <a className="underline " href='/us.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a>
+                  <p>Sorry, there are no locations near by.......</p>
                 </div> : ''}
               <div className="button-bx">
                 <ViewMore className={" btn notHighlight lg:!w-[132%] !mb-2 button view-more"} idName={"view-more-button"} buttonLabel={"View More"} />
