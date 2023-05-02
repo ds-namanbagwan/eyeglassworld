@@ -26,6 +26,7 @@ import useFetchResults from "../../hooks/useFetchResults";
 import { Link } from "@mui/material";
 
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
+import FilterModel from "./InputDropdown";
 
 var params1: any = { latitude: center_latitude, longitude: center_longitude }
 var mapzoom = 8;
@@ -396,7 +397,7 @@ const SearchLayout = (props: any): JSX.Element => {
             showEmptyMap={true}
           />
         </div>
-
+  {/* <FilterModel/> */}
         <div className="left-listing">
 
           <PerfectScrollbar >

@@ -281,8 +281,7 @@ export default function InputDropdown({
         setDisplaymsg(false);
         setLatestUserInput("");
         if (keyUpStatus) {
-          // searchActions.setVertical("");
-
+          searchActions.setVertical("");///for result stop
           searchActions.setQuery("");
           searchActions.setOffset(0);
           searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
@@ -331,10 +330,19 @@ export default function InputDropdown({
     return meters;
   }
 
-  const radius=100;
+  const radius=200;
   const miles1= meterstoMiles(radius);
   console.log(miles1,"ashsjfgsdj,fysd");
 
+  const options = [
+    { value: "1", label: "1 mile" },
+    { value: "5", label: "5 mile" },
+    { value: "10", label: "10 mile" },
+    { value: "25", label: "25 mile" },
+    { value: "50", label: "50 mile" },
+    { value: "100", label: "100 mile" },
+    { value: "200", label: "200 mile" },
+  ];
   ////start///////
   /////bound result at user marker 200 miles//////// 
   function getGoogleLatLng(address: any) {
@@ -377,6 +385,8 @@ export default function InputDropdown({
             searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
             searchActions.executeVerticalQuery();
           } else {
+            // const handleChange = (e: any) => {  
+            //   let mileToMeter = e.target.value * 1609.344;  
             const locationFilter: SelectableFilter = {
               selected: true,
               fieldId: "builtin.location",
@@ -400,6 +410,7 @@ export default function InputDropdown({
             searchActions.executeVerticalQuery();
           }
         }
+        
       })
       .catch(() => { });
     /////end////////
@@ -453,13 +464,25 @@ export default function InputDropdown({
     }
   );
 
+  let optionsHtml = options && options.map((option: any, i: Number) => {     
+    return (
+      <>
+        <option value={option.value}  >{option.label}</option>          
+      </>
+    );
+  });
+
+  // function handleChange(event: MouseEvent<HTMLSelectElement, MouseEvent>): void {
+  //   throw new Error("Function not implemented.");
+  // }
 
   return (
+    <>
+    
     <div
       className={inputDropdownContainerCssClasses}
       ref={inputDropdownRef}
-      onBlur={handleBlur}
-    >
+      onBlur={handleBlur}>
       <div className={cssClasses?.inputContainer}>
         <div className={cssClasses.logoContainer}>{renderLogo()}</div>
         <input
@@ -492,6 +515,12 @@ export default function InputDropdown({
           {renderSearchButton()}
         </div>
       </div>
+      <div className="filter-by-services">
+          <h2>Filter by distance</h2>
+          <select autoFocus={true}>
+            {optionsHtml}
+          </select>
+        </div>
       {(locationResults.length === 0 && allResultsForVertical > 0) || (locationResults.length === 0 && displaymsg && !loading) ? (
         <h4 className="font-bold">
           Sorry No result found
@@ -509,6 +538,7 @@ export default function InputDropdown({
         </>
       )}
     </div>
+    </>
   );
 }
 function miles(event: MouseEvent<HTMLButtonElement, MouseEvent>): void {
