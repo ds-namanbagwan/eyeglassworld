@@ -18,16 +18,8 @@ export default function NewHeader(props: any) {
                             </a>
                         </div>
                         <div className="Header-searchBarAndCtasWrapper">
-                            <div className="Header-searchBarWrapper">
-                                {/* <a className="Header-searchLabelText" href="search"><img className="location-logo" src={props?._site?.c_middleHeader.icon.url} alt="" /></a> */}
-                                <form method="get" id="HeaderSearchForm" className="search Header-form" action="">
-                                    <div className="Header-searchBar">
-                                        <input placeholder="Search by City, State, or ZIP code" className="search-input Header-input" type="text" name="inputStoreValue" id="HeaderSearchInput" required />
-                                        <button type="submit" className="search-button Header-submit" data-ya-track="search">
-                                            <span className="Header-submitLabel">GO</span>
-                                        </button>
-                                    </div>
-                                </form>
+                            <div className="Header-searchBarWrapper">                              
+                                <SearchBar/>
                             </div>
                             <div className="Header-links Header-links--ctas">
                                 <div className="Header-linkWrapper Header-linkWrapper--ctas">

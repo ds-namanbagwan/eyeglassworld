@@ -1,21 +1,17 @@
 import * as React from "react";
+// import "../index.css"
 const SearchBar = () => (
-<div className="cover">
-  <form method="get"  className="searchfrom">
-    <div className="tb">
-      <div className="td flex"><input type="text" placeholder="Search entire store here..." name="text" required style={{border:"solid",width:"250px",padding:"15px",borderWidth:"1px", borderRadius:"1px"}}/>
-      <div><button className="bg-green border-solid w-16" style={{padding:"16px",borderWidth:"1px",borderRadius:"1px"}}>GO</button></div>
+  <div className="cover">
+    <form method="get" className="search Header-form">
+      <div className="Header-searchBar">
+        <div className="td flex">
+          <input className="search-input Header-input" type="text" placeholder="Search by City, State, or ZIP code" name="text" required />
+          <button className="search-button Header-submit">
+            <span className="Header-submitLabel">GO</span>
+          </button>
+        </div>
       </div>
-      
-      <div className="td" id="s-cover">
-        <button  type="submit" className="buttonsearch">
-          {/* <div className="s-circle"></div> */}
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 );
-
 export default SearchBar;
