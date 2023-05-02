@@ -7,7 +7,7 @@ const SearchBar = () => (
         <div className="td flex">
           <input className="search-input Header-input" type="text" placeholder="Search by City, State, or ZIP code" name="text" required />
           <button className="search-button Header-submit">
-            <span className="Header-submitLabel">GO</span>
+            <span className="Header-submitLabel">GO </span>
           </button>
         </div>
       </div>
