@@ -10,7 +10,6 @@ export default function NewFooter(props: any) {
 
                 <div className="absolute text-4xl ml-6 mt-14">
                     {props?.prop?.c_text5}
-
                 </div>
 
                 <div className="flex absolute text-xl ml-8 mt-32 gap-5">
@@ -19,7 +18,7 @@ export default function NewFooter(props: any) {
                         return (
                             <>
                                 <div className="flex w-9">
-                                   <img src={img?.url} alt=""/>
+                                    <a href="#"><img src={img?.url} alt="" /></a>
                                 </div>
                             </>
                         )
@@ -34,8 +33,8 @@ export default function NewFooter(props: any) {
                         {props?.prop?.c_footer1?.fsubdata?.map((res1: any) => {
                             return (
                                 <>
-                                    <div className="mt-2">
-                                       <a href={res1?.link}> {res1?.label}</a>
+                                    <div className="mt-2 hover:underline">
+                                        <a href={res1?.link}> {res1?.label}</a>
                                     </div>
                                 </>
                             )
@@ -47,8 +46,8 @@ export default function NewFooter(props: any) {
                         {props?.prop?.c_footer2?.fsubdata?.map((res2: any) => {
                             return (
                                 <>
-                                    <div className="mt-2">
-                                    <a href={res2?.link}> {res2?.label}</a>
+                                    <div className="mt-2 hover:underline">
+                                        <a href={res2?.link}> {res2?.label}</a>
                                     </div>
 
                                 </>
@@ -61,8 +60,8 @@ export default function NewFooter(props: any) {
                         {props?.prop?.c_footert3?.fsubdata?.map((res3: any) => {
                             return (
                                 <>
-                                    <div className="mt-2">
-                                    <a href={res3?.link}> {res3?.label}</a>
+                                    <div className="mt-2 hover:underline">
+                                        <a href={res3?.link}> {res3?.label}</a>
                                     </div>
 
                                 </>
@@ -77,8 +76,8 @@ export default function NewFooter(props: any) {
                         // console.log(res4, "res4")
                         return (
                             <>
-                                <div className="mt-2">
-                                    {res4?.label}
+                                <div className="mt-2 hover:underline">
+                                    <a href={res4.link}>{res4?.label}</a>
                                 </div>
                             </>
                         )

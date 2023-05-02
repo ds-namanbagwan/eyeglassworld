@@ -95,64 +95,66 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             <div className="notHighlight">
               <div className="icon-row content-col address-with-availablity notHighlight">
                 <Address address={address} />
+              </div>
 
-                <div className="pt-2 pb-2 ">
-                  {/* {/ this section is open cloase house in loaction card /} */}
-                  <div className="open-close ">
-                    <div className="hours-sec">
-                      <div className="OpenCloseStatus notHighlight">
-                        <div className="hours-labels">
-                          <span className="icon notHighlight">
-                            {/* {/ <img src={timesvg} alt="time"/> /} */}
+              <div className="pt-2 pb-2 ">
+                {/* {/ this section is open cloase house in loaction card /} */}
+                <div className="open-close ">
+                  <div className="hours-sec">
+                    <div className="OpenCloseStatus notHighlight">
+                      <div className="hours-labels">
+                        <div className="flex notHighlight">
+                          <span className="icon notHighlight mr-1">
+                            <img src={timesvg} alt="time"/>
                           </span>
-                          <div className="flex notHighlight">
-                            <OpenClose
-                              timezone={timezone}
-                              hours={hours}
-                              deliveryHours={hours}
-                            ></OpenClose>
-                            <div className="notHighlight"><button className="ml-2">
-                              {" "}
-                              <svg
-                                onClick={onOpenHide}
-                                className="openclose notHighlight"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20.585"
-                                height="8.793"
-                                viewBox="0 0 9.585 4.793"
-                              >
-                                <path
-                                  id="hrd-drop"
-                                  d="M9,13.5l4.793,4.793L18.585,13.5Z"
-                                  transform="translate(-9 -13.5)"
-                                  fill="#004990"
-                                ></path>
-                              </svg>
-                            </button>
-                            </div>
+                          <OpenClose
+                            timezone={timezone}
+                            hours={hours}
+                            deliveryHours={hours}
+                          ></OpenClose>
+                          <div className="notHighlight"><button className="ml-2">
+                            {" "}
+                            <svg
+                              onClick={onOpenHide}
+                              className="openclose notHighlight"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20.585"
+                              height="8.793"
+                              viewBox="0 0 9.585 4.793"
+                            >
+                              <path
+                                id="hrd-drop"
+                                d="M9,13.5l4.793,4.793L18.585,13.5Z"
+                                transform="translate(-9 -13.5)"
+                                fill="#004990"
+                              ></path>
+                            </svg>
+                          </button>
                           </div>
                         </div>
-                        <div className={timeStatus + " daylist"}>
-                         <div className="notHighlight"> <Hours
+                      </div>
+                      <div className={timeStatus + " daylist"}>
+                        <div className="notHighlight">
+                          <Hours
                             key={result.rawData.id}
                             hours={hours}
                             additionalHoursText={additionalHoursText}
-                          /></div>
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
             <div className="mt-2">
 
               {result.rawData.mainPhone ?
                 <div className="icon-row ">
-                  {/* <div className="icon">
-           <img className=" " src={Phonesvg} width="20" height="20"
-                        alt="" />
-                        </div> */}
+                  <div className="icon">
+                    <img className=" " src={Phonesvg} width="20" height="20" alt="" />
+                  </div>
                   <div className="content-col">
                     <a className="underline" href={`tel:${mainPhone}`}>{formatPhoneNumber(mainPhone)}</a>
                   </div>

@@ -5,7 +5,7 @@ import { Link } from "@yext/pages/components"
 
 
 export default function NewHeader(props: any) {
-    // console.log(props.prop.c_scheduleTest.label, "26812282428242s")
+    console.log(props.prop.c_scheduleTest.label, "26812282428242s")
 
     return (
         <>
@@ -32,7 +32,7 @@ export default function NewHeader(props: any) {
                             <div className="Header-links Header-links--ctas">
                                 <div className="Header-linkWrapper Header-linkWrapper--ctas">
                                     <a className="Header-link Header-link--ctas" href="#" data-ya-track="cta1">
-                                        <span className="Header-linktext">SCHEDULE AN EXAM</span>
+                                        <span className="Header-linktext"><a href={props?.prop?.c_scheduleTest?.link}>{props?.prop?.c_scheduleTest?.label}</a></span>
                                     </a>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@ export default function NewHeader(props: any) {
 
                         return (
                             <>
-                                <div className="mt-2">
+                                <div className="mt-2 hover:underline">
                                     <a href={res?.link}>{res?.label}</a>
                                 </div>
                             </>
