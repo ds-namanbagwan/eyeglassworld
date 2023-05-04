@@ -301,9 +301,9 @@ export default function InputDropdown({
       setKeyUpStatus(true);
     }
     if (!keyUpStatus) {
-      // searchActions.resetFacets();
-      // setKeyUpStatus(false);
-      // searchActions.setVertical("locations");
+      searchActions.resetFacets();
+      setKeyUpStatus(false);
+      searchActions.setVertical("locations");
     }
   }, [inputValue])
 
