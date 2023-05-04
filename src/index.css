@@ -880,3 +880,5 @@ h1.entity-name{
 
 .active.daylist{ @apply  !block pl-[50px]}
 .OpenCloseStatus .daylist{@apply hidden}
+
+/* .filter-by-services{@apply absolute ml-[200px] mt-3 } */

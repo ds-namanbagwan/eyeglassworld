@@ -26,7 +26,7 @@ export default function NewFooter(props: any) {
 
                 </div>
 
-                <div className="flex gap-20 justify-end mr-6">
+                <div className="flex gap-20 justify-end mr-8">
 
                     <div className="mt-14">
                         <p className="text-xl mb-5">{props?.prop?.c_footer1?.fhead}</p>
@@ -34,7 +34,7 @@ export default function NewFooter(props: any) {
                             return (
                                 <>
                                     <div className="mt-2 hover:underline">
-                                        <a href={res1?.link}> {res1?.label}</a>
+                                        <a href={res1?.link}>{res1?.label}</a>
                                     </div>
                                 </>
                             )
@@ -71,7 +71,7 @@ export default function NewFooter(props: any) {
 
                 </div>
 
-                <div className="flex mt-8 justify-end gap-36 text-2xl mr-6">
+                <div className="flex mt-8 justify-end gap-36 text-2xl mr-8">
                     {props?.prop?.c_footer4?.map((res4: any) => {
                         // console.log(res4, "res4")
                         return (

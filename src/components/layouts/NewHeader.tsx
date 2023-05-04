@@ -5,7 +5,7 @@ import { Link } from "@yext/pages/components"
 
 
 export default function NewHeader(props: any) {
-    console.log(props.prop.c_scheduleTest.label, "26812282428242s")
+    // console.log(props.prop.c_scheduleTest.label, "26812282428242s")
 
     return (
         <>

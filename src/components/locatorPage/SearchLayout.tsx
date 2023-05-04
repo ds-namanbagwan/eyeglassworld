@@ -83,8 +83,8 @@ const SearchLayout = (props: any): JSX.Element => {
           //   },
           //   matcher:Matcher.Near,
           // };
-          // searchActions.setOffset(0);
-          // searchActions.setStaticFilters([locationFilter]);
+          searchActions.setOffset(0);
+          searchActions.setStaticFilters([locationFilter]);
 
 
           searchActions.setUserLocation(params1);
@@ -421,7 +421,6 @@ const SearchLayout = (props: any): JSX.Element => {
 
                 <div className="browse-dir">
                   <a className="underline " href='/us.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a>
-                  <p>Sorry, there are no locations near by.......</p>
                 </div> : ''}
               <div className="button-bx">
                 <ViewMore className={" btn notHighlight lg:!w-[132%] !mb-2 button view-more"} idName={"view-more-button"} buttonLabel={"View More"} />

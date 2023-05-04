@@ -34,6 +34,7 @@ import { Directionsvg, View_Store } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 import useFetchResults from "../../hooks/useFetchResults";
 import { Link } from "@yext/pages/components";
+import { formatPhoneNumber } from "react-phone-number-input";
 /**
  * CSS class interface for the {@link GoogleMaps} component
  *
@@ -519,16 +520,7 @@ function UnwrappedGoogleMaps({
               ""
             )}
           </div>
-          {/* {result.rawData.mainPhone?
-    <div className="icon-row">
-      <div className="icon"> <img className=" " src={Phonesvg} width="20" height="20" alt="" />
-      </div>
-      <div className="content-col">
-        <h6>Telephone</h6>
-        <a id="address" className="notHighlight" href={`tel:${result.rawData.mainPhone}`}>
-          {result.rawData.mainPhone}</a>
-      </div>
-    </div>:''} */}
+
 
           {result.rawData.hours && result.rawData.hours.reopenDate ? (
             ""
@@ -562,7 +554,14 @@ function UnwrappedGoogleMaps({
               </div>
             </div>
           )}
+          <div className="mt-2">
+            <div className="content-col">
+              <a className="underline" href={`tel:${result.rawData.mainPhone}`}>{formatPhoneNumber(result.rawData.mainPhone)}</a>
+            </div>
+          </div>
         </div>
+
+
         <div className="button-bx !ml-4 !mb-0">
           <a href={url} className="btn">
             {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
@@ -637,7 +636,7 @@ function UnwrappedGoogleMaps({
           e.target.dataset.longitude +
           "&origin=" +
           origin +
-          ",Us";
+          ",US";
         window.open(getDirectionUrl, "_blank");
       };
       navigator.geolocation.getCurrentPosition(

@@ -224,7 +224,7 @@ type DayRow = {
 const DayRow = (props: DayRow) => {
   const { dayName, day, isToday, dayDate, holidayhours, key, c_specific_day } =
     props;
-    console.log(dayName,"kl")
+    // console.log(dayName,"kl")
   const [currentDay, setCurrentDay] = useState('');
 
   const [myDataAccordintToMe, setMyDataAccordintToMe] = React.useState({});
