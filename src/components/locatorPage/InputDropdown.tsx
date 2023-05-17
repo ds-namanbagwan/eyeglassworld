@@ -397,7 +397,7 @@ export default function InputDropdown({
               },
               matcher: Matcher.Near,
             };
-            console.log(locationFilter.value, "naman")
+            // console.log(locationFilter.value, "naman")
 
             searchActions.setUserLocation(params);
             searchActions.setQuery("");

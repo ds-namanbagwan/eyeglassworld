@@ -11,6 +11,8 @@ import Holidayhours from "./Holdayhours";
 import Model from "./Model";
 import CustomMap from "./CustomMap";
 import { formatPhoneNumber } from "react-phone-number-input";
+import OpenClose from "../commons/openClose";
+import { useState } from "react";
 
 const Contact = (props: any) => {
   const {
@@ -25,6 +27,14 @@ const Contact = (props: any) => {
     c_storeInfoHeading,
     c_getDirectionsCTAText
   } = props;
+  const [timeStatus, setTimeStatus] = useState("");
+  const onOpenHide = () => {
+    if (timeStatus == "") {
+      setTimeStatus("active");
+    } else {
+      setTimeStatus("");
+    }
+  }
   return (
     <>
       <div className="address-main-sec">
@@ -106,6 +116,7 @@ const Contact = (props: any) => {
                   c_specific_day={c_specific_day}
                 />
               )}
+             
             </div>
           </div>
         </div>

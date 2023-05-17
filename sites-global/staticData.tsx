@@ -2,7 +2,7 @@ export const StaticData = {
     photoGallary:"FEATURED BRANDS",
     about:"ABOUT",
     photoGallary1:"BROWSE GLASSES",
-    offer:"OFFERS AT EYEGLASS WORLD IN MOBILE",
+    offer:"OFFERS AT EYEGLASS WORLD",
     Meta_title:" Matalan Demo Store - Online Clothes Store",
     Meta_description:"Visit Matalan Demo Store | Matalan is your local great value family retailer shop. Find latest seasonal looks for Women, Men and kids, plus a huge range of homeware.",
     locator_breadcrumb:"Store Locator",

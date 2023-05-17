@@ -7,14 +7,11 @@ export default function NewFooter(props: any) {
     return (
         <>
             <div className="bg-green text-white inline-block w-full">
-
                 <div className="absolute text-4xl ml-6 mt-14">
                     {props?.prop?.c_text5}
                 </div>
-
                 <div className="flex absolute text-xl ml-8 mt-32 gap-5">
                     {props?.prop?.c_icons1?.map((img: any) => {
-
                         return (
                             <>
                                 <div className="flex w-9">
@@ -23,11 +20,8 @@ export default function NewFooter(props: any) {
                             </>
                         )
                     })}
-
                 </div>
-
                 <div className="flex gap-20 justify-end mr-8">
-
                     <div className="mt-14">
                         <p className="text-xl mb-5">{props?.prop?.c_footer1?.fhead}</p>
                         {props?.prop?.c_footer1?.fsubdata?.map((res1: any) => {
@@ -40,7 +34,6 @@ export default function NewFooter(props: any) {
                             )
                         })}
                     </div>
-
                     <div className="mt-14">
                         <p className="text-xl mb-5">{props?.prop?.c_footer2?.fhead}</p>
                         {props?.prop?.c_footer2?.fsubdata?.map((res2: any) => {
@@ -49,12 +42,10 @@ export default function NewFooter(props: any) {
                                     <div className="mt-2 hover:underline">
                                         <a href={res2?.link}> {res2?.label}</a>
                                     </div>
-
                                 </>
                             )
                         })}
                     </div>
-
                     <div className="mt-14">
                         <p className="text-xl mb-5">{props?.prop?.c_footert3?.fhead}</p>
                         {props?.prop?.c_footert3?.fsubdata?.map((res3: any) => {
@@ -68,9 +59,7 @@ export default function NewFooter(props: any) {
                             )
                         })}
                     </div>
-
                 </div>
-
                 <div className="flex mt-8 justify-end gap-36 text-2xl mr-8">
                     {props?.prop?.c_footer4?.map((res4: any) => {
                         // console.log(res4, "res4")

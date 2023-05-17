@@ -10,7 +10,7 @@ function Menu(props: any) {
           return (
             <>
               <li>
-              <Link props={item} />
+                <Link props={item} />
               </li>
             </>
           )

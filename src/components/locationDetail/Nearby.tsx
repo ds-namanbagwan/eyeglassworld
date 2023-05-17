@@ -16,38 +16,12 @@ export default function Nearby(props: any) {
   const [neabyData, setnearbyData] = React.useState(props.externalApiData.response.results);
   // console.log(props.externalApiData,"location result-list-inner-355923963200068037 result markerEventBinded")
   const metersToMiles = (meters: number) => {
-
     const miles = meters * 0.000621371;
     return miles.toFixed(2);
   }
-
   return (
-
     <>
-      {/* <Splide
-        id="splide-nearby"
-        options={{
-          rewind: false,
-          type: "slide",
-          perPage: 3,
-          perMove: 1,
-          arrows: false,
-          drag: false,
-          pagination: false,
-          lazyLoad: "nearby",
-          breakpoints: {
-            1279: {
-              perPage: 1,
-              drag: true,
-              pagination: true,
-              arrows: false,
-              type: "splide",
-            },
-          },
-        }}
-      > */}
       {neabyData.map((location: any, index: number) => {
-
         let url = "";
         var name: any = location.data.name?.toLowerCase();
         var country: any = location.data.address.countryCode?.toLowerCase();
@@ -69,23 +43,19 @@ export default function Nearby(props: any) {
         } else {
           url = `/${location.data.slug.toString()}.html`;
         }
-         
         if (index > 0) {
-          
           return (
-            <>
-              {/* <SplideSlide key={index}> */}
+            <>              
               <div className="nearby-card">
                 <div className="location-name-miles icon-row">
                   <h2><Link className="inline-block notHighlight" href={`${url}`}
                     data-ya-track={`${location.data.name}`}
                     eventName={`${location.data.name}`}
                     rel="noopener noreferrer">{location.data.name}</Link></h2>
-
                 </div>
-                 <div className="distance mt-5 mr-5">{metersToMiles(location.distance)}
-                  <span>{StaticData.miles}</span>                  
-                 </div> 
+                <div className="distance mt-5 mr-5">{metersToMiles(location.distance)}
+                  <span>{StaticData.miles}</span>
+                </div>
                 <div className="icon-row content-col">
                   <Address address={location.data.address} />
                 </div>
@@ -112,19 +82,15 @@ export default function Nearby(props: any) {
                     {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
                     STORE DETAILS</Link>
                   <GetDirection buttonText={props.c_getDirectionsCTAText ? props.c_getDirectionsCTAText : "Get directions"} address={location.data.address} latitude={location.data.displayCoordinate ? location.data.displayCoordinate.latitude : location.data.yextDisplayCoordinate.latitude} longitude={location.data.displayCoordinate ? location.data.displayCoordinate.longitude : location.data.yextDisplayCoordinate.longitude} />
-
                 </div>
-              </div>
-              {/* </SplideSlide> */}
+              </div>             
             </>
-
           )
         }
       }
-
       )
       }
-      {/* </Splide> */}
+      
     </>
   )
 }

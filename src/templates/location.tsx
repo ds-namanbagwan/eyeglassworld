@@ -455,9 +455,7 @@ const Location: Template<ExternalApiRenderData> = ({
           itemListElement: breadcrumbScheme,
         }}
       />
-
-
-
+      
       <AnalyticsProvider
         templateData={templateData}
         enableDebugging={AnalyticsEnableDebugging}
@@ -474,8 +472,6 @@ const Location: Template<ExternalApiRenderData> = ({
             baseUrl={relativePrefixToRoot}
             address={address}
           ></BreadCrumbs>
-
-
           <div className="container">
             <div className='banner-text banner-dark-bg justify-center text-center'>
               <h1 className="">{name}</h1>

@@ -33,7 +33,6 @@ import NewFooter from "../components/layouts/NewFooter";
 //     // directly as props to the default exported function.
 //     fields: [
 //       "name",
-
 //     ],
 //     // Defines the scope of entities that qualify for this stream.
 //     filter: {
@@ -67,7 +66,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${document.c_meta_description ? document.c_meta_description : `View Eye Glass Stores near you today. We supply high-quality,of glass.`}`,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -75,7 +73,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: StaticData.Brandname,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -90,18 +87,15 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           href: favicon,
         },
       },
-
       //  {
       //    type: "link",
       //    attributes: {
       //      rel: "canonical",
       //      href: `${
       //        document._site.c_canonical?document.c_canonical:stagingBaseurl
-
       //      }`,
       //    },
       //  },
-
       {
         type: "meta",
         attributes: {
@@ -151,9 +145,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: favicon
         },
       },
-
     ],
-
   };
 };
 
@@ -165,7 +157,6 @@ const Locator: Template<TemplateRenderProps> = ({
     _site
   } = document;
 
-
   let templateData = { document: document, __meta: __meta };
   const endpoints = {
     universalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/query",
@@ -174,8 +165,8 @@ const Locator: Template<TemplateRenderProps> = ({
     universalAutocomplete: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/autocomplete",
     verticalAutocomplete: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/autocomplete",
     filterSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/filtersearch",
-
   }
+
   var Api = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
   return (
     <>

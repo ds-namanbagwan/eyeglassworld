@@ -878,7 +878,7 @@ h1.entity-name{
   .storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked{@apply left-1}
 }
 
-.active.daylist{ @apply  !block pl-[50px]}
+.active.daylist{ @apply  !block pl-[50px] hidden}
 .OpenCloseStatus .daylist{@apply hidden}
 
 /* .filter-by-services{@apply absolute ml-[200px] mt-3 } */

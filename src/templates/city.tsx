@@ -73,7 +73,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
       url = `${url}/${i.slug}/${document.slug.toString()}.html`
     }
   })
-  return  url;
+  return url;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
@@ -105,7 +105,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${document.c_meta_description ? document.c_meta_description : `Use this page to find your nearest store in ${document.name} and discover the location details you need to visit us today.`}`,
         },
       },
-
       //   {
       //     type: "meta",
       //     attributes: {
@@ -134,26 +133,24 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: "noindex, nofollow",
         },
       },
-
       {
         type: "link",
         attributes: {
           rel: "canonical",
           href: `${stagingBaseurl
-              ? stagingBaseurl + canonical + "/" + document.slug + ".html"
-              : "/" + document.slug + ".html"
+            ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+            : "/" + document.slug + ".html"
             }`,
         },
       },
       //   // /og tags
-
       {
         type: "meta",
         attributes: {
           property: "og:url",
           content: `${stagingBaseurl
-              ? stagingBaseurl + canonical + "/" + document.slug + ".html"
-              : "/" + document.slug + ".html"
+            ? stagingBaseurl + canonical + "/" + document.slug + ".html"
+            : "/" + document.slug + ".html"
             }`,
         },
       },
@@ -178,7 +175,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: favicon,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -193,7 +189,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `/${document.slug ? document.slug : `${document.name.toLowerCase()}`}.html`,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -267,8 +262,6 @@ const City: Template<TemplateRenderProps> = ({
     } else {
       url = `/${entity.slug.toString()}.html`;
     }
-
-
 
     return (
 
@@ -386,19 +379,7 @@ const City: Template<TemplateRenderProps> = ({
       );
     }
   }
-  // c_globalData &&
-  //   c_globalData.map((i: any) => {
-  //     address = i.address ? i.address : [];
-  //     c_companyrn = i.c_companyrn ? i.c_companyrn : "";
-  //     c_footerLinks = i.c_footerLinks ? i.c_footerLinks : [];
-  //     c_headerLinks1 = i.c_headerLinks1 ? i.c_headerLinks1 : [];
-  //     c_phoneNumber = i.phoneNumber ? i.phoneNumber : "";
-  //     facebookPageUrl = i.facebookPageUrl ? i.facebookPageUrl : "";
-  //     instagramHandle = i.instagramHandle ? i.instagramHandle : "";
-  //     twitterHandle = i.twitterHandle ? i.twitterHandle : "";
-  //     c_tikTok = i.c_tikTok ? i.c_tikTok : "";
-  //   });
-
+   
   var url: any = ""
 
   document.dm_directoryParents.map((i: any) => {

@@ -21,9 +21,6 @@ const metersToMiles = (meters: number) => {
 }
 let array = [];
 
-
-
-
 const LocationCard: CardComponent<Location> = ({ result }) => {
 
   const [timeStatus, setTimeStatus] = useState("");
@@ -105,7 +102,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                       <div className="hours-labels">
                         <div className="flex notHighlight">
                           <span className="icon notHighlight mr-1">
-                            <img src={timesvg} alt="time"/>
+                            <img src={timesvg} alt="time" />
                           </span>
                           <OpenClose
                             timezone={timezone}
@@ -120,14 +117,13 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                               xmlns="http://www.w3.org/2000/svg"
                               width="20.585"
                               height="8.793"
-                              viewBox="0 0 9.585 4.793"
-                            >
+                              viewBox="0 0 9.585 4.793">
                               <path
                                 id="hrd-drop"
                                 d="M9,13.5l4.793,4.793L18.585,13.5Z"
                                 transform="translate(-9 -13.5)"
-                                fill="#004990"
-                              ></path>
+                                fill="#004990">
+                              </path>
                             </svg>
                           </button>
                           </div>
@@ -146,10 +142,9 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   </div>
                 </div>
               </div>
-
             </div>
-            <div className="mt-2">
 
+            <div className="mt-2">
               {result.rawData.mainPhone ?
                 <div className="icon-row ">
                   <div className="icon">
@@ -174,7 +169,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
             </div>
           </div>
-
         </div>
       </div>
     </div>

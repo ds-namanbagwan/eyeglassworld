@@ -13,7 +13,7 @@ const GetDirection = (props: GetDirection) => {
   const { 
     buttonText, 
     latitude,
-	address,
+	  address,
     longitude 
   } = props;
 
