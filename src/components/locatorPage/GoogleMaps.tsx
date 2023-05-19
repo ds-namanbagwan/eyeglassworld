@@ -48,7 +48,6 @@ declare global {
 export interface GoogleMapsCssClasses {
   googleMapsContainer?: string;
 }
-
 /**
  * Props for the {@link GoogleMaps} component
  *
@@ -64,14 +63,12 @@ export interface GoogleMapsProps {
   providerOptions?: google.maps.MapOptions;
   customCssClasses?: GoogleMapsCssClasses;
 }
-
 type UnwrappedGoogleMapsProps = Omit<GoogleMapsProps, "apiKey" | "locale">;
 let mapMarkerClusterer: { clearMarkers: () => void } | null = null;
 // let infoWindow:any = null;
 const builtInCssClasses: Readonly<GoogleMapsCssClasses> = {
   googleMapsContainer: "locator-map-block",
 };
-
 /**
  * A component that renders a map with markers to show result locations.
  *
@@ -89,7 +86,6 @@ export function GoogleMaps(props: GoogleMapsProps) {
     </div>
   );
 }
-
 function UnwrappedGoogleMaps({
   centerLatitude,
   centerLongitude,
@@ -121,7 +117,6 @@ function UnwrappedGoogleMaps({
 
   const refLocationResults = useRef({});
   const locationResults = useFetchResults() || [];
-
 
   // const locationResults = useSearchState(state => state.vertical?.results) || [];
   refLocationResults.current = locationResults;

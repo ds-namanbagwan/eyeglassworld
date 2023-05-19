@@ -3,7 +3,6 @@ import "../index.css";
 import {
   Template,
   GetPath,
-  GetRedirects,
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
@@ -11,17 +10,10 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
-import constant from "../constant";
-import Banner from "../components/locationDetail/banner";
 import { StaticData } from "../../sites-global/staticData";
-import PageLayout from "../components/layouts/PageLayout";
 import { favicon, regionNames, stagingBaseurl } from "../../sites-global/global";
-import Footer1 from "../components/layouts/NewFooter";
-import Header from "../components/layouts/NewHeader";
 import NewHeader from "../components/layouts/NewHeader";
 import NewFooter from "../components/layouts/NewFooter";
-
-
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -40,8 +32,6 @@ export const config: TemplateConfig = {
       "address",
       "mainPhone",
       "slug",
-      // "c_locatorBannerImage",
-      // "c_locatorBannerTitle",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "dm_directoryParents.meta.entityType",
@@ -70,17 +60,10 @@ export const config: TemplateConfig = {
   },
 };
 
-
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   currentUrl = "/" + document.slug.toString() + ".html";
   return "/" + document.slug.toString() + ".html";
 };
-
-// export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
-//   // return [`index-old/${document.id.toString()}`];
-//   return [`index-old/${document.locale + "/" + document.name}`];
-// };
-
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
@@ -107,7 +90,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${document.c_meta_description ? document.c_meta_description : `Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`}`,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -129,7 +111,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: "noindex, nofollow",
         },
       },
-
       {
         type: "link",
         attributes: {
@@ -140,8 +121,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
             }`,
         },
       },
-      //   // /og tags
-
       {
         type: "meta",
         attributes: {
@@ -170,7 +149,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: favicon,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -185,7 +163,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `/${document.slug ? document.slug : `${document.name.toLowerCase()}`}.html`,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -196,8 +173,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     ],
   };
 };
-
-
 
 const country: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
@@ -210,13 +185,11 @@ const country: Template<TemplateRenderProps> = ({
     _site,
     address,
     c_locatorBannerImage,
-    c_locatorBannerTitle,
     dm_directoryParents,
     dm_directoryChildren
   } = document;
   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
     let detlslug;
-
 
     if (typeof entity.dm_directoryChildren != "undefined") {
       if (entity.dm_baseEntityCount == 1) {
@@ -243,12 +216,8 @@ const country: Template<TemplateRenderProps> = ({
             } else {
               detlslug1 = `${detl.slug.toString()}.html`;
             }
-
             detlslug = detlslug1;
-
           }) : detlslug = detlslug1;
-
-
         })
       }
       else {
@@ -261,14 +230,12 @@ const country: Template<TemplateRenderProps> = ({
       <li className=" storelocation-category">
         <a
           key={entity.slug}
-          href={detlslug}
-        >
+          href={detlslug}>
           {entity.name} ({entity.dm_baseEntityCount})
         </a>
       </li>
     )
   }) : null;
-
 
   let bannerimage = c_locatorBannerImage ? c_locatorBannerImage.map((element: any) => {
     return element.url
@@ -283,10 +250,6 @@ const country: Template<TemplateRenderProps> = ({
         parents={dm_directoryParents}
         baseUrl={relativePrefixToRoot}
       ></BreadCrumbs>
-      {/* <div className="location-dtl">
-          <Banner name={regionNames.of(name)} c_bannerImage={bannerimage} />
-        </div> */}
-
       <div className="content-list">
         <div className="container">
           <div className="sec-title">
@@ -294,17 +257,12 @@ const country: Template<TemplateRenderProps> = ({
               {StaticData.AllRegion} {regionNames.of(name)}{" "}
             </h2>
           </div>
-
           <ul className="region-list">
-
             {childrenDivs}
           </ul>
-
         </div>
       </div>
-
       <NewFooter prop={_site} />
-
     </>
   );
 };

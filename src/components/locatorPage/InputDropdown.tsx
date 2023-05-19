@@ -122,7 +122,7 @@ export default function InputDropdown({
   const [latestUserInput, setLatestUserInput] = useState(inputValue);
   const [childrenKey, setChildrenKey] = useState(0);
   const [norecord, setNorecord] = useState(true);
-
+  const [milesData, setMilesData] = useState(50)
   const [keyUpStatus, setKeyUpStatus] = useState(true);
 
   const screenReaderInstructionsId = useMemo(() => uuid(), []);
@@ -325,14 +325,14 @@ export default function InputDropdown({
     }
   },);
 
-  const meterstoMiles = (miles: number) => {
-    const meters = miles * 1609.344;
-    return meters;
-  }
+  // const meterstoMiles = (miles: number) => {
+  //   const meters = miles * 1609.344;
+  //   return meters;
+  // }
 
-  const radius = 200;
-  const miles1 = meterstoMiles(radius);
-  console.log(miles1, "ashsjfgsdj,fysd");
+  // const radius = 200;
+  // const miles1 = meterstoMiles(radius);
+  // console.log(miles1, "ashsjfgsdj,fysd");
 
   const options = [
     { value: "50", label: "50 mile" },
@@ -342,6 +342,8 @@ export default function InputDropdown({
     { value: "400", label: "400 mile" },
     { value: "500", label: "500 mile" },
   ];
+
+  // let mileToMeter = e.target.value * 1609.344;
   ////start///////
   /////bound result at user marker 200 miles//////// 
   function getGoogleLatLng(address: any) {
@@ -384,15 +386,14 @@ export default function InputDropdown({
             searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
             searchActions.executeVerticalQuery();
           } else {
-            // const handleChange = (e: any) => {  
-            // let mileToMeter = e.target.value * 1609.344;
+
             const locationFilter: SelectableFilter = {
               selected: true,
               fieldId: "builtin.location",
               value: {
                 lat: params.latitude,
                 lng: params.longitude,
-                radius: miles1//radius 200 miles
+                radius: milesData//radius 200 miles
 
               },
               matcher: Matcher.Near,
@@ -404,9 +405,10 @@ export default function InputDropdown({
             searchActions.setStaticFilters([locationFilter])
             searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
             searchActions.executeVerticalQuery();
-          }
-        }
 
+          }
+
+        }
       })
       .catch(() => { });
     /////end////////
@@ -460,13 +462,6 @@ export default function InputDropdown({
     }
   );
 
-  let optionsHtml = options && options.map((option: any, i: Number) => {
-    return (
-      <>
-        <option value={option.value} >{option.label}</option>
-      </>
-    );
-  });
 
   return (
     <>
@@ -527,8 +522,12 @@ export default function InputDropdown({
       {/* dropdown start */}
       <div className="filter-by-services">
         <h3>Filter by Miles</h3>
-        <select>
-          {optionsHtml}
+        <select onChange={(e: any) => setMilesData(e.target.value * 1609.344)}>
+          {options?.map((option: any) => {
+            return (
+              <option value={option.value} >{option.label}</option>
+            ); 
+          })}
         </select>
       </div>
       {/* dropdown end */}

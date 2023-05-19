@@ -455,7 +455,7 @@ const Location: Template<ExternalApiRenderData> = ({
           itemListElement: breadcrumbScheme,
         }}
       />
-      
+
       <AnalyticsProvider
         templateData={templateData}
         enableDebugging={AnalyticsEnableDebugging}

@@ -305,16 +305,12 @@ const City: Template<TemplateRenderProps> = ({
            c_parking_facilities={entity.c_parking_facilities} c_fitting_rooms={entity.c_fitting_rooms}
             hours={entity.hours} />
         </div> */}
-
-
-
         <div className="button-bx">
           <Link className="btn" href={url}
             data-ya-track={`viewstore-${entity.name}`}
             eventName={`viewstore-${entity.name}`}
             rel="noopener noreferrer"
           >
-
             {StaticData.StoreDetailbtn}</Link>
           <GetDirection buttonText={StaticData.getDirection} address={entity.address} latitude={entity.yextDisplayCoordinate.latitude} longitude={entity.yextDisplayCoordinate.longitude} />
         </div>
@@ -379,7 +375,7 @@ const City: Template<TemplateRenderProps> = ({
       );
     }
   }
-   
+
   var url: any = ""
 
   document.dm_directoryParents.map((i: any) => {
