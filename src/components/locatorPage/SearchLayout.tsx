@@ -72,21 +72,9 @@ const SearchLayout = (props: any): JSX.Element => {
           };
           params1 = params;
           SetNewparam(params1);
-          mapzoom = 3;
-          // const locationFilter: SelectableFilter={
-          //   selected:true,
-          //   fieldId:"builtin.location",
-          //   value:{
-          //     lat:params.latitude,
-          //     lng:params.longitude,
-          //     radius: 100000,
-          //   },
-          //   matcher:Matcher.Near,
-          // };
+          mapzoom = 3;       
           searchActions.setOffset(0);
           searchActions.setStaticFilters([locationFilter]);
-
-
           searchActions.setUserLocation(params1);
           searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
           searchActions.executeVerticalQuery();
@@ -103,18 +91,7 @@ const SearchLayout = (props: any): JSX.Element => {
     };
     SetNewparam(params1);
     mapzoom = 8;
-    // const locationFilter: SelectableFilter={
-    //   selected:true,
-    //   fieldId:"builtin.location",
-    //   value:{
-    //     lat:params1.latitude,
-    //     lng:params1.longitude,
-    //     radius: 700000,
-    //   },
-    //   matcher:Matcher.Near,
-    // };
-    // // searchActions.setOffset(0);
-    // searchActions.setStaticFilters([locationFilter]);
+    
     searchActions.setUserLocation(params1);
     searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
     searchActions.executeVerticalQuery();
@@ -307,12 +284,7 @@ const SearchLayout = (props: any): JSX.Element => {
                   entityType: "location",
                   fieldApiName: "name",
 
-                },
-                // {
-                //   entityType: "location",s
-                //   fieldApiName: "address.line1",
-
-                // },
+                },                
                 {
                   entityType: "location",
                   fieldApiName: "address.postalCode",
@@ -332,11 +304,7 @@ const SearchLayout = (props: any): JSX.Element => {
                   entityType: "location",
                   fieldApiName: "address.region",
 
-                },
-                // {
-                //   entityType: "location",
-                //   fieldApiName: "address.line2",
-                // },
+                },                
                 {
                   entityType: "location",
                   fieldApiName: "address.countryCode",

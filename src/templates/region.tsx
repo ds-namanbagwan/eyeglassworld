@@ -243,10 +243,7 @@ const region: Template<TemplateRenderProps> = ({
           // let result: any = string.replaceAll(" ", "-");
           newurl = slug + "/" + newurl + "/" + string.toLowerCase().replaceAll(" ", "-") + ".html";
           //  console.log(newurl,"575524")
-        })
-        // let slugs =
-        //   links+"/" + entity?.dm_directoryChildren[0]?.name.toLowerCase() + ".html";
-        // let slug: any = slugs.replaceAll(" ", "-");
+        })        
         return (
           <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
             <a key={entity.slug} href={newurl} className="hover:text-red">

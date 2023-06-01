@@ -39,7 +39,6 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.address",
       "dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildren.name",
-      // "dm_directoryChildren.dm_directoryChildrenCount",
       "dm_directoryChildren.dm_baseEntityCount",
       "dm_directoryChildren.dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
@@ -194,10 +193,7 @@ const country: Template<TemplateRenderProps> = ({
     if (typeof entity.dm_directoryChildren != "undefined") {
       if (entity.dm_baseEntityCount == 1) {
         entity.dm_directoryChildren.map((res: any) => {
-          // console.log(res,"123456")
-
           let detlslug1 = "";
-
           if (!res.slug) {
             let slugString = res.id + " " + res.name;
             let slug = slugString;
@@ -205,7 +201,6 @@ const country: Template<TemplateRenderProps> = ({
           } else {
             detlslug1 = `${res.slug.toString()}.html`;
           }
-
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
             // console.log(detl,"123456")
             if (!detl.slug) {
@@ -222,10 +217,9 @@ const country: Template<TemplateRenderProps> = ({
       }
       else {
         detlslug = slug + "/" + entity.slug + ".html";
-        // console.log(detlslug,"detlslug")
+        // console.log(detlslug,"naman145371")
       }
     }
-
     return (
       <li className=" storelocation-category">
         <a
@@ -248,8 +242,8 @@ const country: Template<TemplateRenderProps> = ({
         name={regionNames.of(name)}
         address={address}
         parents={dm_directoryParents}
-        baseUrl={relativePrefixToRoot}
-      ></BreadCrumbs>
+        baseUrl={relativePrefixToRoot}>
+      </BreadCrumbs>
       <div className="content-list">
         <div className="container">
           <div className="sec-title">

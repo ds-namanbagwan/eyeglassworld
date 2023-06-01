@@ -2,20 +2,8 @@ import * as React from "react";
 import "../index.css";
 import { GetHeadConfig, GetPath, HeadConfig, Template, TemplateConfig, TemplateProps, TemplateRenderProps } from "@yext/pages";
 import { SearchHeadlessProvider } from "@yext/search-headless-react";
-import { FilterSearch, VerticalResults, ResultsCount, AppliedFilters, ApplyFiltersButton, LocationBias, Pagination } from "@yext/search-ui-react";
-import { Location } from "../types/search/locations";
-import MapboxMap from "../components/MapboxMap";
-import MapPin from "../components/MapPin";
-import LocationCard from "../components/locatorPage/LocationCard";
-import PageLayout from "../components/layouts/PageLayout";
-import Geocode from "react-geocode";
-import UseMyLocation from "../components/locatorPage/UseMyLocation"
-import { Address } from "../types/search/locations";
-import { useSearchActions } from "@yext/search-headless-react";
-import { useEffect } from "react";
 import SearchLayout from "../components/locatorPage/SearchLayout";
 import { stagingBaseurl, favicon, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie } from "../../sites-global/global"
-import Newsletter from "../components/locatorPage/Newsletter";
 import { JsonLd } from "react-schemaorg";
 import { StaticData } from "../../sites-global/staticData";
 import {
@@ -158,23 +146,14 @@ const Locator: Template<TemplateRenderProps> = ({
   } = document;
 
   let templateData = { document: document, __meta: __meta };
-  const endpoints = {
-    universalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/query",
-    verticalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/query",
-    questionSubmission: "https://liveapi-sandbox.yext.com/v2/accounts/me/createQuestion",
-    universalAutocomplete: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/autocomplete",
-    verticalAutocomplete: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/autocomplete",
-    filterSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/filtersearch",
-  }
 
-  var Api = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
   return (
     <>
       <JsonLd<locator>
         item={{
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "MGM ",
+          name: "",
           url: stagingBaseurl,
           logo: favicon,
         }}
@@ -186,8 +165,9 @@ const Locator: Template<TemplateRenderProps> = ({
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
-          {/* <PageLayout global={_site}> */}
+
           <NewHeader prop={_site} />
+
           <SearchHeadlessProvider
             experienceKey={AnswerExperienceConfig.experienceKey}
             locale={AnswerExperienceConfig.locale}
@@ -195,13 +175,16 @@ const Locator: Template<TemplateRenderProps> = ({
             verticalKey={AnswerExperienceConfig.verticalKey}
             experienceVersion="STAGING"
             sessionTrackingEnabled={true}
-            endpoints={AnswerExperienceConfig.endpoints}
-          >
+            endpoints={AnswerExperienceConfig.endpoints}>
+
             <SearchLayout _site={_site} />
+
           </SearchHeadlessProvider>
+
           <NewFooter prop={_site} />
-          {/* </PageLayout> */}
+
         </AnalyticsScopeProvider>
+
       </AnalyticsProvider>
     </>
   );

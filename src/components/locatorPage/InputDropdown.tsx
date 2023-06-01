@@ -112,22 +112,16 @@ export default function InputDropdown({
     }
   );
 
-
-
   const shouldDisplayDropdown = !dropdownHidden && !forceHideDropdown;
-
   const [focusedOptionId, setFocusedOptionId] = useState<string | undefined>(
-    undefined
-  );
+    undefined);
   const [latestUserInput, setLatestUserInput] = useState(inputValue);
   const [childrenKey, setChildrenKey] = useState(0);
   const [norecord, setNorecord] = useState(true);
   const [milesData, setMilesData] = useState(50)
   const [keyUpStatus, setKeyUpStatus] = useState(true);
-
   const screenReaderInstructionsId = useMemo(() => uuid(), []);
   const loading = useSearchState((s) => s.searchStatus.isLoading);
-
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const inputDropdownRef = useRef<HTMLDivElement>(null);
@@ -143,7 +137,6 @@ export default function InputDropdown({
     }
     const currentSectionIndex = numSections;
     numSections++;
-
     const childProps = child.props as DropdownSectionProps;
     const modifiedOptions = childProps.options.map((option) => {
       // console.log(option,"children")
@@ -215,15 +208,12 @@ export default function InputDropdown({
       dispatch({ type: "HideSections" });
       getCoordinates(inputRef.current?.value);
     }
-
-
   }
 
   function handleDocumentKeydown(evt: globalThis.KeyboardEvent) {
     if (["ArrowDown", "ArrowUp"].includes(evt.key)) {
       evt.preventDefault();
     }
-
     if (evt.key === "Escape") {
       dispatch({ type: "HideSections" });
     } else if (
@@ -237,17 +227,13 @@ export default function InputDropdown({
 
   function handleDocumentKeyUp(evt: KeyboardEvent<HTMLInputElement>) {
     if (
-
       evt.key == "Enter" &&
       latestUserInput != "" &&
       locationResults.length == 0
     ) {
       // alert('1')
       setNorecord(true);
-
       dispatch({ type: "HideSections" });
-      // document.querySelector('.z-10')?.classList.add('hidden');
-
       getCoordinates(latestUserInput);
     }
     if (
@@ -270,10 +256,8 @@ export default function InputDropdown({
       searchActions.setStaticFilters([locationFilter]);
       dispatch({ type: "HideSections" });
       document.querySelector('.z-10')?.classList.add('hidden');
-
       getCoordinates(latestUserInput);
     }
-
     handleInputValue();
     if (evt.key === "Backspace" || evt.key === "x" || evt.key === "Delete") {
       if (inputValue == "") {
@@ -290,11 +274,6 @@ export default function InputDropdown({
         }
       }
     }
-
-
-    // if (document.querySelector(".z-10") != null) {
-    //   document.querySelector(".z-10")?.classList.remove("hidden");
-    // }
   }
   useEffect(() => {
     if (inputValue != "") {
@@ -325,15 +304,6 @@ export default function InputDropdown({
     }
   },);
 
-  // const meterstoMiles = (miles: number) => {
-  //   const meters = miles * 1609.344;
-  //   return meters;
-  // }
-
-  // const radius = 200;
-  // const miles1 = meterstoMiles(radius);
-  // console.log(miles1, "ashsjfgsdj,fysd");
-
   const options = [
     { value: "50", label: "50 mile" },
     { value: "100", label: "100 mile" },
@@ -343,7 +313,6 @@ export default function InputDropdown({
     { value: "500", label: "500 mile" },
   ];
 
-  // let mileToMeter = e.target.value * 1609.344;
   ////start///////
   /////bound result at user marker 200 miles//////// 
   function getGoogleLatLng(address: any) {
@@ -385,29 +354,24 @@ export default function InputDropdown({
             searchActions.setOffset(0);
             searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
             searchActions.executeVerticalQuery();
-          } else {
-
+          }
+          else {
             const locationFilter: SelectableFilter = {
               selected: true,
               fieldId: "builtin.location",
               value: {
                 lat: params.latitude,
                 lng: params.longitude,
-                radius: milesData//radius 200 miles
-
+                radius: milesData
               },
               matcher: Matcher.Near,
             };
-            // console.log(locationFilter.value, "naman")
-
             searchActions.setUserLocation(params);
             searchActions.setQuery("");
             searchActions.setStaticFilters([locationFilter])
             searchActions.setVerticalLimit(AnswerExperienceConfig.limit)
             searchActions.executeVerticalQuery();
-
           }
-
         }
       })
       .catch(() => { });
@@ -416,10 +380,6 @@ export default function InputDropdown({
 
   function getCoordinates(address: string) {
     getGoogleLatLng(address);
-    // searchActions.setQuery(address);
-    // searchActions.setUserLocation(params);
-    // searchActions.setOffset(0);
-    // searchActions.executeVerticalQuery();
   }
 
   function handleInputElementKeydown(evt: KeyboardEvent<HTMLInputElement>) {
@@ -439,7 +399,6 @@ export default function InputDropdown({
     if (staticfilter > 0) {
       searchActions.setStaticFilters([]);
     }
-
   }
 
   function handleBlur(evt: FocusEvent<HTMLDivElement>) {
@@ -454,14 +413,12 @@ export default function InputDropdown({
       dispatch({ type: "HideSections" });
     }
   }
-
   const inputDropdownContainerCssClasses = classNames(
     cssClasses.inputDropdownContainer,
     {
       [cssClasses.inputDropdownContainer___active ?? ""]: shouldDisplayDropdown,
     }
   );
-
 
   return (
     <>
@@ -517,7 +474,6 @@ export default function InputDropdown({
             </div>
           </>
         )}
-
       </div>
       {/* dropdown start */}
       <div className="filter-by-services">
@@ -526,7 +482,7 @@ export default function InputDropdown({
           {options?.map((option: any) => {
             return (
               <option value={option.value} >{option.label}</option>
-            ); 
+            );
           })}
         </select>
       </div>

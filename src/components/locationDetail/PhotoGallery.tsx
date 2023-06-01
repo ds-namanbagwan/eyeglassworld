@@ -16,14 +16,11 @@ export default function PhotoGallery(props: any) {
                 <div className=" border-black border-2 hover:border-green hover:border-r-[5px] hover:border-b-[5px]" style={{ padding: "1%" }}>
                   <img src={res1?.image.url} alt="" />
                 </div>
-
               </>
             )
           })}
         </div>
       </div>
-
-
     </>
   )
 }

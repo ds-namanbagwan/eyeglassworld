@@ -143,7 +143,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
             }`,
         },
       },
-      //   // /og tags
+      //og tags
       {
         type: "meta",
         attributes: {
@@ -209,10 +209,7 @@ const City: Template<TemplateRenderProps> = ({
     name,
     dm_directoryParents,
     dm_directoryChildren,
-    c_globalData,
-    c_canonical,
-    c_metaDescription,
-    c_metaTitle,
+
     _site,
   } = document;
   var address;
@@ -267,8 +264,6 @@ const City: Template<TemplateRenderProps> = ({
 
       <div className="nearby-card">
         <div className="location-name-miles icon-row">
-          {/* <div className="icon"> <img className=" " src={mapimage} width="20" height="20"
-                      alt="" /></div> */}
           <h2><Link className="inline-block notHighlight" href={url}
             data-ya-track={`viewstore-${entity.name}`}
             eventName={`viewstore-${entity.name}`}
@@ -280,10 +275,6 @@ const City: Template<TemplateRenderProps> = ({
         </div>
         {entity.mainPhone ?
           <div className="icon-row">
-            {/* <div className="icon">
-           <img className=" " src={Phonesvg} width="20" height="20"
-                        alt="" />
-                        </div> */}
             <div className="content-col">
               <a href={`tel:${entity.mainPhone}`}>{entity.mainPhone}</a>
             </div>
@@ -298,13 +289,7 @@ const City: Template<TemplateRenderProps> = ({
 
           </div>
         </div>
-        {/* <div className="icon-row content-col availability-col">
 
-          <Availability c_openForShoppingAvailibility={entity.c_open_for_shopping}
-           c_clickCollectAvaliability={entity.c_click_collect_availability}
-           c_parking_facilities={entity.c_parking_facilities} c_fitting_rooms={entity.c_fitting_rooms}
-            hours={entity.hours} />
-        </div> */}
         <div className="button-bx">
           <Link className="btn" href={url}
             data-ya-track={`viewstore-${entity.name}`}
@@ -330,19 +315,7 @@ const City: Template<TemplateRenderProps> = ({
       const error = (error: any) => {
         var message_string =
           "Unable to determine your entity. please share your entity";
-        // if (confirm(message_string) != true) {
-        //   var getDirectionUrl =
-        //     "https://www.google.com/maps/dir/?api=1&destination=" +
-        //     entitiy.yextDisplayCoordinate.latitude +
-        //     "," +
-        //     entitiy.yextDisplayCoordinate.longitude +
-        //     "&origin=" +
-        //     origin;
 
-        //   window.open(getDirectionUrl, "_blank");
-        // } else {
-        //   return false;
-        // }
         var getDirectionUrl =
           "https://www.google.com/maps/dir/?api=1&destination=" +
           entitiy.yextDisplayCoordinate.latitude +
@@ -417,9 +390,7 @@ const City: Template<TemplateRenderProps> = ({
         item={{
           "@context": "https://schema.org",
           "@type": "Store",
-          name: "Matalan",
-          //   url: _site.c_canonical,
-          // logo: `${document.c_ogImage ? document.c_ogImage.map((result:any)=>{return result.url}) : ""}`
+          name: "EyeGlassWorld",         
         }}
       />
       <JsonLd<BreadcrumbList>

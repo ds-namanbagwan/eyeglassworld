@@ -89,6 +89,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 </div>
                 : ''}
             </div>
+
             <div className="notHighlight">
               <div className="icon-row content-col address-with-availablity notHighlight">
                 <Address address={address} />
@@ -143,7 +144,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 </div>
               </div>
             </div>
-
             <div className="mt-2">
               {result.rawData.mainPhone ?
                 <div className="icon-row ">
@@ -155,7 +155,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   </div>
                 </div> : ''}
             </div>
-
             <div className="button-bx">
               <a href={url} className=" btn notHighlight "
                 data-ya-track={`viewStore -${result.rawData.name}`}
@@ -172,9 +171,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
         </div>
       </div>
     </div>
-
   );
-
 }
 
 export default LocationCard;
