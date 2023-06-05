@@ -1,5 +1,5 @@
 import * as React from "react";
-// import gallerybg from "../../images/faq-bg.png"
+
 
 import { useState, useEffect } from "react";
 import AccordionItem from "./AccordianItem";

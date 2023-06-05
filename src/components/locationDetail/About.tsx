@@ -1,9 +1,5 @@
 import { Link } from "@yext/pages/components";
 import * as React from "react";
-import abbanner from "../../images/ab-banner.jpg"
-import dt12 from "../../images/dtl2.jpg"
-import PhotoSlider from "./PhotoSlider"
-import RtfConverter from "@yext/rtf-converter";
 
 export default function About(props: any) {
   function convertToRtf(rtf: any) {

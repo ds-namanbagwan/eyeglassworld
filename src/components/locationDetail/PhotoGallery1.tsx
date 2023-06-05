@@ -1,6 +1,4 @@
 import * as React from "react";
-import { StaticData } from "../../../sites-global/staticData";
-import { Link } from "@yext/pages/components";
 
 export default function PhotoGallery1(props: any) {
     // console.log(props.c_photogallary1CTA.label, "sdfjgj")

@@ -1,5 +1,5 @@
 import * as React from "react";
-// import "../index.css"
+
 const SearchBar = () => (
   <div className="cover">
     <form method="get" className="search Header-form">

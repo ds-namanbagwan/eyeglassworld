@@ -1,6 +1,6 @@
 import { Link } from "@yext/pages/components";
 import * as React from "react";
-import { conversionDetailsDirection, conversionDetailsPhone, Directionsvg } from "../../../sites-global/global";
+import { conversionDetailsDirection} from "../../../sites-global/global";
 
 type Cta = {
   buttonText: string;

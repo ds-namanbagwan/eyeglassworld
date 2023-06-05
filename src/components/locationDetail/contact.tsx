@@ -1,17 +1,13 @@
 import * as React from "react";
-import Cta from "../commons/cta";
 import Hours from "../commons/hours";
-import woodtexture from "../../images/wood-texture.jpg";
 import mapimage from "../../images/map.svg";
 import Phonesvg from "../../images/phone.svg";
-import Address from "../commons/Address";
 import GetDirection from "../commons/GetDirection";
 import { StaticData } from "../../../sites-global/staticData";
-import Holidayhours from "./Holdayhours";
 import Model from "./Model";
 import CustomMap from "./CustomMap";
 import { formatPhoneNumber } from "react-phone-number-input";
-import OpenClose from "../commons/openClose";
+
 import { useState } from "react";
 
 const Contact = (props: any) => {

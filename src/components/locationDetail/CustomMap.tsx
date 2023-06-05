@@ -86,9 +86,7 @@ function CustomMap(coords: props) {
           icon={marker}
         />
       </GoogleMap></> : <></>
-
       }
-
     </LoadScript>
   );
 }
