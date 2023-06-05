@@ -33,8 +33,8 @@ const SCREENREADER_INSTRUCTIONS = "";
 
 interface FilterSearchCssClasses
   extends InputDropdownCssClasses,
-    DropdownSectionCssClasses,
-    AutocompleteResultCssClasses {
+  DropdownSectionCssClasses,
+  AutocompleteResultCssClasses {
   container?: string;
   label?: string;
 }
@@ -63,9 +63,9 @@ export interface FilterSearchProps {
   handleSetUserShareLocation: any;
   inputvalue: any;
   params: any;
-  displaymsg:any;
-  setDisplaymsg:any;
-  setSearchInputValue:any
+  displaymsg: any;
+  setDisplaymsg: any;
+  setSearchInputValue: any
 }
 
 type FilterHandle = {
@@ -97,12 +97,12 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
     const searchParamFields = searchFields.map((searchField) => {
       return { ...searchField, fetchEntities: false };
     });
-    React.useImperativeHandle(ref,() => {
+    React.useImperativeHandle(ref, () => {
       return {
         setInputValue: (value: String) => setInput(value)
       }
     })
-  //  console.log(displaymsg,"fisttimedispalydfsd")
+    //  console.log(displaymsg,"fisttimedispalydfsd")
     const cssClasses = useComposedCssClasses(
       builtInCssClasses,
       customCssClasses,
@@ -119,10 +119,10 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
         searchParamFields
       )
     );
-  
+
 
     let sections: { results: Option[]; label?: string }[] = [];
-     
+
     if (filterSearchResponse) {
       sections = filterSearchResponse.sections.map((section) => {
         return {
@@ -178,19 +178,19 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
       });
       screenReaderText = screenReaderPhrases.join(" ");
     }
-    useEffect (() => {
+    useEffect(() => {
       // if(localStorage.getItem('inputvalue')){
-        //       setInput(localStorage.getItem('inputvalue'));
-        
-        let params = (new URL(window.location.href)).searchParams;
-        let addresssearch = params.get("text");
-        if (addresssearch) {
-          setInput(addresssearch);
-       } else {
-          setInput("");
-        }
-     
-      },[inputvalue]);
+      //       setInput(localStorage.getItem('inputvalue'));
+
+      let params = (new URL(window.location.href)).searchParams;
+      let addresssearch = params.get("text");
+      if (addresssearch) {
+        setInput(addresssearch);
+      } else {
+        setInput("");
+      }
+
+    }, [inputvalue]);
 
     return (
       <div className={cssClasses.container}>
