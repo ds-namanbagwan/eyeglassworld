@@ -1,8 +1,6 @@
 import * as React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { StaticData } from "../../../sites-global/staticData";
-import Timer from "../locationDetail/countdown";
-import Model from "../locationDetail/Model";
 import { OpenStausFunctions } from "./openClose";
 
 type Hours = {

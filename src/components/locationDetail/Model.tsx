@@ -1,10 +1,9 @@
 import * as React from "react";
-import { useEffect } from "react";
 import Modal from "react-modal";
 import { Cross } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 import Holidayhours from "./Holdayhours";
-import { Link } from "@yext/pages/components";
+
 
 const customStyles = {
   content: {

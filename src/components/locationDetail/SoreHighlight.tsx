@@ -1,7 +1,6 @@
 import * as React from "react";
-import { useState } from "react";
 import { StaticData } from "../../../sites-global/staticData";
-import Noimage from "../../images/placeholder.jpg"
+
 
 export default function StoreHighlight(props: any) {
 

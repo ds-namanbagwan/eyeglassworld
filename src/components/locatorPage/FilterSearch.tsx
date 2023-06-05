@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import {
-  useSearchState,
+import {  
   useSearchActions,
   FilterSearchResponse,
   SearchParameterField,
@@ -20,12 +19,6 @@ import {
   CompositionMethod,
   useComposedCssClasses,
 } from "../../hooks/useComposedCssClasses";
-import {
-  breadcrumbhome,
-  googleApikey,
-  search_icn,
-  UseMylocationsvg,
-} from "../../../sites-global/global";
 import * as React from "react";
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
 

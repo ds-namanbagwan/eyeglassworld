@@ -2,7 +2,6 @@ import * as React from "react";
 import RtfConverter from "@yext/rtf-converter";
 const AccordionItem = ({
   showDescription,
-  // hideDescription,
   ariaExpanded,
   fontWeightBold,
   background,

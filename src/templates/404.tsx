@@ -5,15 +5,14 @@ import {
   GetHeadConfig,
   GetPath,
   Template,
-  TemplateConfig,
 } from "@yext/pages";
 import * as React from "react";
 import { favicon } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
-import PageLayout from "../components/layouts/PageLayout";
 import NewHeader from "../components/layouts/NewHeader";
 import "../index.css";
 import NewFooter from "../components/layouts/NewFooter";
+
 // export const config: TemplateConfig = {
 //   stream: {
 //     $id: "404",
@@ -21,7 +20,6 @@ import NewFooter from "../components/layouts/NewFooter";
 //     // directly as props to the default exported function.
 //     fields: [
 //       "name",
-
 //     ],
 //     // Defines the scope of entities that qualify for this stream.
 //     filter: {
@@ -39,7 +37,6 @@ import NewFooter from "../components/layouts/NewFooter";
 export const getPath: GetPath<TemplateProps> = () => {
   return "404.html";
 };
-
 // Add a title to the page
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = () => {
   return {
@@ -55,7 +52,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = () => {
     ]
   };
 };
-
 // Template that will show as the page
 const FourOhFour: Template<TemplateRenderProps> = ({
   document,
@@ -65,7 +61,6 @@ const FourOhFour: Template<TemplateRenderProps> = ({
   } = document;
   return (
     <>
-
       <NewHeader prop={_site} />
       <div className="content-list">
         <div className="container">
@@ -73,21 +68,16 @@ const FourOhFour: Template<TemplateRenderProps> = ({
             <h1 className="" style={{ textAlign: "center" }}>
               {StaticData.PagenotFound}
             </h1>
-
-            <p>{StaticData.cantfind_page}.</p>
+            <p>{StaticData.cantfind_page}</p>
             <p>{StaticData.Youcouldtry}</p>
-
             <div className="button-bx max-w-[45rem] !mx-auto !mt-5">
               <a className="btn" href="javascript:history.back()">{StaticData.Previuspage} &gt;</a>
               <a className="btn" href="/">{StaticData.homePage} &gt;</a>
             </div>
           </div>
-
-
         </div>
       </div>
       <NewFooter prop={_site} />
-
     </>
   );
 };
