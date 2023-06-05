@@ -57,10 +57,7 @@ const SearchLayout = (props: any): JSX.Element => {
 
   var searchKey: any;
   var target;
-
   var firstTimeRunners = true;
-
-
   const FirstLoad = () => {
     setCheck(true);
     if (navigator.geolocation) {
@@ -72,7 +69,7 @@ const SearchLayout = (props: any): JSX.Element => {
           };
           params1 = params;
           SetNewparam(params1);
-          mapzoom = 3;       
+          mapzoom = 3;
           searchActions.setOffset(0);
           searchActions.setStaticFilters([locationFilter]);
           searchActions.setUserLocation(params1);
@@ -91,7 +88,6 @@ const SearchLayout = (props: any): JSX.Element => {
     };
     SetNewparam(params1);
     mapzoom = 8;
-    
     searchActions.setUserLocation(params1);
     searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
     searchActions.executeVerticalQuery();
@@ -101,10 +97,8 @@ const SearchLayout = (props: any): JSX.Element => {
     }, 3100);
   };
   const onClick = () => {
-
     if (navigator.geolocation) {
       const error = (error: any) => {
-
         if (error.code == 1) {
           setallowLocation('Please allow your Location')
         }
@@ -124,24 +118,20 @@ const SearchLayout = (props: any): JSX.Element => {
             setCheck(false);
           }
         );
-
         let params = {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude
         };
-
         mapzoom = 3;
         searchActions.setVertical('locations');
         searchActions.setUserLocation(params);
         searchActions.setOffset(0);
         searchActions.executeVerticalQuery();
-
       }, error, {
         timeout: 10000,
       });
     }
   }
-
 
   const Findinput = () => {
     let searchKey = document.getElementsByClassName('FilterSearchInput');
@@ -158,7 +148,6 @@ const SearchLayout = (props: any): JSX.Element => {
       setDisplaymsg(false);
     }
   }
-
   const handleInputValue = () => {
     setInputValue('');
     // const lat=centerLatitude;
@@ -173,18 +162,14 @@ const SearchLayout = (props: any): JSX.Element => {
     }
   }
 
-
   function getCoordinates(address: String) {
     setInputValue('');
-
-
     setCheck(true);
     // console.log(searchActions,"searchActions")
     searchActions.setQuery(address);
     searchActions.setUserLocation(params1);
     searchActions.setOffset(0);
     searchActions.executeVerticalQuery();
-
   }
 
   // let bannerimage = props._site.c_locatorBannerImage != undefined  ? props._site.c_locatorBannerImage.image.url:'';
@@ -194,11 +179,8 @@ const SearchLayout = (props: any): JSX.Element => {
   //   isLoading ? <LoadingSpinner /> : '';
 
   const addClass = () => {
-
     document.body.setAttribute("class", "mapView");
     // setActive('')
-
-
   }
 
   useEffect(() => {
@@ -284,7 +266,7 @@ const SearchLayout = (props: any): JSX.Element => {
                   entityType: "location",
                   fieldApiName: "name",
 
-                },                
+                },
                 {
                   entityType: "location",
                   fieldApiName: "address.postalCode",
@@ -304,7 +286,7 @@ const SearchLayout = (props: any): JSX.Element => {
                   entityType: "location",
                   fieldApiName: "address.region",
 
-                },                
+                },
                 {
                   entityType: "location",
                   fieldApiName: "address.countryCode",
@@ -365,7 +347,7 @@ const SearchLayout = (props: any): JSX.Element => {
             showEmptyMap={true}
           />
         </div>
-  {/* <FilterModel/> */}
+        {/* <FilterModel/> */}
         <div className="left-listing">
 
           <PerfectScrollbar >
@@ -389,7 +371,7 @@ const SearchLayout = (props: any): JSX.Element => {
 
                 <div className="browse-dir">
                   <a className="underline " href='/us.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a>
-                  
+
                 </div> : ''}
               <div className="button-bx">
                 <ViewMore className={" btn notHighlight lg:!w-[132%] !mb-2 button view-more"} idName={"view-more-button"} buttonLabel={"View More"} />

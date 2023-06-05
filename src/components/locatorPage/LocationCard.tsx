@@ -10,7 +10,6 @@ import { StaticData } from "../../../sites-global/staticData";
 import { Link } from "@yext/pages/components";
 import Hours from "../commons/hours";
 import Phonesvg from "../../images/phone.svg";
-import mapimage from "../../images/map.svg";
 import { useState } from "react";
 import { formatPhoneNumber } from "react-phone-number-input";
 

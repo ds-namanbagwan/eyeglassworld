@@ -32,7 +32,6 @@ import NewFooter from "../components/layouts/NewFooter";
 //       primary: false,
 //     },
 //   },
-// };
 
 export const getPath: GetPath<TemplateProps> = () => {
   return `/index.html`;
@@ -75,15 +74,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           href: favicon,
         },
       },
-      //  {
-      //    type: "link",
-      //    attributes: {
-      //      rel: "canonical",
-      //      href: `${
-      //        document._site.c_canonical?document.c_canonical:stagingBaseurl
-      //      }`,
-      //    },
-      //  },
       {
         type: "meta",
         attributes: {

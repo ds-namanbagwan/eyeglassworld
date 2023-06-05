@@ -390,7 +390,7 @@ const City: Template<TemplateRenderProps> = ({
         item={{
           "@context": "https://schema.org",
           "@type": "Store",
-          name: "EyeGlassWorld",         
+          name: "EyeGlassWorld",
         }}
       />
       <JsonLd<BreadcrumbList>

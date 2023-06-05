@@ -118,7 +118,8 @@ export default function InputDropdown({
   const [latestUserInput, setLatestUserInput] = useState(inputValue);
   const [childrenKey, setChildrenKey] = useState(0);
   const [norecord, setNorecord] = useState(true);
-  const [milesData, setMilesData] = useState(50)
+  const [milesData, setMilesData] = useState("50");
+  // console.log(setMilesData,"miles")
   const [keyUpStatus, setKeyUpStatus] = useState(true);
   const screenReaderInstructionsId = useMemo(() => uuid(), []);
   const loading = useSearchState((s) => s.searchStatus.isLoading);
@@ -375,8 +376,8 @@ export default function InputDropdown({
         }
       })
       .catch(() => { });
-    /////end////////
   }
+  /////end////////
 
   function getCoordinates(address: string) {
     getGoogleLatLng(address);
@@ -433,7 +434,6 @@ export default function InputDropdown({
             placeholder={placeholder}
             onChange={(evt) => {
               const value = evt.target.value;
-
               setNorecord(false);
               setDisplaymsg(false);
               setLatestUserInput(value);

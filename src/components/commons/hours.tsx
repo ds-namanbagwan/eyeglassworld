@@ -100,7 +100,7 @@ function sortByDay(week: Week): Week {
     () => {
       return new Date(
         now.toLocaleString("en-US", { timeZone: "Europe/London" })
-        
+
       ).getDay();
 
     },
@@ -121,7 +121,7 @@ function sortByDay(week: Week): Week {
   });
 
   return orderedWeek;
- 
+
 }
 
 
@@ -174,7 +174,7 @@ const renderHours = (week: Week, c_specific_day: any) => {
 
     dayDom.push(
       <DayRow
-        key={k}        
+        key={k}
         dayDate={dayDate}
         dayName={k}
         day={v}
@@ -196,7 +196,7 @@ const renderHours = (week: Week, c_specific_day: any) => {
 // day find here
 function isDayToday(dayName: string) {
   return defaultSorter[dayName] === cuurentdaynum;
-  
+
 }
 
 function convertTo12HourFormat(time: string, includeMeridiem: boolean): string {
@@ -224,7 +224,7 @@ type DayRow = {
 const DayRow = (props: DayRow) => {
   const { dayName, day, isToday, dayDate, holidayhours, key, c_specific_day } =
     props;
-    // console.log(dayName,"kl")
+  // console.log(dayName,"kl")
   const [currentDay, setCurrentDay] = useState('');
 
   const [myDataAccordintToMe, setMyDataAccordintToMe] = React.useState({});

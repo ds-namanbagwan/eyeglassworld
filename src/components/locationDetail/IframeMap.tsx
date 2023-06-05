@@ -9,9 +9,9 @@ const IframeMap = (props: Address) => {
 
   return (
     <>
-    <iframe className="h-[400px] w-full md:h-[500px] xl:h-full"
-      src={`https://www.google.com/maps/embed/v1/place?q=${address.line1}&language=fr&key=AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18`}>
-    </iframe>
+      <iframe className="h-[400px] w-full md:h-[500px] xl:h-full"
+        src={`https://www.google.com/maps/embed/v1/place?q=${address.line1}&language=fr&key=AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18`}>
+      </iframe>
     </>
   );
 };

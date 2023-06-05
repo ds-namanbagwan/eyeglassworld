@@ -6,7 +6,7 @@ export default function PhotoGallery(props: any) {
 
   return (
     <>
-      
+
       <div className="container">
         <div className=" grid grid-cols-4 gap-24">
           {props?.props?.map((res1: any) => {

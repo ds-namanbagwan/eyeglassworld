@@ -6,11 +6,11 @@ type Coordinates = {
 };
 
 const StaticMap = (props: Coordinates) => {
-  const { latitude, longitude } = props;  
+  const { latitude, longitude } = props;
   return (
     <>
       <h2 className="text-xl font-semibold mb-4">Static Map</h2>
-	  <img
+      <img
         className="w-full"
         width="300"
         height="200"

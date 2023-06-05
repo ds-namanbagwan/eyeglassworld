@@ -1,5 +1,3 @@
-export type nearByLocation = {    
+export type nearByLocation = {
     entities: object;
-  
- };
-  
+};
