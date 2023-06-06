@@ -54,9 +54,11 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = () => {
 };
 // Template that will show as the page
 const FourOhFour: Template<TemplateRenderProps> = ({
+  // eslint-disable-next-line react/prop-types
   document,
 }) => {
   const {
+    // eslint-disable-next-line react/prop-types
     _site
   } = document;
   return (

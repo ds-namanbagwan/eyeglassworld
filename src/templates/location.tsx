@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import * as React from "react";
 import Contact from "../components/locationDetail/contact";
 import Nearby from "../components/locationDetail/Nearby";
@@ -92,11 +93,11 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  var url = "";
-  var name: any = document.name.toLowerCase();
-  var string: any = name.toString();;
-  let result: any = string.replaceAll(" ", "-");
-  document.dm_directoryParents?.map((result: any, i: Number) => {
+  let url = "";
+  const name: string = document.name.toLowerCase();
+  const string: string = name.toString();
+  const result: string = string.replaceAll(" ", "-");
+  document.dm_directoryParents?.map((result: string, i: number) => {
     if (i > 0) {
       url += result.slug + "/"
     }
@@ -224,10 +225,10 @@ export const transformProps: TransformProps<ExternalApiData> = async (
   data: any
 ) => {
 
-  var location = `${data.document.yextDisplayCoordinate ? data.document.yextDisplayCoordinate.latitude : data.document.displayCoordinate.latitude},${data.document.yextDisplayCoordinate ? data.document.yextDisplayCoordinate.longitude : data.document.displayCoordinate.longitude}`;
+  const location = `${data.document.yextDisplayCoordinate ? data.document.yextDisplayCoordinate.latitude : data.document.displayCoordinate.latitude},${data.document.yextDisplayCoordinate ? data.document.yextDisplayCoordinate.longitude : data.document.displayCoordinate.longitude}`;
 
   const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=4&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
-  // console.log(url)
+  // console.log(url)s
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
 
@@ -274,10 +275,10 @@ const Location: Template<ExternalApiRenderData> = ({
     c_aboutCTA
   } = document;
 
-  let templateData = { document: document, __meta: __meta };
-  let hoursSchema = [];
-  let breadcrumbScheme = [];
-  for (var key in hours) {
+  const templateData = { document: document, __meta: __meta };
+  const hoursSchema = [];
+  const breadcrumbScheme = [];
+  for (const key in hours) {
     if (hours.hasOwnProperty(key)) {
       let openIntervalsSchema = "";
       if (key !== "holidayHours") {
@@ -291,7 +292,7 @@ const Location: Template<ExternalApiRenderData> = ({
           let start = "";
           if (typeof hours[key].openIntervals != "undefined") {
             let openIntervals = hours[key].openIntervals;
-            for (var o in openIntervals) {
+            for (const o in openIntervals) {
               if (openIntervals.hasOwnProperty(o)) {
                 end = openIntervals[o].end;
                 start = openIntervals[o].start;
@@ -305,13 +306,13 @@ const Location: Template<ExternalApiRenderData> = ({
             opens: start,
           };
         }
-      } else {
-      }
+      } 
 
       hoursSchema.push(openIntervalsSchema);
     }
   }
   document.dm_directoryParents &&
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     document.dm_directoryParents.map((i: any, index: any) => {
       if (i.meta.entityType.id == "ce_country") {
         document.dm_directoryParents[index].name =
@@ -356,6 +357,7 @@ const Location: Template<ExternalApiRenderData> = ({
         });
       } else if (i.meta.entityType.id == "ce_city") {
         let url = "";
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         document.dm_directoryParents.map((j: any) => {
           if (
             j.meta.entityType.id != "ce_city" &&

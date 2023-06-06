@@ -2,14 +2,26 @@ import { Link } from "@yext/pages/components";
 import * as React from "react";
 import { conversionDetailsDirection} from "../../../sites-global/global";
 
-type Cta = {
-  buttonText: string;
-  address: object;
+interface type {
+  line1: string,
+  line2: string,
+  region: string,
+  postalCode: number,
+  city: string,
+  countryCode: string,
+  country:string,
+}
+interface Cta  {
+  buttonText: string;  
   latitude?: number;
   longitude?: number;
-};
+  address:type;
+}
+interface address1{
+  address:type; 
+}
 
-const GetDirection = (props: GetDirection) => {
+const GetDirection = (props: Cta) => {
   const {
     buttonText,
     latitude,
@@ -19,7 +31,7 @@ const GetDirection = (props: GetDirection) => {
 
 
   const getDirectionUrl = () => {
-    var origin: any = null;
+    let origin: address1 ;
     if (address.city) {
       origin = address.city;
     } else if (address.region) {
@@ -28,8 +40,8 @@ const GetDirection = (props: GetDirection) => {
       origin = address.country;
     }
     if (navigator.geolocation) {
-      const error = (error: any) => {
-        var getDirectionUrl =
+      const error = () => {
+        const getDirectionUrl =
           "https://www.google.com/maps/dir/?api=1&destination=" +
           latitude +
           "," +
@@ -42,9 +54,9 @@ const GetDirection = (props: GetDirection) => {
       navigator.geolocation.getCurrentPosition(
         function (position) {
           // console.log("current lat lang");
-          let currentLatitude = position.coords.latitude;
-          let currentLongitude = position.coords.longitude;
-          let getDirectionUrl =
+          const currentLatitude= position.coords.latitude;
+          const currentLongitude = position.coords.longitude;
+          const getDirectionUrl =
             "https://www.google.com/maps/dir/?api=1&destination=" +
             latitude +
             "," +

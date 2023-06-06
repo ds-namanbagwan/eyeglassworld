@@ -7,21 +7,21 @@ const containerStyle = {
   height: "100%",
 };
 
-var center = {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+let center = {
   lat: 0.0,
   lng: 0.0,
 };
 
-const divStyle = {
-  background: `white`,
-  border: `1px solid #ccc`,
-};
+
 
 type props = {
-  prop: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  prop:any;
 };
 
 function CustomMap(coords: props) {
+  
   React.useEffect(() => {
     center = {
       lat: coords.prop.latitude,

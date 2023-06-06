@@ -51,29 +51,28 @@ export interface FilterSearchProps {
   searchFields: Omit<SearchParameterField, "fetchEntities">[];
   customCssClasses?: FilterSearchCssClasses;
   cssCompositionMethod?: CompositionMethod;
-  searchInputValue: any;
+  searchInputValue: string;
   handleInputValue: any;
-  handleSetUserShareLocation: any;
-  inputvalue: any;
-  params: any;
-  displaymsg: any;
-  setDisplaymsg: any;
-  setSearchInputValue: any
+  handleSetUserShareLocation: string;
+  inputvalue: string;
+  params: string;
+  displaymsg: string;
+  setDisplaymsg: string;
+  setSearchInputValue: string
 }
 
 type FilterHandle = {
-  setInputValue: (value: String) => void,
+  setInputValue: (value: string) => void,
 }
 
+// eslint-disable-next-line react/display-name
 const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
   (
-    {
-      label,
+    {      
       sectioned,
       searchFields,
       customCssClasses,
-      cssCompositionMethod,
-      searchInputValue,
+      cssCompositionMethod,      
       handleInputValue,
       handleSetUserShareLocation,
       inputvalue,
@@ -92,7 +91,7 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
     });
     React.useImperativeHandle(ref, () => {
       return {
-        setInputValue: (value: String) => setInput(value)
+        setInputValue: (value: string) => setInput(value)
       }
     })
     //  console.log(displaymsg,"fisttimedispalydfsd")
@@ -175,8 +174,8 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
       // if(localStorage.getItem('inputvalue')){
       //       setInput(localStorage.getItem('inputvalue'));
 
-      let params = (new URL(window.location.href)).searchParams;
-      let addresssearch = params.get("text");
+      const params = (new URL(window.location.href)).searchParams;
+      const addresssearch = params.get("text");
       if (addresssearch) {
         setInput(addresssearch);
       } else {
@@ -197,10 +196,12 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
           screenReaderInstructions={SCREENREADER_INSTRUCTIONS}
           screenReaderText={screenReaderText}
           onlyAllowDropdownOptionSubmissions={true}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           onInputChange={(newInput: any) => {
             setInput(newInput);
             handleInputValue();
           }}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           onInputFocus={(input: any) => {
             executeFilterSearch(input);
           }}

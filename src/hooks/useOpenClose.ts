@@ -10,7 +10,7 @@ function useOpenClose(hoursData: Week, timeZone: string) {
     day: "",
   });
 
-  const timeStringToNumber = (timeString: any) => {
+  const timeStringToNumber = (timeString: string) => {
     const parts = timeString.split(":");
     const hours = parseInt(parts[0].replace(/\u200E/g, ""), 10);
     const minutes = parseInt(parts[1].replace(/\u200E/g, ""), 10);
@@ -24,15 +24,15 @@ function useOpenClose(hoursData: Week, timeZone: string) {
   ) => {
     // Check for holiday
     if (hoursData && hoursData.holidayHours) {
-      const days = [
-        "sunday",
-        "monday",
-        "tuesday",
-        "wednesday",
-        "thursday",
-        "friday",
-        "saturday",
-      ];
+      // const days = [
+      //   "sunday",
+      //   "monday",
+      //   "tuesday",
+      //   "wednesday",
+      //   "thursday",
+      //   "friday",
+      //   "saturday",
+      // ];
 
       const now = new Date();
       const currentDate = new Date(

@@ -1,5 +1,4 @@
 import * as React from "react";
-import Modal from "react-modal";
 import { Cross } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 import Holidayhours from "./Holdayhours";
@@ -16,8 +15,6 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-// Modal.setAppElement('#main');
 
 function Model(props: any) {
   let subtitle: any;
@@ -38,10 +35,10 @@ function Model(props: any) {
     setIsOpen(false);
   }
 
-  var day;
+  let day;
   return (
     <>
-      {props.holidayHours.map((res: any, index: Number) => {
+      {props.holidayHours.map((res: any) => {
         const d = new Date(res.date);
         day = d.getDay();
         let a, s, holidayDate: any;
@@ -59,8 +56,8 @@ function Model(props: any) {
              if(new Date(join(new Date(res.date), a, '-')).getTime()>=new Date(s).getTime()){
        */
 
-        var d1 = new Date();
-        var d2 = new Date(res.date);
+        const d1 = new Date();
+        const d2 = new Date(res.date);
 
         if (d2.getDate() >= d1.getDate()) {
 
@@ -71,7 +68,7 @@ function Model(props: any) {
                 {props.name}
               </a>
 
-              <Modal
+              <Model
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
@@ -102,7 +99,7 @@ function Model(props: any) {
                 ) : (
                   ""
                 )}
-              </Modal>
+              </Model>
             </>
           );
         }

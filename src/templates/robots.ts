@@ -15,7 +15,8 @@ export const getPath = () => {
   return `robots.txt`;
 };
 
-export const render = (data: any): string => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const render = (data: string): string => {
   /*
    * Return a string that will be served at <your-site-domain>.com/robots.txt.
    * For more information about robots.txt, check out this resource: https://developers.google.com/search/docs/advanced/robots/intro

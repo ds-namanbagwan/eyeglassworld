@@ -4,7 +4,7 @@ const Holidayhours = (props: any) => {
 
   return (
     <>
-      {props.hours.map((res: any, index: Number) => {
+      {props.hours.map((res: any) => {
         // console.log(res.isClosed)
         const weeks = [
           "Sunday",
@@ -17,20 +17,21 @@ const Holidayhours = (props: any) => {
         ]
 
         const d = new Date(res.date);
-        let day = d.getDay();
-        let a, s, holidayDate: any;
+        const day = d.getDay();
+        let a;
         function join(t: any, a: any, s: any) {
           function format(m: any) {
-            let f = new Intl.DateTimeFormat('en', m);
+            const f = new Intl.DateTimeFormat('en', m);
             return f.format(t);
           }
           return a.map(format).join(s);
         }
 
+        // eslint-disable-next-line prefer-const
         a = [{ day: '2-digit' }, { month: 'numeric' }, { year: 'numeric' }];
         //  s = join(new Date(), a, '-');  
-        var d1 = new Date();
-        var d2 = new Date(res.date);
+        const d1 = new Date();
+        const d2 = new Date(res.date);
         if (d2.getDate() >= d1.getDate()) {
 
 
@@ -42,7 +43,7 @@ const Holidayhours = (props: any) => {
               {res.isClosed ? <span className="cl-time">
                 Closed
               </span> : <>
-                {res.openIntervals && res.openIntervals.map((openinterval: any, index: Number) => {
+                {res.openIntervals && res.openIntervals.map((openinterval: any) => {
 
                   return (
                     <>

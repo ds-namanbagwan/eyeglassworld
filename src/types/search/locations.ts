@@ -1,6 +1,6 @@
 export interface Interval {
-	start?: any,
-	end?: any,
+	start?: unknown,
+	end?: unknown,
 }
 
 export interface DayHour {
@@ -247,10 +247,10 @@ export interface ComplexVideo {
 }
 
 export interface Location {
-  c_click_collect_availability: any;
-  c_open_for_shopping: any;
-  c_clickCollectAvaliability: any;
-  c_openForShoppingAvailibitlity: any;
+//   c_click_collect_availability: any;
+//   c_open_for_shopping: any;
+//   c_clickCollectAvaliability: any;
+//   c_openForShoppingAvailibitlity: any;
 	accessHours?: Hours,
 	blackOwnedBusiness?: boolean,
 	brunchHours?: Hours,
@@ -272,7 +272,7 @@ export interface Location {
 	phoneticName?: string,
 	pickupAndDeliveryServices?: PickupAndDeliveryServices[],
 	pickupHours?: Hours,
-	primaryConversationContact?: any,
+	primaryConversationContact?: unknown,
 	proofOfVaccinationRequired?: boolean,
 	reviewResponseConversationEnabled?: boolean,
 	seniorHours?: Hours,
@@ -282,15 +282,15 @@ export interface Location {
 	additionalHoursText?: string,
 	address: Address,
 	addressHidden?: boolean,
-	alternatePhone?: any,
+	alternatePhone?: number,
 	androidAppUrl?: string,
 	associations?: string[],
 	brands?: string[],
 	description?: string,
 	hours?: Hours,
 	logo?: ComplexImage,
-	name: string,
-	categories?: any,
+	// name: string,
+	categories?: unknown,
 	cityCoordinate?: Coordinate,
 	closed?: boolean,
 	dm_directoryParents?: EntityReference[],
@@ -300,7 +300,7 @@ export interface Location {
 	emails?: string[],
 	facebookEmail?: string,
 	facebookPageUrl?: string,
-	fax?: any,
+	// fax?: any,
 	featuredMessage?: FeaturedMessage,
 	photoGallery?: ComplexImage[],
 	geocodedCoordinate?: Coordinate,
@@ -309,14 +309,14 @@ export interface Location {
 	isoRegionCode?: string,
 	keywords?: string[],
 	languages?: string[],
-	localPhone?: any,
+	localPhone?: number,
 	locationType?: LocationType,
-	mainPhone?: any,
+	mainPhone?: number,
 	menuUrl?: MenuUrl,
-	mobilePhone?: any,
+	mobilePhone?: number,
 	orderUrl?: OrderUrl,
 	paymentOptions?: PaymentOptions[],
-	phones?: any,
+	phones?: number,
 	pickupCoordinate?: Coordinate,
 	priceRange?: PriceRange,
 	products?: string[],
@@ -327,9 +327,9 @@ export interface Location {
 	shortName64?: string,
 	specialities?: string[],
 	id: string,
-	timezone?: any,
-	tollFreePhone?: any,
-	ttyPhone?: any,
+	timezone?: string,
+	// tollFreePhone?: any,
+	// ttyPhone?: any,
 	twitterHandle?: string,
 	uberClientId?: string,
 	uberLink?: UberLink,

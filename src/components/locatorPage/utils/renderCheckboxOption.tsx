@@ -1,3 +1,5 @@
+import * as React from "react";
+
 interface CheckboxOption {
   id: string,
   label: string
@@ -27,7 +29,7 @@ export default function renderCheckboxOption({
 }: CheckBoxOptionProps) {
   const cssClasses = { ...builtInCssClasses, ...customCssClasses };  
   return (
-    <div className={cssClasses.option} key={option.id}>
+    <div className={cssClasses.option} key={option.id}>      
       <input 
         type="checkbox"
         id={option.id}

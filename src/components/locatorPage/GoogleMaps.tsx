@@ -1,9 +1,7 @@
 import { Wrapper } from "@googlemaps/react-wrapper";
-// import { Result, useAnswersState } from '@yext/answers-headless-react';
 import {
   useSearchState,
-  Result,
-  useSearchActions,
+  Result, 
 } from "@yext/search-headless-react";
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
@@ -13,27 +11,16 @@ import {
 } from "../../hooks/useComposedCssClasses";
 import Mapicon2 from "../../images/MGMpin.svg";
 import clustericon from "../../images/cluster.png";
-import mapimage from "../../images/map.svg";
-import timesvg from "../../images/watch-icn.svg";
 import Hovermap from "../../images/MGMhover1.svg"
 import Hours from "../commons/hours";
-import reactElementToJSXString from "react-element-to-jsx-string";
-import Nav from "../layouts/Nav";
 import UserMarker from "../../images/map-center.svg";
 import { renderToString } from "react-dom/server";
-import LocationCard from "./LocationCard";
-import Opening from "../commons/openClose";
-import GetDirection from "../commons/GetDirection";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import Address from "../commons/Address";
-import Phonesvg from "../../images/phone.svg";
-import { ResultsCount } from "@yext/search-ui-react";
 import OpenClose from "../commons/openClose";
 import $ from "jquery";
-import { Directionsvg, View_Store } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 import useFetchResults from "../../hooks/useFetchResults";
-import { Link } from "@yext/pages/components";
 import { formatPhoneNumber } from "react-phone-number-input";
 /**
  * CSS class interface for the {@link GoogleMaps} component

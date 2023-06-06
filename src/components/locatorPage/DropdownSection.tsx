@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import * as React from "react";
 import { useState, useEffect, useRef } from "react";
 
 export interface Option {
@@ -29,7 +30,9 @@ export default function DropdownSection({
   isFocused = false,
   options,
   optionIdPrefix,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onFocusChange = () => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onLeaveSectionFocus = () => {},
   label = '',
   cssClasses = {}
@@ -116,4 +119,4 @@ export default function DropdownSection({
       </div>
     </div>
   );
-};
+}

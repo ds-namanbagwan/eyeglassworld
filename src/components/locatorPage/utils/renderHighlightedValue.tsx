@@ -1,4 +1,5 @@
 import { HighlightedValue } from "@yext/answers-headless-react";
+import * as React from "react";
 
 const defaultCssClasses: HighlightedValueCssClasses = {
   highlighted: 'font-bold'
@@ -15,13 +16,13 @@ interface HighlightedValueCssClasses {
 export default function renderHighlightedValue ({ value = '', matchedSubstrings }: Partial<HighlightedValue>, customCssClasses?: HighlightedValueCssClasses): JSX.Element {
   const cssClasses = { ...defaultCssClasses, ...customCssClasses };
   if (!matchedSubstrings || matchedSubstrings.length === 0) {
-    return <span>{value}</span>;
+    return <><span>{value}</span></>;
   }
   const substrings = [...matchedSubstrings];
   substrings.sort((a, b) => a.offset - b.offset);
   const highlightedJSX = []
   let curr = 0;
-  for (let { offset, length } of substrings) {
+  for (const { offset, length } of substrings) {
     if (offset > curr) {
       highlightedJSX.push(<span key={curr}>{value.substring(curr, offset)}</span>)
     }

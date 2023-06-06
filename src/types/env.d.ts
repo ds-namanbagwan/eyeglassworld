@@ -6,5 +6,5 @@
  * https://github.com/vitejs/vite/issues/6194
  */
  interface ImportMeta {
-    readonly env: any,
+    readonly env: unknown,
   }

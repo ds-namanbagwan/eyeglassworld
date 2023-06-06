@@ -1,8 +1,31 @@
 import * as React from "react"
 
+interface FooterProps {
+    prop: {
+        c_text5: string;
+        c_icons1: { url: string }[];
+        c_footer1: {
+            fhead: string;
+            fsubdata: { link: string; label: string }[];
+        };
+        c_footer2: {
+            fhead: string;
+            fsubdata: { link: string; label: string }[];
+        };
+        c_footert3: {
+            fhead: string;
+            fsubdata: { link: string; label: string }[];
+        };
+        c_footer4: { link: string; label: string }[];
+        c_textline1: string;
+        c_textline2: string;
+        c_textline3: string;
+    };
+}
 
-export default function NewFooter(props: any) {
+export default function NewFooter(props: FooterProps) {
     // console.log(props, "26812282428242s")
+
 
     return (
         <>
@@ -11,7 +34,7 @@ export default function NewFooter(props: any) {
                     {props?.prop?.c_text5}
                 </div>
                 <div className="flex absolute text-xl ml-8 mt-32 gap-5">
-                    {props?.prop?.c_icons1?.map((img: any) => {
+                    {props?.prop?.c_icons1?.map((img) => {
                         return (
                             <>
                                 <div className="flex w-9">
@@ -24,7 +47,7 @@ export default function NewFooter(props: any) {
                 <div className="flex gap-20 justify-end mr-8">
                     <div className="mt-14">
                         <p className="text-xl mb-5">{props?.prop?.c_footer1?.fhead}</p>
-                        {props?.prop?.c_footer1?.fsubdata?.map((res1: any) => {
+                        {props?.prop?.c_footer1?.fsubdata?.map((res1) => {
                             return (
                                 <>
                                     <div className="mt-2 hover:underline">
@@ -36,7 +59,7 @@ export default function NewFooter(props: any) {
                     </div>
                     <div className="mt-14">
                         <p className="text-xl mb-5">{props?.prop?.c_footer2?.fhead}</p>
-                        {props?.prop?.c_footer2?.fsubdata?.map((res2: any) => {
+                        {props?.prop?.c_footer2?.fsubdata?.map((res2) => {
                             return (
                                 <>
                                     <div className="mt-2 hover:underline">
@@ -48,7 +71,7 @@ export default function NewFooter(props: any) {
                     </div>
                     <div className="mt-14">
                         <p className="text-xl mb-5">{props?.prop?.c_footert3?.fhead}</p>
-                        {props?.prop?.c_footert3?.fsubdata?.map((res3: any) => {
+                        {props?.prop?.c_footert3?.fsubdata?.map((res3) => {
                             return (
                                 <>
                                     <div className="mt-2 hover:underline">
@@ -61,7 +84,7 @@ export default function NewFooter(props: any) {
                     </div>
                 </div>
                 <div className="flex mt-8 justify-end gap-36 text-2xl mr-8">
-                    {props?.prop?.c_footer4?.map((res4: any) => {
+                    {props?.prop?.c_footer4?.map((res4) => {
                         // console.log(res4, "res4")
                         return (
                             <>

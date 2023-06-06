@@ -63,7 +63,7 @@ interface VerticalResultsProps {
 
 export default function VerticalResults(props: VerticalResultsProps): JSX.Element | null {
 
-  const { displayAllOnNoResults = false, allowPagination = true, ...otherProps } = props;
+  const { displayAllOnNoResults = false, ...otherProps } = props;
   const verticalResults = props.locationResults || [];
   // const verticalResults = useSearchState(s => s.vertical.results) || [];
   const allResultsForVertical = useSearchState(state => state.vertical?.noResults?.allResultsForVertical.results) || [];
@@ -71,7 +71,7 @@ export default function VerticalResults(props: VerticalResultsProps): JSX.Elemen
   const allResultsCountForVertical = useSearchState(state => state.vertical?.noResults?.allResultsForVertical.resultsCount) || 0;
   const isLoading = useSearchState(state => state.searchStatus.isLoading);
   
-  let results:any = verticalResults;
+  let results:object = verticalResults;
   let resultsCount = verticalResultsCount;
   if (verticalResults.length === 0 && displayAllOnNoResults) {
     results = allResultsForVertical;
