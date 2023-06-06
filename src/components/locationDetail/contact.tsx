@@ -8,8 +8,6 @@ import Model from "./Model";
 import CustomMap from "./CustomMap";
 import { formatPhoneNumber } from "react-phone-number-input";
 
-import { useState } from "react";
-
 const Contact = (props: any) => {
   const {
     address,
@@ -23,14 +21,7 @@ const Contact = (props: any) => {
     c_storeInfoHeading,
     c_getDirectionsCTAText
   } = props;
-  const [timeStatus, setTimeStatus] = useState("");
-  const onOpenHide = () => {
-    if (timeStatus == "") {
-      setTimeStatus("active");
-    } else {
-      setTimeStatus("");
-    }
-  }
+ 
   return (
     <>
       <div className="address-main-sec">

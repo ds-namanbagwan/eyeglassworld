@@ -1,10 +1,24 @@
 // import { SearchBar } from "@yext/search-ui-react"
 import * as React from "react"
 import SearchBar from "../locationDetail/search"
-import { Link } from "@yext/pages/components"
+interface HeaderProps {
+    prop: {
+      c_photo: {
+        url: string;
+      };
+      c_scheduleTest: {
+        link: string;
+        label: string;
+      };
+      c_headdata2: {
+        link: string;
+        label: string;
+      }[];
+    };
+  }
 
 
-export default function NewHeader(props: any) {
+export default function NewHeader(props: HeaderProps) {
     // console.log(props.prop.c_scheduleTest.label, "26812282428242s")
 
     return (
@@ -36,7 +50,7 @@ export default function NewHeader(props: any) {
 
                 <div className="flex gap-24 ml-6" style={{ paddingBottom: "10px" }}>
 
-                    {props?.prop?.c_headdata2?.map((res: any) => {
+                    {props?.prop?.c_headdata2?.map((res) => {
 
                         return (
                             <>

@@ -11,17 +11,10 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
-import constant from "../constant";
-import Banner from "../components/locationDetail/banner";
-import PageLayout from "../components/layouts/PageLayout";
 import { favicon, stagingBaseurl } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
-import Footer1 from "../components/layouts/NewFooter";
-import Header from "../components/layouts/NewHeader";
 import NewFooter from "../components/layouts/NewFooter";
 import NewHeader from "../components/layouts/NewHeader";
-
-
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -68,6 +61,7 @@ export const config: TemplateConfig = {
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   let url = "";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   document.dm_directoryParents.map((i: any) => {
     if (i.meta.entityType.id == 'ce_country') {
       url += i.slug + "/";
@@ -84,11 +78,10 @@ export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
   document,
 }): HeadConfig => {
-  var canonical = "";
+  let canonical = "";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   document.dm_directoryParents.map((entity: any) => {
 
     canonical = entity.slug.toLowerCase();
@@ -216,17 +209,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 const region: Template<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
+  relativePrefixToRoot,  
   document,
 }) => {
   const {
     name,
     _site,
     slug,
-    address,
-    c_banner_image,
-    c_bannerHeading,
+    address,   
     dm_directoryParents,
     dm_directoryChildren
   } = document;
@@ -235,11 +225,13 @@ const region: Template<TemplateRenderProps> = ({
   // console.log('links', links)
   const childrenDivs =
     dm_directoryChildren &&
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dm_directoryChildren?.map((entity: any) => {
       if (entity?.dm_baseEntityCount == 1) {
         newurl = entity.slug;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         entity.dm_directoryChildren.map((detl: any) => {
-          var string: any = detl.name.toString();
+          const string: string = detl.name.toString();
           // let result: any = string.replaceAll(" ", "-");
           newurl = slug + "/" + newurl + "/" + string.toLowerCase().replaceAll(" ", "-") + ".html";
           //  console.log(newurl,"575524")
@@ -253,7 +245,7 @@ const region: Template<TemplateRenderProps> = ({
         );
       } else {
         // console.log(dm_directoryParents&&dm_directoryParents[1]&&dm_directoryParents[1].slug,'jghhfhhhjhhhhh')
-        let slug =
+        const slug =
           "/" +
           dm_directoryParents[1]?.slug +
           "/" +
@@ -282,8 +274,7 @@ const region: Template<TemplateRenderProps> = ({
         parents={dm_directoryParents}
         baseUrl={relativePrefixToRoot}
         address={address}
-      ></BreadCrumbs>
-      {/* <div className="location-dtl">     <Banner name={c_bannerHeading?c_bannerHeading:name} c_bannerImage={bannerimage}  /></div> */}
+      ></BreadCrumbs>      
 
       <div className="content-list">
         <div className="container">

@@ -1,14 +1,18 @@
-import { useState, useEffect } from "react";
 import { useSearchState } from "@yext/search-headless-react";
 
-let mapLocations: any = [];
+interface LocationResult {
+  id: string;
+ 
+}
+
+let mapLocations: LocationResult[]=[];
 const useFetchResults = () => {
   const locationResults = useSearchState(s => s.vertical.results) || [];
   // const Alternateresult=  useSearchState(s => s.vertical.noResults?.allResultsForVertical.results) || [];
 
   // const resultsCount:any = useSearchState(s => s.vertical.resultsCount) || 0;
   // const limit:any = useSearchState(s => s.vertical.limit) || 0;
-  const offset: any = useSearchState(s => s.vertical.offset) || 0;
+  const offset: number = useSearchState(s => s.vertical.offset) || 0;
 
   if (offset == 0) {
     mapLocations = [];
@@ -50,7 +54,7 @@ const useFetchResults = () => {
   //   }
   // }
 
-  let mapLocationsResults = mapLocations;
+  const mapLocationsResults = mapLocations;
   // console.log('mapLocationsResults',mapLocationsResults);
   return mapLocationsResults;
 };

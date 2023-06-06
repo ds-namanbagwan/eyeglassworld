@@ -7,8 +7,8 @@ const Timer = (props: any) => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
-  const [week, setWeek] = useState({ props })
-  var deadline = "";
+  const [week] = useState({ props })
+  let deadline = "";
   const weeks = [
     "sunday",
     "monday",
@@ -78,8 +78,8 @@ const Timer = (props: any) => {
   }
 
   const getTime = () => {
-    var now = new Date();
-    var nowUTC: any = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+    const now = new Date();
+    const nowUTC: any = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
     // console.log(nowUTC);
     const time = Date.parse(deadline) - nowUTC;
 

@@ -1,37 +1,26 @@
-import { SelectableFilter, useSearchActions } from "@yext/search-headless-react";
+import {useSearchActions } from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from 'react';
 import * as React from "react";
-import { LocationBias, Pagination, StandardFacets } from "@yext/search-ui-react";
-
-import { Location } from "../../types/search/locations";
 import LocationCard from "./LocationCard";
-import { AnswersHeadlessProvider, Matcher } from '@yext/answers-headless-react';
 import { GoogleMaps } from "./GoogleMaps";
-import { useSearchState, Result } from "@yext/search-headless-react";
+import { useSearchState} from "@yext/search-headless-react";
 import Geocode from "react-geocode";
-import Address from "../commons/Address";
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import $ from "jquery";
-import Banner from "../locationDetail/banner";
-import LoadingSpinner from "../commons/LoadingSpinner";
-import { breadcrumbhome, center_latitude, center_longitude, googleApikey, search_icn, UseMylocationsvg } from "../../../sites-global/global";
+import { center_latitude, center_longitude, googleApikey, search_icn, UseMylocationsvg } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
-
 import FilterSearch from "../locatorPage/FilterSearch";
 import ViewMore from "./ViewMore";
 import VerticalResults from "../VerticalResults";
 import ResultsCount from "./ResultsCount";
 import useFetchResults from "../../hooks/useFetchResults";
-import { Link } from "@mui/material";
-
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
-import FilterModel from "./InputDropdown";
 
-var params1: any = { latitude: center_latitude, longitude: center_longitude }
-var mapzoom = 8;
-var centerLatitude = center_latitude;
-var centerLongitude = center_longitude;
+let params1: any = { latitude: center_latitude, longitude: center_longitude }
+let mapzoom = 8;
+const centerLatitude = center_latitude;
+const centerLongitude = center_longitude;
 const SearchLayout = (props: any): JSX.Element => {
   const [isLoading, setIsloading] = React.useState(true);
   const [check, setCheck] = useState(false);
@@ -55,9 +44,7 @@ const SearchLayout = (props: any): JSX.Element => {
 
   const loading = useSearchState(s => s.searchStatus.isLoading);
 
-  var searchKey: any;
-  var target;
-  var firstTimeRunners = true;
+  let firstTimeRunners = true;
   const FirstLoad = () => {
     setCheck(true);
     if (navigator.geolocation) {
@@ -207,8 +194,8 @@ const SearchLayout = (props: any): JSX.Element => {
       // searchActions.resetFacets();
       // FirstLoad() ;
     }
-    let params = (new URL(window.location.href)).searchParams;
-    let addresssearch = params.get("text");
+    const params = (new URL(window.location.href)).searchParams;
+    const addresssearch = params.get("text");
 
     if (addresssearch) {
       setInputValue(addresssearch);
@@ -357,13 +344,7 @@ const SearchLayout = (props: any): JSX.Element => {
               <VerticalResults
                 displayAllOnNoResults={false}
                 CardComponent={LocationCard}
-                locationResults={locationResults}
-              // customCssClasses={{
-              //   container:
-              //     "result-list flex flex-col scroll-smooth  overflow-auto",
-
-              // }}
-              // CardComponent={LocationCard}
+                locationResults={locationResults}           
               />
 
 

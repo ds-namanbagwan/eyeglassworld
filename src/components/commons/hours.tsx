@@ -6,7 +6,7 @@ import { OpenStausFunctions } from "./openClose";
 type Hours = {
   title?: string;
   hours: Week;
-  c_specific_day: any;
+  c_specific_day: string;
   additionalHoursText?: string;
   children?: React.ReactNode;
 };
@@ -37,7 +37,7 @@ const now = new Date();
 /**
  * Dynamically creates a sort order based on today's day.
  */
-function getSorterForCurrentDay(todayIndex: any): { [key: string]: number } {
+function getSorterForCurrentDay(todayIndex: number): { [key: string]: number } {
   const dayIndexes = [0, 1, 2, 3, 4, 5, 6];
 
   const updatedDayIndexes = [];
@@ -134,7 +134,7 @@ function sortByDay(week: Week): Week {
 //   sunday: 7,
 // };
 
-const renderHours = (week: Week, c_specific_day: any) => {
+const renderHours = (week: Week, c_specific_day: string) => {
   const dayDom: JSX.Element[] = [];
   let i = 0;
   for (const [k, v] of Object.entries(sortByDay(week))) {
@@ -212,15 +212,15 @@ function convertTo12HourFormat(time: string, includeMeridiem: boolean): string {
 type DayRow = {
   dayName: string;
   day: Day;
-  key: any;
+  key: number;
   isToday?: boolean;
-  dayDate: any;
-  holidayhours: any;
-  c_specific_day: any;
+  dayDate: string;
+  holidayhours: string;
+  c_specific_day: string;
 };
 
 const DayRow = (props: DayRow) => {
-  const { dayName, day, isToday, dayDate, holidayhours, key, c_specific_day } =
+  const { dayName, day, isToday, dayDate, holidayhours, key} =
     props;
   // console.log(dayName,"kl")
   const [currentDay, setCurrentDay] = useState('');

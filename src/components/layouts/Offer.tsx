@@ -1,9 +1,22 @@
 import * as React from "react"
-import { StaticData } from "../../../sites-global/staticData"
-import { Link } from "@yext/pages/components"
 
+interface OfferProps {
+    props: {
+      offer1: string;
+      offer2: string;
+      offer3: string;
+      offerbutton: {
+        link: string;
+        label: string;
+      };
+    }[];
+    c_aboutCTA: {
+      link: string;
+      label: string;
+    };
+  }
 
-export default function offer(props: any) {
+export default function offer(props: OfferProps) {
     // console.log(props.c_aboutCTA.label, "naman12")
 
     return (
@@ -11,7 +24,7 @@ export default function offer(props: any) {
             
             <div className="container">
                 <div className="grid grid-cols-2 gap-7">
-                    {props?.props?.map((res: any) => {
+                    {props?.props?.map((res) => {
                         return (
                             <>
                                 <div className="text border-r-4 border-b-4 border-green">

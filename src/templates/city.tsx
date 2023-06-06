@@ -1,15 +1,11 @@
+/* eslint-disable react/prop-types */
 import * as React from "react";
-// import Banner from "../components/banner";
 import GetDirection from "../components/commons/GetDirection";
 import constant from "../constant";
-// import { stagingBaseUrl } from "../constants";
-// import bannerImage from "../images/banner.png"
 import "../index.css";
-var currentUrl = "";
 import {
   Template,
-  GetPath,
-  GetRedirects,
+  GetPath, 
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
@@ -17,20 +13,15 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
-import Banner from "../components/locationDetail/banner";
 import { StaticData } from "../../sites-global/staticData";
-import { Addresssvg, favicon, mobilesvg, regionNames, stagingBaseurl } from "../../sites-global/global";
+import { favicon,stagingBaseurl } from "../../sites-global/global";
 import { JsonLd } from "react-schemaorg";
 import Address from "../components/commons/Address";
-import PageLayout from "../components/layouts/PageLayout";
 import OpenClose from "../components/commons/openClose";
-import timesvg from "../images/watch-icn.svg";
 import { Link } from "@yext/pages/components";
-import Footer1 from "../components/layouts/NewFooter";
-import Header from "../components/layouts/NewHeader";
 import NewHeader from "../components/layouts/NewHeader";
 import NewFooter from "../components/layouts/NewFooter";
-var currentUrl = "";
+
 export const config: TemplateConfig = {
   stream: {
     $id: "city",
@@ -64,7 +55,8 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  var url: any = ""
+  let url= ""
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   document?.dm_directoryParents?.map((i: any) => {
     if (i.meta.entityType.id == 'ce_country') {
       url = `${i.slug}`
@@ -77,11 +69,10 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
   document,
 }): HeadConfig => {
-  var canonical = "";
+  let canonical = "";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   document?.dm_directoryChildren?.map((entity: any) => {
     canonical = entity.address.countryCode.toLowerCase().replaceAll(" ", "-") + '/' + entity.address.region.toLowerCase().replaceAll(" ", "-");
   })
@@ -201,8 +192,8 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 const City: Template<TemplateRenderProps> = ({
+  // eslint-disable-next-line react/prop-types
   relativePrefixToRoot,
-  path,
   document,
 }) => {
   const {
@@ -212,20 +203,12 @@ const City: Template<TemplateRenderProps> = ({
 
     _site,
   } = document;
-  var address;
-  var c_companyrn;
-  var c_footerLinks;
-  var c_headerLinks1;
-  var c_phoneNumber;
-  var facebookPageUrl;
-  var instagramHandle;
-  var twitterHandle;
-  var c_tikTok;
-  var sortedChildren = dm_directoryChildren.sort(function (a: any, b: any) {
-    var a = a.name;
-    var b = b.name;
-    return a < b ? -1 : a > b ? 1 : 0;
-  });
+  let address;
+  // const sortedChildren = dm_directoryChildren.sort(function (a:any, b:any) {
+  //   let a = a.name;
+  //   let b = b.name;
+  //   return a < b ? -1 : a > b ? 1 : 0;
+  // });
 
   let slugString = "";
   document.dm_directoryParents.forEach((e: any) => {
@@ -234,7 +217,7 @@ const City: Template<TemplateRenderProps> = ({
 
   const childrenDivs = dm_directoryChildren?.map((entity: any) => {
     // console.log(entity)
-    var origin: any = null;
+    let origin: any = null;
     if (entity.address.city) {
       origin = entity.address.city;
     } else if (entity.address.region) {
@@ -243,16 +226,16 @@ const City: Template<TemplateRenderProps> = ({
       origin = entity.address.country;
     }
     // let key: any = Object.keys(entity.hours)[0];
-    var url = "";
-    var name: any = entity.name.toLowerCase();
-    var region: any = entity.address.region.toLowerCase();
-    var initialregion: any = region.toString();
-    var finalregion: any = initialregion.replaceAll(" ", "-");
-    var city: any = entity.address.city.toLowerCase();
-    var initialrcity: any = city.toString();
-    var finalcity: any = initialrcity.replaceAll(" ", "-");
-    var string: any = name.toString();;
-    let result: any = string.replaceAll(" ", "-");
+    let url = "";
+    const name: string = entity.name.toLowerCase();
+    // const region: string = entity.address.region.toLowerCase();
+    // const initialregion: string = region.toString();
+    // const finalregion: string = initialregion.replaceAll(" ", "-");
+    // const city: string = entity.address.city.toLowerCase();
+    // const initialrcity: string = city.toString();
+    // const finalcity: string = initialrcity.replaceAll(" ", "-");
+    const string: string = name.toString();
+    const result: string = string.replaceAll(" ", "-");
     // let newlink: any = 
     if (!entity.slug) {
       url = document.slug + "/" + `${result}.html`;
@@ -262,6 +245,7 @@ const City: Template<TemplateRenderProps> = ({
 
     return (
 
+      // eslint-disable-next-line react/jsx-key
       <div className="nearby-card">
         <div className="location-name-miles icon-row">
           <h2><Link className="inline-block notHighlight" href={url}
@@ -302,55 +286,57 @@ const City: Template<TemplateRenderProps> = ({
       </div>
     );
   });
-  function getDirectionUrl(entitiy: any) {
-    var origin: any = null;
-    if (entitiy.address.city) {
-      origin = entitiy.address.city;
-    } else if (entitiy.address.region) {
-      origin = entitiy.address.region;
-    } else {
-      origin = entitiy.address.country;
-    }
-    if (navigator.geoentity) {
-      const error = (error: any) => {
-        var message_string =
-          "Unable to determine your entity. please share your entity";
+  // function getDirectionUrl(entitiy: any) {
+  //   var origin: any = null;
+  //   if (entitiy.address.city) {
+  //     origin = entitiy.address.city;
+  //   } else if (entitiy.address.region) {
+  //     origin = entitiy.address.region;
+  //   } else {
+  //     origin = entitiy.address.country;
+  //   }
+  //   if (navigator.geoentity) {
+  //     const error = (error: any) => {
+  //       const message_string =
+  //         "Unable to determine your entity. please share your entity";
 
-        var getDirectionUrl =
-          "https://www.google.com/maps/dir/?api=1&destination=" +
-          entitiy.yextDisplayCoordinate.latitude +
-          "," +
-          entitiy.yextDisplayCoordinate.longitude +
-          "&origin=" +
-          origin;
+  //       const getDirectionUrl =
+  //         "https://www.google.com/maps/dir/?api=1&destination=" +
+  //         entitiy.yextDisplayCoordinate.latitude +
+  //         "," +
+  //         entitiy.yextDisplayCoordinate.longitude +
+  //         "&origin=" +
+  //         origin;
 
-        window.open(getDirectionUrl, "_blank");
-      };
-      navigator.geoentity.getCurrentPosition(
-        function (position: any) {
-          let currentLatitude = position.coords.latitude;
-          let currentLongitude = position.coords.longitude;
-          let getDirectionUrl =
-            "https://www.google.com/maps/dir/?api=1&destination=" +
-            entitiy.yextDisplayCoordinate.latitude +
-            "," +
-            entitiy.yextDisplayCoordinate.longitude +
-            "&origin=" +
-            currentLatitude +
-            "," +
-            currentLongitude;
-          window.open(getDirectionUrl, "_blank");
-        },
-        error,
-        {
-          timeout: 10000,
-        }
-      );
-    }
-  }
+  //       window.open(getDirectionUrl, "_blank");
+  //     };
+  //     navigator.geoentity.getCurrentPosition(
+  //       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  //       function (position: any) {
+  //         const currentLatitude = position.coords.latitude;
+  //         const currentLongitude = position.coords.longitude;
+  //         const getDirectionUrl =
+  //           "https://www.google.com/maps/dir/?api=1&destination=" +
+  //           entitiy.yextDisplayCoordinate.latitude +
+  //           "," +
+  //           entitiy.yextDisplayCoordinate.longitude +
+  //           "&origin=" +
+  //           currentLatitude +
+  //           "," +
+  //           currentLongitude;
+  //         window.open(getDirectionUrl, "_blank");
+  //       },
+  //       error,
+  //       {
+  //         timeout: 10000,
+  //       }
+  //     );
+  //   }
+  // }
 
-  var url: any = ""
+  let url= ""
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   document.dm_directoryParents.map((i: any) => {
     if (i.meta.entityType.id == 'ce_country') {
       url = `${i.slug}`
@@ -359,10 +345,12 @@ const City: Template<TemplateRenderProps> = ({
       url = `${url}/${i.slug}/${document.slug.toString()}.html`
     }
   })
-  let breadcrumbScheme: any = [];
-  let currentIndex: any = 0;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const breadcrumbScheme: any = [];
+  let currentIndex = 0;
   dm_directoryParents &&
-    dm_directoryParents?.map((i: any, index: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dm_directoryParents?.map((i: any, index: number) => {
       currentIndex = index;
       if (index != 0) {
         breadcrumbScheme.push({

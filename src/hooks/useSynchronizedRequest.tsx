@@ -29,4 +29,4 @@ export function useSynchronizedRequest<RequestDataType, ResponseType>(
     });
   }
   return [synchronizedResponse, executeSynchronizedRequest]
-};
+}

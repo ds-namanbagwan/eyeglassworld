@@ -1,5 +1,6 @@
 import { AutocompleteResult } from '@yext/answers-headless-react';
 import renderHighlightedValue from '../utils/renderHighlightedValue';
+import * as React from 'react';
 
 export interface AutocompleteResultCssClasses {
   option?: string,

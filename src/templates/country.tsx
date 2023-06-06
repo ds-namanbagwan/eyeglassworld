@@ -18,7 +18,7 @@ import NewFooter from "../components/layouts/NewFooter";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
-var currentUrl = "";
+// const currentUrl = "";
 export const config: TemplateConfig = {
   stream: {
     $id: "country",
@@ -60,13 +60,10 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  currentUrl = "/" + document.slug.toString() + ".html";
   return "/" + document.slug.toString() + ".html";
 };
 
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
+export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({ 
   document,
 }): HeadConfig => {
 
@@ -174,38 +171,39 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 const country: Template<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
+  relativePrefixToRoot, 
   document,
 }) => {
   const {
     name,
     slug,
     _site,
-    address,
-    c_locatorBannerImage,
+    address,   
     dm_directoryParents,
     dm_directoryChildren
   } = document;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
     let detlslug;
 
     if (typeof entity.dm_directoryChildren != "undefined") {
       if (entity.dm_baseEntityCount == 1) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         entity.dm_directoryChildren.map((res: any) => {
           let detlslug1 = "";
           if (!res.slug) {
-            let slugString = res.id + " " + res.name;
-            let slug = slugString;
+            const slugString = res.id + " " + res.name;
+            const slug = slugString;
             detlslug1 = `${slug}.html`;
           } else {
             detlslug1 = `${res.slug.toString()}.html`;
           }
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
             // console.log(detl,"123456")
             if (!detl.slug) {
-              let slugString = detl.name;
-              let slug = slugString;
+              const slugString = detl.name;
+              const slug = slugString;
               detlslug1 = document.slug + "/" + entity.slug + "/" + res.slug + "/" + slug.toLowerCase().replaceAll(" ", "-") + ".html";
               // console.log(detlslug1,"123456")
             } else {
@@ -221,6 +219,7 @@ const country: Template<TemplateRenderProps> = ({
       }
     }
     return (
+      // eslint-disable-next-line react/jsx-key
       <li className=" storelocation-category">
         <a
           key={entity.slug}
@@ -231,9 +230,7 @@ const country: Template<TemplateRenderProps> = ({
     )
   }) : null;
 
-  let bannerimage = c_locatorBannerImage ? c_locatorBannerImage.map((element: any) => {
-    return element.url
-  }) : null;
+
 
   return (
     <>

@@ -2,18 +2,28 @@ import * as React from "react";
 import { breadcrumbhome, conversionDetailsDirection } from "../../../sites-global/global";
 import { regionNames } from "../../../sites-global/global";
 import { Link } from "@yext/pages/components";
-type data = {
-  name: any;
-  parents: any;
-  baseUrl: any;
-  address: any;
-};
+interface type {
+  line1: string,
+  line2: string,
+  region: string,
+  postalCode: number,
+  city: string,
+  countryCode: string
+}
+interface data  {
+  name: string;
+  parents: string;
+  baseUrl: string;
+  address: type;
+}
+
 
 const BreadCrumbs = (props: data) => {
 
   const [list, setList] = React.useState(null);
- var breadcrumbs;
-  var data: any = [];
+ let breadcrumbs;
+  let data:any = [];
+  // console.log(data,"dta")
   React.useEffect(() => {
     setURL(props.parents, props.baseUrl);
   // console.log(props.parents)

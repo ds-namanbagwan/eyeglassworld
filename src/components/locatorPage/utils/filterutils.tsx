@@ -3,6 +3,7 @@ import { NearFilterValue, CombinedFilter, Filter } from '@yext/answers-headless-
 /**
  * Check if the object follows NearFilterValue interface
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function isNearFilterValue(obj: any): obj is NearFilterValue {
   return typeof obj === 'object' && 'radius' in obj && 'lat' in obj && 'long' in obj;
 }
