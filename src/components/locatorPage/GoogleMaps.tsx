@@ -1,7 +1,7 @@
 import { Wrapper } from "@googlemaps/react-wrapper";
 import {
   useSearchState,
-  Result, 
+  Result,
 } from "@yext/search-headless-react";
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";

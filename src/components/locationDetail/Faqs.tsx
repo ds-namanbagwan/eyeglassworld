@@ -1,10 +1,10 @@
 import * as React from "react";
-import { useState} from "react";
+import { useState } from "react";
 import AccordionItem from "./AccordianItem";
 import { StaticData } from "../../../sites-global/staticData";
 
 export default function Faq(props: any) {
- 
+
   const [activeIndex, setActiveIndex] = useState();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let preExpandedarr = [];
@@ -16,14 +16,14 @@ export default function Faq(props: any) {
       }
     });
   }
-  
+
   const renderedQuestionsAnswers = props?.c_faqs?.map((item: any, index: number) => {
     // {console.log(renderedQuestionsAnswers,"renderedQuestionsAnswers")}
     const showDescription = index === activeIndex ? "current" : "hidden";
     const background = index === activeIndex ? "active" : "";
     const fontWeightBold = index === activeIndex ? "font-weight-bold  py-0 mt-2" : "";
     const ariaExpanded = index === activeIndex ? "true" : "false";
-   
+
     return (
       // eslint-disable-next-line react/jsx-key
       <AccordionItem

@@ -1,8 +1,6 @@
 import * as React from "react";
-import { useEffect } from "react";
 import { StaticData } from "../../../sites-global/staticData";
 import Timer from "../locationDetail/countdown";
-// import OpenCloseBlock from "./OpenCloseBlock";
 
 export const OpenStausFunctions = {
   formatOpenNowString: (hoursData: any, timeZone: any) => {
@@ -68,7 +66,7 @@ export const OpenStausFunctions = {
         const endIntervalNumber = OpenStausFunctions.timeStringToNumber(
           interval.end
         );
-
+        
         // If current time doesn't belong to one of yesterdays interval.
         if (currentInterval == null) {
           if (endIntervalNumber < startIntervalNumber) {
@@ -185,8 +183,6 @@ export const OpenStausFunctions = {
     ];
 
     const statusclass = "";
-
-
 
     if (openRightNow) {
       // console.log("openRightNow");
@@ -339,7 +335,7 @@ export const OpenStausFunctions = {
       return null;
     }
   },
-  formatTime: (time) => {
+  formatTime: (time: string) => {
     const tempDate = new Date("January 1, 2020 " + time);
     const localeString = "en-US";
 
@@ -349,7 +345,7 @@ export const OpenStausFunctions = {
       hour12: true,
     });
   },
-  getUtcOffsetFromTimeZone: (timeZone, date = new Date()) => {
+  getUtcOffsetFromTimeZone: (timeZone: any, date = new Date()) => {
     const tz = date
       .toLocaleString("en", { timeZone, timeStyle: "long" })
       .split(" ")
@@ -359,11 +355,9 @@ export const OpenStausFunctions = {
       Date.parse(`${dateString} UTC`) - Date.parse(`${dateString} ${tz}`);
     return OpenStausFunctions.msToTime(offset);
   },
-  msToTime: (duration) => {
-    let milliseconds = Math.floor((duration % 1000) / 100),
-      seconds = Math.floor((duration / 1000) % 60),
-      minutes = Math.floor((duration / (1000 * 60)) % 60),
-      hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+  msToTime: (duration: number) => {
+    // let milliseconds = Math.floor((duration % 1000) / 100),      
+      let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
     hours = hours < 10 ? hours : hours;
     return hours + ":00";
   },
@@ -430,6 +424,4 @@ export default function OpenClose(props: any) {
     </>
   );
 }
-// function formatTime(end: any): string {
-//   throw new Error("Function not implemented.");
-// }
+
