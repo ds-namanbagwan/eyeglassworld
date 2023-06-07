@@ -1,9 +1,9 @@
-import {useSearchActions } from "@yext/search-headless-react";
+import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from 'react';
 import * as React from "react";
 import LocationCard from "./LocationCard";
 import { GoogleMaps } from "./GoogleMaps";
-import { useSearchState} from "@yext/search-headless-react";
+import { useSearchState } from "@yext/search-headless-react";
 import Geocode from "react-geocode";
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
@@ -344,7 +344,7 @@ const SearchLayout = (props: any): JSX.Element => {
               <VerticalResults
                 displayAllOnNoResults={false}
                 CardComponent={LocationCard}
-                locationResults={locationResults}           
+                locationResults={locationResults}
               />
 
 

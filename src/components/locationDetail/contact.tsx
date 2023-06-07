@@ -21,7 +21,7 @@ const Contact = (props: any) => {
     c_storeInfoHeading,
     c_getDirectionsCTAText
   } = props;
- 
+
   return (
     <>
       <div className="address-main-sec">

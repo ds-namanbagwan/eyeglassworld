@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from "react";
-import {  
+import { useRef, useState} from "react";
+import {
   useSearchActions,
   FilterSearchResponse,
   SearchParameterField,
@@ -26,8 +26,8 @@ const SCREENREADER_INSTRUCTIONS = "";
 
 interface FilterSearchCssClasses
   extends InputDropdownCssClasses,
-  DropdownSectionCssClasses,
-  AutocompleteResultCssClasses {
+    DropdownSectionCssClasses,
+    AutocompleteResultCssClasses {
   container?: string;
   label?: string;
 }
@@ -51,28 +51,29 @@ export interface FilterSearchProps {
   searchFields: Omit<SearchParameterField, "fetchEntities">[];
   customCssClasses?: FilterSearchCssClasses;
   cssCompositionMethod?: CompositionMethod;
-  searchInputValue: string;
+  searchInputValue: any;
   handleInputValue: any;
-  handleSetUserShareLocation: string;
-  inputvalue: string;
-  params: string;
-  displaymsg: string;
-  setDisplaymsg: string;
-  setSearchInputValue: string
+  handleSetUserShareLocation: any;
+  inputvalue: any;
+  params: any;
+  displaymsg:any;
+  setDisplaymsg:any;
+  setSearchInputValue:any
 }
 
 type FilterHandle = {
-  setInputValue: (value: string) => void,
+  setInputValue: (value: String) => void,
 }
 
-// eslint-disable-next-line react/display-name
 const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
   (
-    {      
+    {
+      label,
       sectioned,
       searchFields,
       customCssClasses,
-      cssCompositionMethod,      
+      cssCompositionMethod,
+      searchInputValue,
       handleInputValue,
       handleSetUserShareLocation,
       inputvalue,
@@ -89,12 +90,12 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
     const searchParamFields = searchFields.map((searchField) => {
       return { ...searchField, fetchEntities: false };
     });
-    React.useImperativeHandle(ref, () => {
+    React.useImperativeHandle(ref,() => {
       return {
-        setInputValue: (value: string) => setInput(value)
+        setInputValue: (value: String) => setInput(value)
       }
     })
-    //  console.log(displaymsg,"fisttimedispalydfsd")
+  console.log(displaymsg,"fisttimedispalydfsd")
     const cssClasses = useComposedCssClasses(
       builtInCssClasses,
       customCssClasses,
@@ -111,10 +112,10 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
         searchParamFields
       )
     );
-
+  
 
     let sections: { results: Option[]; label?: string }[] = [];
-
+     
     if (filterSearchResponse) {
       sections = filterSearchResponse.sections.map((section) => {
         return {
@@ -170,19 +171,6 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
       });
       screenReaderText = screenReaderPhrases.join(" ");
     }
-    useEffect(() => {
-      // if(localStorage.getItem('inputvalue')){
-      //       setInput(localStorage.getItem('inputvalue'));
-
-      const params = (new URL(window.location.href)).searchParams;
-      const addresssearch = params.get("text");
-      if (addresssearch) {
-        setInput(addresssearch);
-      } else {
-        setInput("");
-      }
-
-    }, [inputvalue]);
 
     return (
       <div className={cssClasses.container}>
@@ -192,16 +180,14 @@ const FilterSearch = React.forwardRef<FilterHandle, FilterSearchProps>(
           displaymsg={displaymsg}
           setDisplaymsg={setDisplaymsg}
           params={params}
-          placeholder="Find Address, City or Postal Code"
+          placeholder="Find Restaurant"
           screenReaderInstructions={SCREENREADER_INSTRUCTIONS}
           screenReaderText={screenReaderText}
           onlyAllowDropdownOptionSubmissions={true}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           onInputChange={(newInput: any) => {
             setInput(newInput);
             handleInputValue();
           }}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           onInputFocus={(input: any) => {
             executeFilterSearch(input);
           }}

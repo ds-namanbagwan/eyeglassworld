@@ -209,14 +209,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 const region: Template<TemplateRenderProps> = ({
-  relativePrefixToRoot,  
+  relativePrefixToRoot,
   document,
 }) => {
   const {
     name,
     _site,
     slug,
-    address,   
+    address,
     dm_directoryParents,
     dm_directoryChildren
   } = document;
@@ -235,7 +235,7 @@ const region: Template<TemplateRenderProps> = ({
           // let result: any = string.replaceAll(" ", "-");
           newurl = slug + "/" + newurl + "/" + string.toLowerCase().replaceAll(" ", "-") + ".html";
           //  console.log(newurl,"575524")
-        })        
+        })
         return (
           <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
             <a key={entity.slug} href={newurl} className="hover:text-red">
@@ -274,7 +274,7 @@ const region: Template<TemplateRenderProps> = ({
         parents={dm_directoryParents}
         baseUrl={relativePrefixToRoot}
         address={address}
-      ></BreadCrumbs>      
+      ></BreadCrumbs>
 
       <div className="content-list">
         <div className="container">

@@ -31,9 +31,9 @@ export default function DropdownSection({
   options,
   optionIdPrefix,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onFocusChange = () => {},
+  onFocusChange = () => { },
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onLeaveSectionFocus = () => {},
+  onLeaveSectionFocus = () => { },
   label = '',
   cssClasses = {}
 }: DropdownSectionProps): JSX.Element | null {

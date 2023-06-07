@@ -17,11 +17,11 @@ let center = {
 
 type props = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  prop:any;
+  prop: any;
 };
 
 function CustomMap(coords: props) {
-  
+
   React.useEffect(() => {
     center = {
       lat: coords.prop.latitude,
