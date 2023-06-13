@@ -46,6 +46,7 @@
     "react-element-to-jsx-string": "^15.0.0",
     "react-geocode": "^0.2.3",
     "react-google-recaptcha": "^2.1.0",
+    "react-icons": "^4.9.0",
     "react-markdown": "^8.0.3",
     "react-modal": "^3.16.1",
     "react-perfect-scrollbar": "^1.5.8",

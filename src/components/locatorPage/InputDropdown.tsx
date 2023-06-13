@@ -84,8 +84,6 @@ function reducer(state: State, action: Action): State {
 export default function InputDropdown({
   inputValue = "",
   placeholder,
-  screenReaderInstructions,
-  screenReaderText,
   onlyAllowDropdownOptionSubmissions,
   forceHideDropdown,
   children,
@@ -96,7 +94,6 @@ export default function InputDropdown({
   onInputFocus,
   onDropdownLeave,
   cssClasses = {},
-  handleSetUserShareLocation,
   handleInputValue,
   params,
   displaymsg,
