@@ -192,7 +192,7 @@ const SearchLayout = (props: any): JSX.Element => {
     if (firstTimeRunners) {
       firstTimeRunners = false;
       // searchActions.resetFacets();
-      // FirstLoad() ;
+      FirstLoad() ;
     }
     const params = (new URL(window.location.href)).searchParams;
     const addresssearch = params.get("text");
