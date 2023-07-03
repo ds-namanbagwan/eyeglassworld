@@ -27,6 +27,8 @@
     "@types/mapbox-gl": "^2.7.5",
     "@yext/analytics": "^0.2.0",
     "@yext/answers-headless-react": "^1.2.0",
+    "@yext/chat-headless-react": "^0.4.0",
+    "@yext/chat-ui-react": "^0.4.0",
     "@yext/custom-field-debugger": "^2.0.8",
     "@yext/rtf-converter": "^1.7.1",
     "@yext/search-headless-react": "^1.4.0",
