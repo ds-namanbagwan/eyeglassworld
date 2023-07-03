@@ -10,7 +10,7 @@ interface type {
   city: string,
   countryCode: string
 }
-interface data  {
+interface data {
   name: string;
   parents: string;
   baseUrl: string;
@@ -21,12 +21,12 @@ interface data  {
 const BreadCrumbs = (props: data) => {
 
   const [list, setList] = React.useState(null);
- let breadcrumbs;
-  let data:any = [];
+  let breadcrumbs;
+  let data: any = [];
   // console.log(data,"dta")
   React.useEffect(() => {
     setURL(props.parents, props.baseUrl);
-  // console.log(props.parents)
+    // console.log(props.parents)
   }, [setList]);
 
   const setURL = (parents: any, baseUrl: any) => {
@@ -35,33 +35,35 @@ const BreadCrumbs = (props: data) => {
     if (parents) {
       for (let i = 0; i < parents.length; i++) {
 
-           
-       if (parents[i].meta.entityType.id == "ce_country") {
+
+        if (parents[i].meta.entityType.id == "ce_country") {
           // parents[i].name = regionNames.of(parents[i].name);
- 
+
           parents[i].slug = parents[i].slug;
-          
+
           data.push({
             name: regionNames.of(parents[i].name),
             slug: parents[i].slug,
-            count:parents[i].dm_directoryChildrenCount
+            count: parents[i].dm_directoryChildrenCount
           });
 
-        } 
+        }
         else if (parents[i].meta.entityType.id == "ce_region") {
-      
-          data.push({ name: parents[i].name, slug:`${parents[i-1].slug}/${parents[i].slug}`, 
-          count:parents[i].dm_directoryChildrenCount});
+
+          data.push({
+            name: parents[i].name, slug: `${parents[i - 1].slug}/${parents[i].slug}`,
+            count: parents[i].dm_directoryChildrenCount
+          });
           parents[i].name = parents[i].name;
-          parents[i].slug = `${parents[i-1].slug}/${parents[i].slug}`;
+          parents[i].slug = `${parents[i - 1].slug}/${parents[i].slug}`;
         } else if (parents[i].meta.entityType.id == "ce_city") {
-       
+
           parents[i].name = parents[i].name;
           parents[i].slug = `${parents[i - 1].slug}/${parents[i].slug}`;
           data.push({
             name: parents[i].name,
             slug: parents[i].slug,
-            count:parents[i].dm_directoryChildrenCount
+            count: parents[i].dm_directoryChildrenCount
           });
         }
       }
@@ -69,19 +71,19 @@ const BreadCrumbs = (props: data) => {
 
       breadcrumbs = data.map((crumb: any) => (
         <li key={crumb.slug}>
-          {(crumb.count==1)?<Link href="javascript:void(0)" className="cursor-not-allowed"
-          data-ya-track="Breadcrumbs"
-          eventName={`Breadcrumbs`}
-          rel="noopener noreferrer"
-          conversionDetails={conversionDetailsDirection}
+          {(crumb.count == 1) ? <Link href="javascript:void(0)" className="cursor-not-allowed"
+            data-ya-track="Breadcrumbs"
+            eventName={`Breadcrumbs`}
+            rel="noopener noreferrer"
+            conversionDetails={conversionDetailsDirection}
           > {crumb.name}</Link>
-          :<Link href={baseUrl + crumb.slug + ".html"}
-          data-ya-track="Breadcrumbs"
-          eventName={`Breadcrumbs`}
-          rel="noopener noreferrer"
-          conversionDetails={conversionDetailsDirection}> {crumb.name}</Link>}
-          
-        </li> 
+            : <Link href={baseUrl + crumb.slug + ".html"}
+              data-ya-track="Breadcrumbs"
+              eventName={`Breadcrumbs`}
+              rel="noopener noreferrer"
+              conversionDetails={conversionDetailsDirection}> {crumb.name}</Link>}
+
+        </li>
       ));
       setList(breadcrumbs);
     } else {
@@ -94,11 +96,11 @@ const BreadCrumbs = (props: data) => {
         <ul className="flex">
           <li>
             <Link className="home" href="/"
-             data-ya-track="Breadcrumbs"
-             eventName={`Breadcrumbs`}
-             rel="noopener noreferrer"
-             conversionDetails={conversionDetailsDirection}>
-            <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/>
+              data-ya-track="Breadcrumbs"
+              eventName={`Breadcrumbs`}
+              rel="noopener noreferrer"
+              conversionDetails={conversionDetailsDirection}>
+              <div dangerouslySetInnerHTML={{ __html: breadcrumbhome }} />
             </Link>
           </li>
           {/* <li>
@@ -111,11 +113,11 @@ const BreadCrumbs = (props: data) => {
               {props.address && props.address.city ? (
                 <li className="inline-block">
                   {" "}
-                  <Link href={props.baseUrl + props.address.city }
-                   data-ya-track="Breadcrumbs"
-                   eventName={`Breadcrumbs`}
-                   rel="noopener noreferrer"
-                   conversionDetails={conversionDetailsDirection}>
+                  <Link href={props.baseUrl + props.address.city}
+                    data-ya-track="Breadcrumbs"
+                    eventName={`Breadcrumbs`}
+                    rel="noopener noreferrer"
+                    conversionDetails={conversionDetailsDirection}>
                     {props.address.city ? props.address.city : ""}
                   </Link>
                 </li>
@@ -124,13 +126,13 @@ const BreadCrumbs = (props: data) => {
               )}
             </>
           )}
-         
+
           <li>{props && props.name}</li>
 
         </ul>
       </div>
     </div>
-       
+
   );
 };
 export default BreadCrumbs;

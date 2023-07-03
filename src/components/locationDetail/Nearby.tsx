@@ -6,6 +6,7 @@ import { Link } from "@yext/pages/components";
 import { StaticData } from "../../../sites-global/staticData";
 
 export default function Nearby(props: any) {
+  // console.log(props,"naman")
 
   const [neabyData, setnearbyData] = React.useState(props.externalApiData.response.results);
   // console.log(props.externalApiData,"location result-list-inner-355923963200068037 result markerEventBinded")

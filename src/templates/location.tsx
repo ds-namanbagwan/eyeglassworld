@@ -71,17 +71,17 @@ export const config: TemplateConfig = {
       "dm_directoryParents.slug",
       "dm_directoryParents.meta.entityType",
       "c_photogallary1CTA",
-      "c_aboutCTA"
+      "c_aboutCTA"    
     ],
-    // Defines the scope of entities that qualify for this stream.
-    filter: {
-      entityTypes: ['location']
+// Defines the scope of entities that qualify for this stream.
+filter: {
+  entityTypes: ['location']
 
-    },
-    // The entity language profiles that documents will be generated for.
-    localization: {
-      locales: ["en"],
-      primary: false,
+},
+// The entity language profiles that documents will be generated for.
+localization: {
+  locales: ["en"],
+    primary: false,
     },
   },
 };
@@ -306,7 +306,7 @@ const Location: Template<ExternalApiRenderData> = ({
             opens: start,
           };
         }
-      } 
+      }
 
       hoursSchema.push(openIntervalsSchema);
     }
