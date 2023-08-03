@@ -500,7 +500,7 @@ const Location: Template<ExternalApiRenderData> = ({
             <PhotoGallery props={photoGallery} />
           </div>
 
-          <Faq c_faqs={c_faqs} />
+          <Faq prop={c_faqs}/>
 
           <div className="nearby-sec">
             <div className="container">

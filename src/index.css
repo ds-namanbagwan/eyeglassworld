@@ -882,3 +882,48 @@ h1.entity-name{
 .OpenCloseStatus .daylist{@apply hidden}
 
 /* .filter-by-services{@apply absolute ml-[200px] mt-3 } */
+
+.faq-sec{
+  @apply pt-5 lg:pt-[10px] pb-10
+}
+.faq-sec .container{
+  @apply max-w-[1240px]
+}
+.faq-blocks{
+  @apply px-4 lg:px-[200px] py-2 lg:py-[10px] flex flex-wrap items-start max-w-[1200px] mx-auto rounded-[1px] lg:rounded-[30px] justify-between mt-6 lg:mt-11
+}
+.faq-blocks .faq-block h4:hover{
+  color: #02a6db;
+}
+.faq-blocks .faq-block{
+  @apply w-full border-b  border-opacity-10;
+}
+.faq-blocks .faq-block:last-child{
+  @apply border-b-0
+}
+.faq-blocks .faq-block h4{
+  @apply text-base lg:text-xl  mt-0  font-medium lg:font-semibold py-4 pr-10 relative leading-6 lg:leading-7 cursor-pointer select-none
+}
+.faq-blocks .faq-block h4 .faq-icon{
+  @apply absolute top-4 right-0 border lg:border-2  w-5 lg:w-7 h-5 lg:h-7 rounded-full z-10;
+}
+.faq-blocks .faq-block h4 .faq-icon:before{
+  @apply content-[''] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 lg:w-3 h-[1px] lg:h-0.5 bg-dark-gray
+}
+.faq-blocks .faq-block h4 .faq-icon:after{
+  @apply content-[''] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 lg:h-3 w-[1px] lg:w-0.5 bg-dark-gray
+}
+.faq-blocks .faq-block.opened h4 .faq-icon:after{
+  @apply opacity-0
+}
+.faq-blocks .faq-block .faq-content{
+  @apply max-h-0 overflow-hidden;
+}
+.faq-blocks .faq-block.opened .faq-content{
+  @apply pb-5 max-h-96;
+}
+
+.sec_heading{
+  color: #02a6db;
+}
+/*faq end*/
