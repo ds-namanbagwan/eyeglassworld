@@ -2,15 +2,15 @@ import * as React from "react"
 
 interface StickyHeaderProps {
     props: {
-      c_head2: {
-        header2sub: string;
-        header2subpart: {
-          link: string;
-          label: string;
-        }[];
-      };
+        c_head2: {
+            header2sub: string;
+            header2subpart: {
+                link: string;
+                label: string;
+            }[];
+        };
     };
-  }
+}
 
 export default function StickyHeader(props: StickyHeaderProps) {
 

@@ -4,6 +4,7 @@ import GetDirection from "../commons/GetDirection";
 import OpenClose from "../commons/openClose"
 import { Link } from "@yext/pages/components";
 import { StaticData } from "../../../sites-global/staticData";
+import { formatPhoneNumber } from "react-phone-number-input";
 
 export default function Nearby(props: any) {
   // console.log(props,"naman")
@@ -53,6 +54,11 @@ export default function Nearby(props: any) {
                 </div>
                 <div className="icon-row content-col">
                   <Address address={location.data.address} />
+                </div>
+                <div className="text mb-4">
+                  <a id="address" className=" location-phn" href={`tel:${location.data.mainPhone}`}>
+                    {formatPhoneNumber(location.data.mainPhone)}
+                  </a>
                 </div>
                 <div className="icon-row closeing-div">
                   {location.data.hours ?
