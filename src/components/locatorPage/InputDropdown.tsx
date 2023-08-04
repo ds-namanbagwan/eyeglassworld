@@ -305,13 +305,13 @@ export default function InputDropdown({
   const options = [
     { value: "50", label: "50 mile" },
     { value: "100", label: "100 mile" },
-    { value: "150", label: "100 mile" },
+    { value: "150", label: "150 mile" },
     { value: "200", label: "200 mile" },
-    { value: "250", label: "100 mile" },
+    { value: "250", label: "250 mile" },
     { value: "300", label: "300 mile" },
-    { value: "350", label: "100 mile" },
+    { value: "350", label: "350 mile" },
     { value: "400", label: "400 mile" },
-    { value: "450", label: "100 mile" },
+    { value: "450", label: "450 mile" },
     { value: "500", label: "500 mile" },
   ];
 
