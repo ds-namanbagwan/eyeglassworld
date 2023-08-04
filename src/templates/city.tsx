@@ -21,6 +21,7 @@ import OpenClose from "../components/commons/openClose";
 import { Link } from "@yext/pages/components";
 import NewHeader from "../components/layouts/NewHeader";
 import NewFooter from "../components/layouts/NewFooter";
+import { formatPhoneNumber } from "react-phone-number-input";
 
 export const config: TemplateConfig = {
   stream: {
@@ -260,7 +261,7 @@ const City: Template<TemplateRenderProps> = ({
         {entity.mainPhone ?
           <div className="icon-row">
             <div className="content-col">
-              <a href={`tel:${entity.mainPhone}`}>{entity.mainPhone}</a>
+              <a href={`tel:${entity.mainPhone}`}>{formatPhoneNumber(entity.mainPhone)}</a>
             </div>
           </div> : ''}
 

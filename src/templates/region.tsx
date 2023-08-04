@@ -221,16 +221,17 @@ const region: Template<TemplateRenderProps> = ({
     dm_directoryChildren
   } = document;
   let newurl = "";
-  //   const links=document?.slug+"/"+document?.dm_directoryChildren?.slug;
-  // console.log('links', links)
+
   const childrenDivs =
     dm_directoryChildren &&
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dm_directoryChildren?.map((entity: any) => {
+      console.log(entity,"naman")
       if (entity?.dm_baseEntityCount == 1) {
         newurl = entity.slug;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         entity.dm_directoryChildren.map((detl: any) => {
+          console.log(detl,"naman2")
           const string: string = detl.name.toString();
           // let result: any = string.replaceAll(" ", "-");
           newurl = slug + "/" + newurl + "/" + string.toLowerCase().replaceAll(" ", "-") + ".html";
@@ -284,14 +285,11 @@ const region: Template<TemplateRenderProps> = ({
             </h2>
           </div>
           <ul className="region-list">
-
             {childrenDivs}
           </ul>
 
         </div>
       </div>
-
-
       <NewFooter prop={_site} />
     </>
   )

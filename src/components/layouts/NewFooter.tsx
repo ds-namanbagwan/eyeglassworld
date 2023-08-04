@@ -101,9 +101,10 @@ export default function NewFooter(props: FooterProps) {
                     <div>{props?.prop?.c_textline2}</div>
                     <div>{props?.prop?.c_textline3}</div>
                 </div>
-                <ChatBox />
+                <div className="chat">
+                    <ChatBox />
+                </div>
             </div>
-
 
         </>
     )

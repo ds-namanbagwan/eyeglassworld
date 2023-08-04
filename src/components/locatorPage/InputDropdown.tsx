@@ -115,8 +115,8 @@ export default function InputDropdown({
   const [latestUserInput, setLatestUserInput] = useState(inputValue);
   const [childrenKey, setChildrenKey] = useState(0);
   const [norecord, setNorecord] = useState(true);
-  const [milesData, setMilesData] = useState("50");
-  // console.log(setMilesData,"miles")
+  const [milesData, setMilesData] = useState("");
+  console.log(milesData, "miles")
   const [keyUpStatus, setKeyUpStatus] = useState(true);
   const screenReaderInstructionsId = useMemo(() => uuid(), []);
   const loading = useSearchState((s) => s.searchStatus.isLoading);
@@ -305,9 +305,13 @@ export default function InputDropdown({
   const options = [
     { value: "50", label: "50 mile" },
     { value: "100", label: "100 mile" },
+    { value: "150", label: "100 mile" },
     { value: "200", label: "200 mile" },
+    { value: "250", label: "100 mile" },
     { value: "300", label: "300 mile" },
+    { value: "350", label: "100 mile" },
     { value: "400", label: "400 mile" },
+    { value: "450", label: "100 mile" },
     { value: "500", label: "500 mile" },
   ];
 
@@ -475,10 +479,10 @@ export default function InputDropdown({
       {/* dropdown start */}
       <div className="filter-by-services">
         <h3>Filter by Miles</h3>
-        <select onChange={(e: any) => setMilesData(e.target.value * 1609.344)}>
+        <select onClick={(e: any) => setMilesData(e.target.value * 1609.344)}>
           {options?.map((option: any) => {
             return (
-              <option value={option.value} >{option.label}</option>
+              <option value={option.value}>{option.label}</option>
             );
           })}
         </select>
