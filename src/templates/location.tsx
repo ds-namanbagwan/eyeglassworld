@@ -23,7 +23,6 @@ import BreadCrumbs from "../components/layouts/Breadcrumb";
 import OpenClose from "../components/commons/openClose";
 import Faq from "../components/locationDetail/Faqs";
 import { StaticData } from "../../sites-global/staticData";
-
 import { stagingBaseurl, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie, favicon } from "../../sites-global/global";
 import {
   AnalyticsProvider,
@@ -35,7 +34,6 @@ import NewHeader from "../components/layouts/NewHeader";
 import PhotoGallery1 from "../components/locationDetail/PhotoGallery1";
 import Offer from "../components/layouts/Offer";
 import StickyHeader from "../components/layouts/StickyHeader";
-// import Faq from "../components/locationDetail/Faqs";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -71,17 +69,16 @@ export const config: TemplateConfig = {
       "dm_directoryParents.slug",
       "dm_directoryParents.meta.entityType",
       "c_photogallary1CTA",
-      "c_aboutCTA"    
+      "c_aboutCTA"
     ],
-// Defines the scope of entities that qualify for this stream.
-filter: {
-  entityTypes: ['location']
-
-},
-// The entity language profiles that documents will be generated for.
-localization: {
-  locales: ["en"],
-    primary: false,
+    // Defines the scope of entities that qualify for this stream.
+    filter: {
+      entityTypes: ['location']
+    },
+    // The entity language profiles that documents will be generated for.
+    localization: {
+      locales: ["en"],
+      primary: false,
     },
   },
 };
@@ -307,7 +304,6 @@ const Location: Template<ExternalApiRenderData> = ({
           };
         }
       }
-
       hoursSchema.push(openIntervalsSchema);
     }
   }
@@ -392,9 +388,7 @@ const Location: Template<ExternalApiRenderData> = ({
   });
 
   return (
-
     <>
-
       <JsonLd<Store>
         item={{
           "@context": "https://schema.org",
@@ -423,7 +417,6 @@ const Location: Template<ExternalApiRenderData> = ({
           itemListElement: breadcrumbScheme,
         }}
       />
-
       <AnalyticsProvider
         templateData={templateData}
         enableDebugging={AnalyticsEnableDebugging}
@@ -431,9 +424,7 @@ const Location: Template<ExternalApiRenderData> = ({
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
-
           <NewHeader prop={_site} />
-
           <BreadCrumbs
             name={name}
             parents={dm_directoryParents}
@@ -462,19 +453,15 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
             }
           </div>
-
           <StickyHeader props={_site} />
-
           <div className="text mt-14">
             <div className="sec-title"><h2 className="">{StaticData.photoGallary1}</h2></div>
             <PhotoGallery1 c_photogallary1={c_photogallary1} c_photogallary1CTA={c_photogallary1CTA} />
           </div>
-
           <div className="text mt-10">
             <div className="sec-title"><h2 className="">{StaticData.offer}</h2></div>
             <Offer props={c_offerstype} c_aboutCTA={c_aboutCTA} />
           </div>
-
           <div className="container">
             <div className="sec-title">
               <h2 className="mt-10">{StaticData.about}</h2>
@@ -494,14 +481,12 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
             </div>
           </div>
-
           <div className="container mt-10">
             <div className="sec-title"><h2 className="">{StaticData.photoGallary}</h2></div>
             <PhotoGallery props={photoGallery} />
           </div>
-
-          <Faq prop={c_faqs}/>
-
+          <Faq prop={c_faqs} />
+          {/* <Faq Props={c_faqs}/> */}
           <div className="nearby-sec">
             <div className="container">
               <div className="sec-title"><h2 className="">{StaticData.NearStoretext}</h2></div>
@@ -512,9 +497,7 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
             </div>
           </div>
-
           <NewFooter prop={_site} />
-
         </AnalyticsScopeProvider>
       </AnalyticsProvider>
     </>

@@ -4,6 +4,7 @@
 // import { StaticData } from "../../../sites-global/staticData";
 
 // export default function Faq(props: any) {
+//   console.log(props,"5721242");
 
 //   const [activeIndex, setActiveIndex] = useState();
 //   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -40,7 +41,7 @@
 //       />
 //     );
 //   });
-//   // console.log(renderedQuestionsAnswers,"renderedQuestionsAnswers")
+//   console.log(renderedQuestionsAnswers,"renderedQuestionsAnswers");   
 //   return (
 //     <>
 //       <div className="container grid grid-cols-2 mt-20">
@@ -60,9 +61,6 @@
 // }
 
 
-
-
-import { Link } from "@yext/pages/components";
 import * as React from "react";
 import { useEffect, useState } from "react";
 
@@ -93,7 +91,6 @@ const Faq = (faqData: Faq) => {
       for (let s = 0; s < -1; s++) {
         acc[s].classList.remove("opened");
       }
-
       setFaqClass("opened");
     }
   };
@@ -130,7 +127,6 @@ const Faq = (faqData: Faq) => {
                       >
                         {i.question} <span className="faq-icon"></span>
                       </h4>
-
                       <>
                         <div className="faq-content">
                           <p>{i.answer}</p>

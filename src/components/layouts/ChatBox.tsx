@@ -3,8 +3,7 @@ import { ChatHeadlessProvider } from "@yext/chat-headless-react";
 import { ChatPopUp } from "@yext/chat-ui-react";
 import "@yext/chat-ui-react/bundle.css";
 
-const ChatBox = () => {
-    
+const ChatBox = () => {    
   return (
     <>
       <ChatHeadlessProvider
@@ -12,17 +11,14 @@ const ChatBox = () => {
           apiKey: "583871cbb80a26421961c0ed13b34350",
           botId: "chat-test",
           saveToSessionStorage: false,
-          apiDomain: "sbx-cdn.yextapis.com",
-          
-        }}
-      >
-        
+          apiDomain: "sbx-cdn.yextapis.com",          
+        }}>        
         <ChatPopUp 
         title="How can we help you ?"
         showRestartButton={false}
         placeholder="Type Your Msg hear"
         stream={false}
-        showTimestamp={false} />
+        showTimestamp={false}/>
       </ChatHeadlessProvider>
     </>
   );
